@@ -1,0 +1,46 @@
+// =============================================================================
+// ZIVA DARK THEME — _dark.scss
+// Applies dark-mode semantic color values.
+// Usage: add [data-theme="dark"] to <html> or <body>
+// =============================================================================
+
+[data-theme='dark'],
+.dark-theme {
+    // --- Brand ---
+    --color-primary: var(--blue-400);
+    --color-secondary: var(--blue-800);
+    --color-tertiary: var(--blue-900);
+
+    // --- Neutral ---
+    --color-blue-gray: var(--slate-300);
+
+    // --- Feedback ---
+    --color-success: var(--green-400);
+    --color-error: var(--red-400);
+    --color-danger: var(--red-500);
+    --color-warning: var(--amber-300);
+
+    // --- UI States ---
+    --color-disabled: var(--gray-600);
+    --color-border: var(--slate-700);
+
+    // --- Surfaces ---
+    --color-surface: var(--slate-900);
+    --color-surface-raised: var(--slate-800);
+    --color-surface-overlay: var(--slate-700);
+
+    // --- Text ---
+    --color-text-primary: var(--slate-50);
+    --color-text-secondary: var(--slate-300);
+    --color-text-muted: var(--slate-500);
+
+    // --- On-color text ---
+    --color-on-primary: var(--blue-950);
+    --color-on-secondary: var(--blue-100);
+    --color-on-tertiary: var(--blue-200);
+    --color-on-success: var(--green-900);
+    --color-on-error: var(--red-900);
+    --color-on-danger: var(--red-900);
+    --color-on-warning: var(--amber-900);
+    --color-on-disabled: var(--gray-400);
+}

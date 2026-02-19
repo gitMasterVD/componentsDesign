@@ -15,8 +15,8 @@
     "target": "ES2022",
     "module": "preserve",
     "paths": {
-      "ziva-components": [
-        "./dist/ziva-components"
+      "@ziva-components": [
+        "./projects/ziva-components/src/public-api.ts"
       ]
     }
   },
@@ -33,6 +33,12 @@
     },
     {
       "path": "./projects/ziva-components/tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/showcase/tsconfig.app.json"
+    },
+    {
+      "path": "./projects/showcase/tsconfig.spec.json"
     }
   ]
 }

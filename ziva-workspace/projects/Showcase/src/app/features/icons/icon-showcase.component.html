@@ -1,0 +1,60 @@
+<div class="content-body">
+    <div class="component-header">
+        <h1 class="component-title">Icon</h1>
+        <p class="component-description">
+            A powerful icon component that allows you to render Lucide icons with full control over coloring and state
+            (including disabled and accessibility).
+        </p>
+    </div>
+
+    <nav class="doc-tabs">
+        <div class="tabs-container">
+            @for (tab of tabs; track tab.id) {
+            <button class="tab-link" [class.active]="activeTab === tab.id" (click)="setTab(tab.id)">
+                {{ tab.label }}
+            </button>
+            }
+        </div>
+    </nav>
+
+    <section class="tab-content">
+        <!-- Examples Tab -->
+        @if (activeTab === 'examples') {
+        <div class="examples-section">
+            <h3 class="section-label">Semantic Variants</h3>
+            <div class="examples-grid">
+                @for (item of iconExamples; track item.label) {
+                <div class="example-card">
+                    <div class="example-preview">
+                        <ziva-icon [iconName]="item.iconName" [iconColor]="item.colorVar || 'var(--color-primary)'"
+                            [disabled]="item.disabled || false"></ziva-icon>
+                    </div>
+                    <div class="example-info">
+                        <span class="example-label">{{ item.label }}</span>
+                    </div>
+                </div>
+                }
+            </div>
+        </div>
+        }
+
+        <!-- Code Tabs -->
+        @if (activeTab === 'html') {
+        <div class="code-viewer">
+            <pre><code class="language-html">{{ codeHtml }}</code></pre>
+        </div>
+        }
+
+        @if (activeTab === 'scss') {
+        <div class="code-viewer">
+            <pre><code class="language-scss">{{ codeScss }}</code></pre>
+        </div>
+        }
+
+        @if (activeTab === 'ts') {
+        <div class="code-viewer">
+            <pre><code class="language-typescript">{{ codeTs }}</code></pre>
+        </div>
+        }
+    </section>
+</div>

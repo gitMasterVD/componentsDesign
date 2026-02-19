@@ -1,0 +1,24 @@
+<div class="components-shell">
+    <aside class="components-sidebar">
+        <nav class="side-nav">
+            <div class="nav-header">COMPONENTS</div>
+            <ul class="nav-list">
+                @for (item of componentNav; track item.label) {
+                <li class="nav-item">
+                    <a [routerLink]="item.path" class="nav-link" [class.active]="isActive(item.path)">
+                        <ziva-icon [iconName]="item.icon"
+                            [iconColor]="isActive(item.path) ? 'var(--color-primary)' : 'var(--color-text-secondary)'"></ziva-icon>
+                        <span>{{ item.label }}</span>
+                    </a>
+                </li>
+                }
+            </ul>
+        </nav>
+    </aside>
+
+    <main class="components-main">
+        <div class="scroll-container">
+            <router-outlet></router-outlet>
+        </div>
+    </main>
+</div>
