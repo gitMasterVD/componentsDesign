@@ -2,36 +2,6 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ZivaIconComponent } from '@ziva-components';
 
-interface ApiProperty {
-  name: string;
-  type: string;
-  default: string;
-  description: string;
-}
-
-interface IconExample {
-  label: string;
-  iconName: string;
-  color: string;
-  disabled: boolean;
-  ariaLabel: string | null;
-}
-
-interface HoverIconExample {
-  label: string;
-  defaultIcon: string;
-  hoverIcon: string;
-  color: string;
-  ariaLabel: string | null;
-}
-
-// Each section has its own active tab state + code snippets
-interface SectionCode {
-  html: string;
-  ts: string;
-  scss: string;
-}
-
 @Component({
   selector: 'app-icon-showcase',
   standalone: true,
@@ -42,7 +12,7 @@ interface SectionCode {
 export class IconShowcaseComponent {
 
   // ─── Per-section active tab state ─────────────────────────────────────────
-  activeTabs: Record<string, string> = {
+  activeTabs: any = {
     setup: 'npm',
     basic: 'html',
     color: 'html',
@@ -69,7 +39,7 @@ importProvidersFrom(
   };
 
   // ─── API Properties ────────────────────────────────────────────────────────
-  apiProperties: ApiProperty[] = [
+  apiProperties = [
     { name: 'iconName', type: 'string', default: "'Circle'", description: 'The name of the icon (must be registered in app.config.ts via LucideAngularModule.pick()).' },
     { name: 'iconColor', type: 'string', default: "'var(--color-primary)'", description: 'Sets the color using a CSS value or design token.' },
     { name: 'svgSrc', type: 'string | null', default: 'null', description: 'Path to an external SVG asset.' },
@@ -80,15 +50,15 @@ importProvidersFrom(
   ];
 
   // ─── SECTION 1: Basic Icons ────────────────────────────────────────────────
-  basicIcons: IconExample[] = [
-    { label: 'Home', iconName: 'Home', color: 'var(--color-text-primary)', disabled: false, ariaLabel: 'Home' },
-    { label: 'Settings', iconName: 'Settings', color: 'var(--color-text-primary)', disabled: false, ariaLabel: 'Settings' },
-    { label: 'User', iconName: 'User', color: 'var(--color-text-primary)', disabled: false, ariaLabel: 'User' },
-    { label: 'Bell', iconName: 'Bell', color: 'var(--color-text-primary)', disabled: false, ariaLabel: 'Bell' },
-    { label: 'Search', iconName: 'Search', color: 'var(--color-text-primary)', disabled: false, ariaLabel: 'Search' },
+  basicIcons = [
+    { label: 'Home', iconName: 'Home' },
+    { label: 'Settings', iconName: 'Settings' },
+    { label: 'User', iconName: 'User' },
+    { label: 'Bell', iconName: 'Bell' },
+    { label: 'Search', iconName: 'Search' },
   ];
 
-  basicCode: SectionCode = {
+  basicCode = {
     html: `<!-- Basic icon with default styling -->
 <ziva-icon iconName="Home" ariaLabel="Home"></ziva-icon>
 <ziva-icon iconName="Settings" ariaLabel="Settings"></ziva-icon>
@@ -101,16 +71,16 @@ import { Home, Settings, User, Bell, Search } from 'lucide-angular';
 // In app.config.ts → LucideAngularModule.pick({ Home, Settings, User, Bell, Search })`,
     scss: `/* 
    DEFAULT COLOR LOGIC:
-   The library uses 'var(--color-text-primary)' by default.
+   The library uses 'var(--color-primary)' by default.
    This variable should be defined in your global theme.
 */
 :root {
-  --color-text-primary: #1e293b; 
+  --color-primary: #6366f1; 
 }`,
   };
 
   // ─── SECTION 2: Color Icons ────────────────────────────────────────────────
-  colorIcons: IconExample[] = [
+  colorIcons = [
     { label: 'Primary', iconName: 'Zap', color: 'var(--color-primary)', disabled: false, ariaLabel: 'Primary' },
     { label: 'Success', iconName: 'CheckCircle', color: 'var(--color-success)', disabled: false, ariaLabel: 'Success' },
     { label: 'Error', iconName: 'XCircle', color: 'var(--color-error)', disabled: false, ariaLabel: 'Error' },
@@ -118,7 +88,7 @@ import { Home, Settings, User, Bell, Search } from 'lucide-angular';
     { label: 'Info', iconName: 'Info', color: '#3b82f6', disabled: false, ariaLabel: 'Info' },
   ];
 
-  colorCode: SectionCode = {
+  colorCode = {
     html: `<!-- Use semantic tokens or any CSS color value -->
 <ziva-icon iconName="Zap"           iconColor="var(--color-primary)"></ziva-icon>
 <ziva-icon iconName="CheckCircle"   iconColor="var(--color-success)"></ziva-icon>
@@ -145,7 +115,7 @@ get statusColor(): string {
   };
 
   // ─── SECTION 3: Hover Icons ────────────────────────────────────────────────
-  hoverIcons: HoverIconExample[] = [
+  hoverIcons = [
     { label: 'Eye / EyeOff', defaultIcon: 'Eye', hoverIcon: 'EyeOff', color: 'var(--color-primary)', ariaLabel: 'Toggle visibility' },
     { label: 'Heart / HeartCrack', defaultIcon: 'Heart', hoverIcon: 'HeartCrack', color: '#ef4444', ariaLabel: 'Like' },
     { label: 'Star / StarOff', defaultIcon: 'Star', hoverIcon: 'StarOff', color: '#f59e0b', ariaLabel: 'Favourite' },
@@ -154,7 +124,7 @@ get statusColor(): string {
 
   hoveredIconIndex: number | null = null;
 
-  hoverCode: SectionCode = {
+  hoverCode = {
     html: `<!-- Swap icon on hover using Angular binding -->
 <ziva-icon
   [iconName]="isHovered ? 'EyeOff' : 'Eye'"
@@ -179,14 +149,14 @@ hoveredIndex: number | null = null;`,
   };
 
   // ─── SECTION 4: Disabled Icons ─────────────────────────────────────────────
-  disabledIcons: IconExample[] = [
-    { label: 'Home', iconName: 'Home', color: 'var(--color-text-primary)', disabled: true, ariaLabel: 'Home Disabled' },
-    { label: 'Settings', iconName: 'Settings', color: 'var(--color-primary)', disabled: true, ariaLabel: 'Settings Disabled' },
-    { label: 'Save', iconName: 'Save', color: 'var(--color-success)', disabled: true, ariaLabel: 'Save Disabled' },
-    { label: 'Delete', iconName: 'Trash2', color: 'var(--color-error)', disabled: true, ariaLabel: 'Trash Disabled' },
+  disabledIcons = [
+    { label: 'Home', iconName: 'Home', color: '', disabled: true, ariaLabel: 'Home Disabled' },
+    { label: 'Settings', iconName: 'Settings', color: '', disabled: true, ariaLabel: 'Settings Disabled' },
+    { label: 'Save', iconName: 'Save', color: '', disabled: true, ariaLabel: 'Save Disabled' },
+    { label: 'Delete', iconName: 'Trash2', color: '', disabled: true, ariaLabel: 'Trash Disabled' },
   ];
 
-  disabledCode: SectionCode = {
+  disabledCode = {
     html: `<!-- Set [disabled]="true" to apply the disabled state -->
 <ziva-icon iconName="Home"     [disabled]="true"></ziva-icon>
 <ziva-icon iconName="Settings" [disabled]="true"></ziva-icon>
@@ -207,16 +177,16 @@ isLoading = true;
   };
 
   // ─── SECTION 5: Click Event Icons ─────────────────────────────────────────
-  clickIcons: IconExample[] = [
+  clickIcons = [
     { label: 'Download', iconName: 'Download', color: 'var(--color-primary)', disabled: false, ariaLabel: 'Download' },
     { label: 'Share', iconName: 'Share2', color: 'var(--color-primary)', disabled: false, ariaLabel: 'Share' },
     { label: 'Copy', iconName: 'Copy', color: 'var(--color-primary)', disabled: false, ariaLabel: 'Copy' },
     { label: 'Delete', iconName: 'Trash2', color: 'var(--color-error)', disabled: false, ariaLabel: 'Delete' },
   ];
 
-  clickLog: string[] = [];
+  clickLog: any[] = [];
 
-  clickCode: SectionCode = {
+  clickCode = {
     html: `<!-- Listen to native (click) event on ziva-icon -->
 <ziva-icon
   iconName="Download"

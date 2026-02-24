@@ -19,6 +19,7 @@ export class ZivaIconComponent {
     @Input() imgSrc: string | null = null;
 
     get effectiveColor(): string {
-        return this.disabled ? 'var(--color-disabled)' : this.iconColor;
+        if (this.disabled) return 'var(--color-disabled)';
+        return this.iconColor || 'var(--color-primary)';
     }
 }
