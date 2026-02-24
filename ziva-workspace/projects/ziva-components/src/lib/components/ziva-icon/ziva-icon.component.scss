@@ -9,12 +9,25 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    vertical-align: middle;
     transition: color 0.2s ease, opacity 0.2s ease;
 
+    .icon-asset {
+        width: 24px;
+        height: 24px;
+        object-fit: contain;
+
+        &--svg {
+            // Allows coloring external SVGs if they use currentColor
+            mask-repeat: no-repeat;
+            mask-size: contain;
+            background-color: currentColor;
+        }
+    }
+
     &--disabled {
-        opacity: 0.45;
+        opacity: 0.5;
         cursor: not-allowed;
-        pointer-events: none;
     }
 
     lucide-icon,

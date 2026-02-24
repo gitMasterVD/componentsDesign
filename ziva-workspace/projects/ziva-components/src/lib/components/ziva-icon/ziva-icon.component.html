@@ -1,16 +1,18 @@
 <span class="ziva-icon" [class.ziva-icon--disabled]="disabled" [attr.role]="ariaLabel || ariaLabelledby ? 'img' : null"
   [attr.aria-label]="ariaLabel" [attr.aria-labelledby]="ariaLabelledby"
   [attr.aria-hidden]="ariaLabel || ariaLabelledby ? 'false' : 'true'">
-  <ng-container *ngIf="resolvedIcon; else fallback">
-    <lucide-icon [img]="resolvedIcon" [color]="effectiveColor" [size]="24" [strokeWidth]="1.75"></lucide-icon>
+
+  <ng-container *ngIf="imgSrc">
+    <img [src]="imgSrc" class="icon-asset" [style.filter]="disabled ? 'grayscale(100%) opacity(0.5)' : null" alt="">
   </ng-container>
-  <ng-template #fallback>
-    <!-- Icon not found: show a placeholder circle -->
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-      [attr.stroke]="effectiveColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
-      <circle cx="12" cy="12" r="10" />
-      <line x1="12" y1="8" x2="12" y2="12" />
-      <line x1="12" y1="16" x2="12.01" y2="16" />
-    </svg>
-  </ng-template>
+
+  <ng-container *ngIf="!imgSrc && svgSrc">
+    <img [src]="svgSrc" class="icon-asset icon-asset--svg" [style.color]="effectiveColor" alt="">
+  </ng-container>
+
+  <!-- Use name binding — resolved from LucideAngularModule.pick() registered in app.config.ts -->
+  <ng-container *ngIf="!imgSrc && !svgSrc">
+    <lucide-icon [name]="iconName" [color]="effectiveColor" [size]="24" [strokeWidth]="1.75"></lucide-icon>
+  </ng-container>
+
 </span>
