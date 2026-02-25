@@ -2,6 +2,7 @@ import { Routes } from '@angular/router';
 import { DashboardComponent } from './layout/dashboard/dashboard.component';
 import { ComponentsLayoutComponent } from './layout/components-layout/components-layout.component';
 import { IconShowcaseComponent } from './features/icons/icon-showcase.component';
+import { ButtonShowcaseComponent } from './features/buttons/button-showcase.component';
 import { ComingSoonComponent } from './features/common/coming-soon/coming-soon.component';
 
 export const routes: Routes = [
@@ -18,7 +19,7 @@ export const routes: Routes = [
                 children: [
                     { path: '', redirectTo: 'icons', pathMatch: 'full' },
                     { path: 'icons', component: IconShowcaseComponent },
-                    { path: 'buttons', component: ComingSoonComponent },
+                    { path: 'buttons', component: ButtonShowcaseComponent },
                     { path: 'inputs', component: ComingSoonComponent },
                 ]
             }

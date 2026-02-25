@@ -44,7 +44,7 @@ importProvidersFrom(
     { name: 'iconColor', type: 'string', default: "'var(--color-primary)'", description: 'Sets the color using a CSS value or design token.' },
     { name: 'svgSrc', type: 'string | null', default: 'null', description: 'Path to an external SVG asset.' },
     { name: 'imgSrc', type: 'string | null', default: 'null', description: 'Path to an external Image asset.' },
-    { name: 'disabled', type: 'boolean', default: 'false', description: 'Toggles the disabled visual state.' },
+    { name: 'disabled', type: 'boolean', default: 'false', description: 'Toggles the disabled visual state. Can be used as a boolean attribute tag.' },
     { name: 'ariaLabel', type: 'string | null', default: 'null', description: 'Sets the accessibility label for screen readers.' },
     { name: 'ariaLabelledby', type: 'string | null', default: 'null', description: 'References an element ID for the icon label.' },
   ];
@@ -157,11 +157,11 @@ hoveredIndex: number | null = null;`,
   ];
 
   disabledCode = {
-    html: `<!-- Set [disabled]="true" to apply the disabled state -->
-<ziva-icon iconName="Home"     [disabled]="true"></ziva-icon>
-<ziva-icon iconName="Settings" [disabled]="true"></ziva-icon>
-<ziva-icon iconName="Save"     [disabled]="true"></ziva-icon>
-<ziva-icon iconName="Trash2"   [disabled]="true"></ziva-icon>`,
+    html: `<!-- Set 'disabled' as a tag to apply the disabled state -->
+<ziva-icon iconName="Home"     disabled></ziva-icon>
+<ziva-icon iconName="Settings" disabled></ziva-icon>
+<ziva-icon iconName="Save"     disabled></ziva-icon>
+<ziva-icon iconName="Trash2"   disabled></ziva-icon>`,
     ts: `// Bind disabled dynamically
 isLoading = true;
 

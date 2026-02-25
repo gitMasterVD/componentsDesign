@@ -1,4 +1,4 @@
-import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, Input, OnChanges, SimpleChanges, booleanAttribute, HostBinding } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LucideAngularModule } from 'lucide-angular';
 
@@ -12,7 +12,11 @@ import { LucideAngularModule } from 'lucide-angular';
 export class ZivaIconComponent {
     @Input() iconName: string = '';
     @Input() iconColor: string = '';
-    @Input() disabled: boolean = false;
+    @Input({ transform: booleanAttribute }) disabled: boolean = false;
+
+    @HostBinding('class.ziva-icon') readonly hostClass = true;
+    @HostBinding('class.disabled') get isDisabled() { return this.disabled; }
+    @HostBinding('attr.disabled') get isDisabledAttr() { return this.disabled ? '' : null; }
     @Input() ariaLabel: string | null = null;
     @Input() ariaLabelledby: string | null = null;
     @Input() svgSrc: string | null = null;

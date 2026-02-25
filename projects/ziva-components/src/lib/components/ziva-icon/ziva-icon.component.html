@@ -1,6 +1,5 @@
-<span class="ziva-icon" [class.ziva-icon--disabled]="disabled" [attr.role]="ariaLabel || ariaLabelledby ? 'img' : null"
-  [attr.aria-label]="ariaLabel" [attr.aria-labelledby]="ariaLabelledby"
-  [attr.aria-hidden]="ariaLabel || ariaLabelledby ? 'false' : 'true'">
+<span [attr.role]="ariaLabel || ariaLabelledby ? 'img' : null" [attr.aria-label]="ariaLabel"
+  [attr.aria-labelledby]="ariaLabelledby" [attr.aria-hidden]="ariaLabel || ariaLabelledby ? 'false' : 'true'">
 
   <ng-container *ngIf="imgSrc">
     <img [src]="imgSrc" class="icon-asset" [style.filter]="disabled ? 'grayscale(100%) opacity(0.5)' : null" alt="">

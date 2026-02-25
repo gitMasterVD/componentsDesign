@@ -57,9 +57,7 @@
               }
             ],
             "styles": [
-              "projects/ziva-components/src/lib/styles/tokens/_main.scss",
-              "projects/ziva-components/src/lib/styles/theme/_light.scss",
-              "projects/ziva-components/src/lib/styles/theme/_dark.scss",
+              "projects/ziva-components/src/lib/styles/index.scss",
               "projects/showcase/src/styles.scss"
             ]
           },
