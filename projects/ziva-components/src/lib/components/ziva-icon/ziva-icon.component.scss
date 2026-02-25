@@ -1,1 +1,30 @@
-@use '../../styles/components/icon';
+:host {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+    transition: color 0.2s ease, opacity 0.2s ease;
+
+    .icon-asset {
+        width: var(--icon-size);
+        height: var(--icon-size);
+        object-fit: contain;
+
+        &--svg {
+            // Allows coloring external SVGs if they use currentColor
+            mask-repeat: no-repeat;
+            mask-size: contain;
+            background-color: currentColor;
+        }
+    }
+
+    &.disabled {
+        opacity: var(--icon-opacity-disabled);
+        cursor: not-allowed;
+    }
+
+    lucide-icon,
+    svg {
+        display: block;
+    }
+}
