@@ -3,6 +3,7 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    line-height: 1;
     gap: 8px;
     border: 1px solid var(--button-border);
     border-radius: var(--button-radius);
@@ -15,6 +16,7 @@
     outline: none;
     position: relative;
     overflow: hidden;
+
 
     &:hover:not(.disabled):not(:disabled) {
         filter: brightness(1.1);
