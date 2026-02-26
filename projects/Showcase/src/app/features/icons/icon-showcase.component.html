@@ -1,0 +1,273 @@
+<div class="content-body">
+
+    <!-- ===== HEADER — plain text only ===== -->
+    <div class="component-header">
+        <h1 class="component-title">Icon</h1>
+        <p class="component-description">
+            <code>ziva-icon</code> renders icons from the registered Lucide set.
+            Icons are declared once in <code>app.config.ts</code> via <code>LucideAngularModule.pick()</code>.
+        </p>
+    </div>
+
+    <!-- ===== SECTION 0: Installation & Configuration ===== -->
+    <div class="section-card">
+        <div class="section-header">
+            <h2 class="section-title">Installation & Configuration</h2>
+            <p class="section-desc">Follow these steps to set up Lucide icons in your Ziva application.</p>
+        </div>
+
+        <div class="section-preview setup-preview">
+            <div class="setup-hint">
+                <ziva-icon iconName="Settings" iconColor="var(--color-primary)"></ziva-icon>
+                <span>Follow the tabs below to configure your project.</span>
+            </div>
+        </div>
+
+        <div class="section-tabs">
+            <div class="tabs-bar">
+                <button class="tab-btn" [class.active]="activeTabs['setup'] === 'npm'"
+                    (click)="setTab('setup', 'npm')">INSTALL</button>
+                <button class="tab-btn" [class.active]="activeTabs['setup'] === 'config'"
+                    (click)="setTab('setup', 'config')">CONFIG</button>
+                <button class="tab-btn" [class.active]="activeTabs['setup'] === 'usage'"
+                    (click)="setTab('setup', 'usage')">USAGE</button>
+            </div>
+            <div class="code-viewer">
+                @if (activeTabs['setup'] === 'npm') {
+                <pre><code class="language-bash">{{ setupCode.npm }}</code></pre> }
+                @if (activeTabs['setup'] === 'config') {
+                <pre><code class="language-typescript">{{ setupCode.config }}</code></pre> }
+                @if (activeTabs['setup'] === 'usage') {
+                <pre><code class="language-html">{{ setupCode.usage }}</code></pre> }
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== SECTION 1: Basic Icons ===== -->
+    <div class="section-card">
+        <div class="section-header">
+            <h2 class="section-title">Basic Icons</h2>
+            <p class="section-desc">Default icons with no custom color or state applied.</p>
+        </div>
+
+        <div class="section-preview">
+            <div class="icons-row">
+                @for (item of basicIcons; track item.label) {
+                <ziva-icon [iconName]="item.iconName"></ziva-icon>
+                }
+            </div>
+        </div>
+
+        <div class="section-tabs">
+            <div class="tabs-bar">
+                <button class="tab-btn" [class.active]="activeTabs['basic'] === 'html'"
+                    (click)="setTab('basic', 'html')">HTML</button>
+                <button class="tab-btn" [class.active]="activeTabs['basic'] === 'ts'"
+                    (click)="setTab('basic', 'ts')">TS</button>
+                <button class="tab-btn" [class.active]="activeTabs['basic'] === 'scss'"
+                    (click)="setTab('basic', 'scss')">SCSS</button>
+            </div>
+            <div class="code-viewer">
+                @if (activeTabs['basic'] === 'html') {
+                <pre><code class="language-html">{{ basicCode.html }}</code></pre> }
+                @if (activeTabs['basic'] === 'ts') {
+                <pre><code class="language-typescript">{{ basicCode.ts }}</code></pre> }
+                @if (activeTabs['basic'] === 'scss') {
+                <pre><code class="language-scss">{{ basicCode.scss }}</code></pre> }
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== SECTION 2: Color Icons ===== -->
+    <div class="section-card">
+        <div class="section-header">
+            <h2 class="section-title">Color Icons</h2>
+            <p class="section-desc">Icons using semantic design tokens and custom color values.</p>
+        </div>
+
+        <div class="section-preview">
+            <div class="icons-row">
+                @for (item of colorIcons; track item.label) {
+                <ziva-icon [iconName]="item.iconName" [iconColor]="item.color" [ariaLabel]="item.ariaLabel"></ziva-icon>
+                }
+            </div>
+        </div>
+
+        <div class="section-tabs">
+            <div class="tabs-bar">
+                <button class="tab-btn" [class.active]="activeTabs['color'] === 'html'"
+                    (click)="setTab('color', 'html')">HTML</button>
+                <button class="tab-btn" [class.active]="activeTabs['color'] === 'ts'"
+                    (click)="setTab('color', 'ts')">TS</button>
+                <button class="tab-btn" [class.active]="activeTabs['color'] === 'scss'"
+                    (click)="setTab('color', 'scss')">SCSS</button>
+            </div>
+            <div class="code-viewer">
+                @if (activeTabs['color'] === 'html') {
+                <pre><code class="language-html">{{ colorCode.html }}</code></pre> }
+                @if (activeTabs['color'] === 'ts') {
+                <pre><code class="language-typescript">{{ colorCode.ts }}</code></pre> }
+                @if (activeTabs['color'] === 'scss') {
+                <pre><code class="language-scss">{{ colorCode.scss }}</code></pre> }
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== SECTION 3: Hover Icons ===== -->
+    <div class="section-card">
+        <div class="section-header">
+            <h2 class="section-title">Hover Icons</h2>
+            <p class="section-desc">Icons that swap on hover. Hover any icon below to see the effect.</p>
+        </div>
+
+        <div class="section-preview">
+            <div class="icons-row">
+                @for (item of hoverIcons; track item.label; let i = $index) {
+                <ziva-icon [iconName]="hoveredIconIndex === i ? item.hoverIcon : item.defaultIcon"
+                    [iconColor]="item.color" [ariaLabel]="item.ariaLabel" class="hover-icon"
+                    (mouseenter)="hoveredIconIndex = i" (mouseleave)="hoveredIconIndex = null">
+                </ziva-icon>
+                }
+            </div>
+        </div>
+
+        <div class="section-tabs">
+            <div class="tabs-bar">
+                <button class="tab-btn" [class.active]="activeTabs['hover'] === 'html'"
+                    (click)="setTab('hover', 'html')">HTML</button>
+                <button class="tab-btn" [class.active]="activeTabs['hover'] === 'ts'"
+                    (click)="setTab('hover', 'ts')">TS</button>
+                <button class="tab-btn" [class.active]="activeTabs['hover'] === 'scss'"
+                    (click)="setTab('hover', 'scss')">SCSS</button>
+            </div>
+            <div class="code-viewer">
+                @if (activeTabs['hover'] === 'html') {
+                <pre><code class="language-html">{{ hoverCode.html }}</code></pre> }
+                @if (activeTabs['hover'] === 'ts') {
+                <pre><code class="language-typescript">{{ hoverCode.ts }}</code></pre> }
+                @if (activeTabs['hover'] === 'scss') {
+                <pre><code class="language-scss">{{ hoverCode.scss }}</code></pre> }
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== SECTION 4: Disabled Icons ===== -->
+    <div class="section-card">
+        <div class="section-header">
+            <h2 class="section-title">Disabled Icons</h2>
+            <p class="section-desc">Icons in the disabled state — visually muted and non-interactive.</p>
+        </div>
+
+        <div class="section-preview">
+            <div class="icons-row">
+                @for (item of disabledIcons; track item.label) {
+                <ziva-icon [iconName]="item.iconName" [iconColor]="item.color" disabled
+                    [ariaLabel]="item.ariaLabel"></ziva-icon>
+                }
+            </div>
+        </div>
+
+        <div class="section-tabs">
+            <div class="tabs-bar">
+                <button class="tab-btn" [class.active]="activeTabs['disabled'] === 'html'"
+                    (click)="setTab('disabled', 'html')">HTML</button>
+                <button class="tab-btn" [class.active]="activeTabs['disabled'] === 'ts'"
+                    (click)="setTab('disabled', 'ts')">TS</button>
+                <button class="tab-btn" [class.active]="activeTabs['disabled'] === 'scss'"
+                    (click)="setTab('disabled', 'scss')">SCSS</button>
+            </div>
+            <div class="code-viewer">
+                @if (activeTabs['disabled'] === 'html') {
+                <pre><code class="language-html">{{ disabledCode.html }}</code></pre> }
+                @if (activeTabs['disabled'] === 'ts') {
+                <pre><code class="language-typescript">{{ disabledCode.ts }}</code></pre> }
+                @if (activeTabs['disabled'] === 'scss') {
+                <pre><code class="language-scss">{{ disabledCode.scss }}</code></pre> }
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== SECTION 5: Click Events ===== -->
+    <div class="section-card">
+        <div class="section-header">
+            <h2 class="section-title">Click Events</h2>
+            <p class="section-desc">Icons with <code>(click)</code> handlers. Click any icon to see the event in the
+                log.</p>
+        </div>
+
+        <div class="section-preview">
+            <div class="icons-row">
+                @for (item of clickIcons; track item.label) {
+                <ziva-icon [iconName]="item.iconName" [iconColor]="item.color" [ariaLabel]="item.ariaLabel"
+                    class="click-icon" (click)="onIconClick(item.label)">
+                </ziva-icon>
+                }
+            </div>
+
+            <!-- Event Log -->
+            <div class="event-log">
+                <div class="event-log-header">
+                    <span class="event-log-title">Event Log</span>
+                    <span class="event-log-hint">Click an icon above</span>
+                </div>
+                <div class="event-log-body">
+                    @if (clickLog.length === 0) {
+                    <p class="event-log-empty">No events yet.</p>
+                    }
+                    @for (entry of clickLog; track entry) {
+                    <div class="event-log-entry">{{ entry }}</div>
+                    }
+                </div>
+            </div>
+        </div>
+
+        <div class="section-tabs">
+            <div class="tabs-bar">
+                <button class="tab-btn" [class.active]="activeTabs['click'] === 'html'"
+                    (click)="setTab('click', 'html')">HTML</button>
+                <button class="tab-btn" [class.active]="activeTabs['click'] === 'ts'"
+                    (click)="setTab('click', 'ts')">TS</button>
+                <button class="tab-btn" [class.active]="activeTabs['click'] === 'scss'"
+                    (click)="setTab('click', 'scss')">SCSS</button>
+            </div>
+            <div class="code-viewer">
+                @if (activeTabs['click'] === 'html') {
+                <pre><code class="language-html">{{ clickCode.html }}</code></pre> }
+                @if (activeTabs['click'] === 'ts') {
+                <pre><code class="language-typescript">{{ clickCode.ts }}</code></pre> }
+                @if (activeTabs['click'] === 'scss') {
+                <pre><code class="language-scss">{{ clickCode.scss }}</code></pre> }
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== API REFERENCE ===== -->
+    <div class="api-reference">
+        <h2 class="api-reference-title">API Reference</h2>
+        <p class="api-reference-desc">
+            All inputs for <code>ziva-icon</code>. Icons must be registered in
+            <code>app.config.ts</code> via <code>LucideAngularModule.pick()</code>.
+        </p>
+        <table class="api-table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Type</th>
+                    <th>Default</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (prop of apiProperties; track prop.name) {
+                <tr>
+                    <td class="prop-name"><code>{{ prop.name }}</code></td>
+                    <td class="prop-type"><code>{{ prop.type }}</code></td>
+                    <td class="prop-default"><code>{{ prop.default }}</code></td>
+                    <td class="prop-desc">{{ prop.description }}</td>
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+</div>

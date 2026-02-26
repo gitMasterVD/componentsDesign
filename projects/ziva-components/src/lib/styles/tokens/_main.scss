@@ -1,0 +1,119 @@
+// =============================================================================
+// ZIVA DESIGN TOKENS — _main.scss
+// Global color palette (blue-based) + Semantic color tokens
+// =============================================================================
+
+// -----------------------------------------------------------------------------
+// GLOBAL BLUE PALETTE
+// Raw scale — do not use directly in components; use semantic tokens instead.
+// -----------------------------------------------------------------------------
+:root {
+    // Blue scale
+    --blue-50: #eff6ff;
+    --blue-100: #dbeafe;
+    --blue-200: #bfdbfe;
+    --blue-300: #93c5fd;
+    --blue-400: #60a5fa;
+    --blue-500: #3b82f6;
+    --blue-600: #2563eb;
+    --blue-700: #1d4ed8;
+    --blue-800: #1e40af;
+    --blue-900: #1e3a8a;
+    --blue-950: #172554;
+
+    // Slate (blue-gray) scale
+    --slate-50: #f8fafc;
+    --slate-100: #f1f5f9;
+    --slate-200: #e2e8f0;
+    --slate-300: #cbd5e1;
+    --slate-400: #94a3b8;
+    --slate-500: #64748b;
+    --slate-600: #475569;
+    --slate-700: #334155;
+    --slate-800: #1e293b;
+    --slate-900: #0f172a;
+    --slate-950: #020617;
+
+    // Green scale (success)
+    --green-50: #f0fdf4;
+    --green-100: #dcfce7;
+    --green-200: #bbf7d0;
+    --green-300: #86efac;
+    --green-400: #4ade80;
+    --green-500: #22c55e;
+    --green-600: #16a34a;
+    --green-700: #15803d;
+    --green-800: #166534;
+    --green-900: #14532d;
+
+    // Red scale (danger / error)
+    --red-50: #fef2f2;
+    --red-100: #fee2e2;
+    --red-200: #fecaca;
+    --red-300: #fca5a5;
+    --red-400: #f87171;
+    --red-500: #ef4444;
+    --red-600: #dc2626;
+    --red-700: #b91c1c;
+    --red-800: #991b1b;
+    --red-900: #7f1d1d;
+
+    // Amber scale (warning)
+    --amber-50: #fffbeb;
+    --amber-100: #fef3c7;
+    --amber-200: #fde68a;
+    --amber-300: #fcd34d;
+    --amber-400: #fbbf24;
+    --amber-500: #f59e0b;
+    --amber-600: #d97706;
+    --amber-700: #b45309;
+    --amber-800: #92400e;
+    --amber-900: #78350f;
+
+    // Gray scale (disabled / neutral)
+    --gray-50: #f9fafb;
+    --gray-100: #f3f4f6;
+    --gray-200: #e5e7eb;
+    --gray-300: #d1d5db;
+    --gray-400: #9ca3af;
+    --gray-500: #6b7280;
+    --gray-600: #4b5563;
+    --gray-700: #374151;
+    --gray-800: #1f2937;
+    --gray-900: #111827;
+}
+
+// -----------------------------------------------------------------------------
+// SEMANTIC COLOR TOKENS (Light mode defaults)
+// These are the tokens components should consume.
+// Override in _light.scss / _dark.scss for theme switching.
+// -----------------------------------------------------------------------------
+:root {
+    // --- Brand ---
+    --color-primary: var(--blue-600); // Main brand blue
+    --color-secondary: var(--blue-200); // Secondary / softer blue
+    --color-tertiary: var(--blue-100); // Subtle / background blue
+
+    // --- Neutral ---
+    --color-blue-gray: var(--slate-600); // Blue-gray neutral text/icons
+
+    // --- Feedback ---
+    --color-success: var(--green-600); // Success / positive
+    --color-error: var(--red-600); // Error state
+    --color-danger: var(--red-700); // Destructive action
+    --color-warning: var(--amber-500); // Warning
+
+    // --- UI States ---
+    --color-disabled: var(--gray-300); // Disabled elements
+    --color-border: var(--slate-200); // Default borders
+
+    // --- Text on semantic backgrounds ---
+    --color-on-primary: #ffffff;
+    --color-on-secondary: var(--blue-800);
+    --color-on-tertiary: var(--blue-900);
+    --color-on-success: #ffffff;
+    --color-on-error: #ffffff;
+    --color-on-danger: #ffffff;
+    --color-on-warning: #ffffff;
+    --color-on-disabled: var(--gray-500);
+}

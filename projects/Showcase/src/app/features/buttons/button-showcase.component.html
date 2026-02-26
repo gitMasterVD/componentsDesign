@@ -1,0 +1,132 @@
+<div class="content-body">
+
+    <div class="component-header">
+        <h1 class="component-title">Button</h1>
+        <p class="component-description">
+            <code>zivaButton</code> and <code>zivaIconButton</code> directives provide standard and icon-only button
+            styles
+            with built-in animations and variants.
+        </p>
+    </div>
+
+    <!-- Selection: Basic Variants -->
+    <div class="section-card">
+        <div class="section-header">
+            <h2 class="section-title">Variants</h2>
+            <p class="section-desc">Choose between primary and secondary variants for different emphasis levels.</p>
+        </div>
+
+        <div class="section-preview">
+            <button zivaButton variant="primary">Primary Button</button>
+            <button zivaButton variant="secondary">Secondary Button</button>
+        </div>
+
+        <div class="section-tabs">
+            <div class="tabs-bar">
+                <button class="tab-btn" [class.active]="activeTabs['variants'] === 'html'"
+                    (click)="setTab('variants', 'html')">HTML</button>
+            </div>
+            <div class="code-viewer">
+                @if (activeTabs['variants'] === 'html') {
+                <pre><code class="language-html">{{ variantCode.html }}</code></pre>
+                }
+            </div>
+        </div>
+    </div>
+
+    <!-- Section: Icon Buttons -->
+    <div class="section-card">
+        <div class="section-header">
+            <h2 class="section-title">Icon Buttons</h2>
+            <p class="section-desc">Circular buttons perfect for compact actions with <code>zivaIconButton</code>.</p>
+        </div>
+
+        <div class="section-preview">
+            <button zivaButton variant="primary">
+                <ziva-icon iconName="Plus" iconColor="#fff"></ziva-icon>
+                Confirm Action
+            </button>
+
+            <button zivaButton variant="primary">
+                Confirm Action
+                <ziva-icon iconName="Plus" iconColor="#fff"></ziva-icon>
+            </button>
+
+            <button zivaIconButton variant="primary">
+                <ziva-icon iconName="Plus" iconColor="#fff"></ziva-icon>
+            </button>
+            <button zivaIconButton variant="secondary">
+                <ziva-icon iconName="Settings"></ziva-icon>
+            </button>
+        </div>
+
+        <div class="section-tabs">
+            <div class="tabs-bar">
+                <button class="tab-btn" [class.active]="activeTabs['icon'] === 'html'"
+                    (click)="setTab('icon', 'html')">HTML</button>
+            </div>
+            <div class="code-viewer">
+                @if (activeTabs['icon'] === 'html') {
+                <pre><code class="language-html">{{ iconButtonCode.html }}</code></pre>
+                }
+            </div>
+        </div>
+    </div>
+
+    <!-- Section: Disabled State -->
+    <div class="section-card">
+        <div class="section-header">
+            <h2 class="section-title">Disabled State</h2>
+            <p class="section-desc">Directives correctly handle the <code>disabled</code> property and apply visual
+                styles.</p>
+        </div>
+
+        <div class="section-preview">
+            <button zivaButton disabled>Disabled Button</button>
+            <button zivaIconButton disabled>
+                <ziva-icon iconName="Lock" iconColor="#6b7280"></ziva-icon>
+            </button>
+            <button zivaIconButton variant="secondary" disabled>
+                <ziva-icon iconName="Lock" iconColor="#6b7280"></ziva-icon>
+            </button>
+        </div>
+
+        <div class="section-tabs">
+            <div class="tabs-bar">
+                <button class="tab-btn" [class.active]="activeTabs['disabled'] === 'html'"
+                    (click)="setTab('disabled', 'html')">HTML</button>
+            </div>
+            <div class="code-viewer">
+                @if (activeTabs['disabled'] === 'html') {
+                <pre><code class="language-html">{{ disabledCode.html }}</code></pre>
+                }
+            </div>
+        </div>
+    </div>
+
+    <!-- API Reference -->
+    <div class="api-reference">
+        <h2 class="api-reference-title">API Reference</h2>
+        <table class="api-table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Type</th>
+                    <th>Default</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (prop of apiProperties; track prop.name) {
+                <tr>
+                    <td><code>{{ prop.name }}</code></td>
+                    <td><code>{{ prop.type }}</code></td>
+                    <td><code>{{ prop.default }}</code></td>
+                    <td>{{ prop.description }}</td>
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+</div>

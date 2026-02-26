@@ -1,0 +1,118 @@
+.sidebar {
+    width: 280px;
+    height: 100vh;
+    background: var(--color-surface);
+    border-right: 1px solid var(--color-border);
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 100;
+}
+
+.sidebar-header {
+    padding: 1.5rem;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    .logo-text {
+        display: flex;
+        flex-direction: column;
+        line-height: 1;
+
+        .logo-main {
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: var(--color-primary);
+            letter-spacing: 0.05em;
+        }
+
+        .logo-sub {
+            font-size: 0.65rem;
+            font-weight: 600;
+            color: var(--color-text-secondary);
+            letter-spacing: 0.15em;
+            margin-top: 2px;
+        }
+    }
+}
+
+.sidebar-nav {
+    flex: 1;
+    padding: 1.5rem;
+    overflow-y: auto;
+}
+
+.nav-section {
+    margin-bottom: 2rem;
+
+    .nav-section-title {
+        font-size: 0.7rem;
+        font-weight: 700;
+        color: var(--color-text-muted);
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        margin-bottom: 0.75rem;
+        padding-left: 0.75rem;
+    }
+
+    .nav-list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+
+        .nav-item {
+            margin-bottom: 4px;
+        }
+
+        .nav-link {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.625rem 0.75rem;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--color-text-secondary);
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.2s ease;
+
+            ziva-icon {
+                flex-shrink: 0;
+            }
+
+            &:hover {
+                background: var(--color-surface-raised);
+                color: var(--color-primary);
+            }
+
+            &.active {
+                background: var(--color-tertiary);
+                color: var(--color-primary);
+                font-weight: 600;
+            }
+        }
+    }
+}
+
+.sidebar-footer {
+    padding: 1rem 1.5rem;
+    border-top: 1px solid var(--color-border);
+    display: flex;
+    justify-content: flex-end;
+
+    .v-tag {
+        font-size: 0.7rem;
+        font-weight: 600;
+        color: var(--color-text-muted);
+        background: var(--color-surface-raised);
+        padding: 2px 8px;
+        border-radius: 12px;
+    }
+}

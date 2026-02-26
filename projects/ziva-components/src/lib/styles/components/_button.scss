@@ -1,0 +1,14 @@
+:root {
+    --button-bg: var(--color-primary);
+    --button-color: var(--color-on-primary);
+    --button-border: transparent;
+    --button-radius: 8px;
+    --button-padding: 10px 20px;
+    --button-font-size: 14px;
+    --button-font-weight: 500;
+    --button-transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+
+    // Icon button specific
+    --icon-button-size: 40px;
+    --icon-button-padding: 8px;
+}

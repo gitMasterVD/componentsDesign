@@ -1,0 +1,46 @@
+// =============================================================================
+// ZIVA LIGHT THEME — _light.scss
+// Applies light-mode semantic color values.
+// Usage: add [data-theme="light"] to <html> or <body>
+// =============================================================================
+
+[data-theme='light'],
+.light-theme {
+    // --- Brand ---
+    --color-primary: var(--blue-600);
+    --color-secondary: var(--blue-200);
+    --color-tertiary: var(--blue-100);
+
+    // --- Neutral ---
+    --color-blue-gray: var(--slate-600);
+
+    // --- Feedback ---
+    --color-success: var(--green-600);
+    --color-error: var(--red-600);
+    --color-danger: var(--red-700);
+    --color-warning: var(--amber-500);
+
+    // --- UI States ---
+    --color-disabled: var(--gray-300);
+    --color-border: var(--slate-200);
+
+    // --- Surfaces ---
+    --color-surface: var(--slate-50);
+    --color-surface-raised: var(--slate-100);
+    --color-surface-overlay: var(--slate-200);
+
+    // --- Text ---
+    --color-text-primary: var(--slate-900);
+    --color-text-secondary: var(--slate-600);
+    --color-text-muted: var(--slate-400);
+
+    // --- On-color text ---
+    --color-on-primary: var(--slate-50);
+    --color-on-secondary: var(--blue-800);
+    --color-on-tertiary: var(--blue-900);
+    --color-on-success: var(--slate-50);
+    --color-on-error: var(--slate-50);
+    --color-on-danger: var(--slate-50);
+    --color-on-warning: var(--slate-50);
+    --color-on-disabled: var(--gray-500);
+}

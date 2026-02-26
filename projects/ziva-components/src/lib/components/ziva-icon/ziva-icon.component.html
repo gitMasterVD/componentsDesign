@@ -1,0 +1,17 @@
+<span [attr.role]="ariaLabel || ariaLabelledby ? 'img' : null" [attr.aria-label]="ariaLabel"
+  [attr.aria-labelledby]="ariaLabelledby" [attr.aria-hidden]="ariaLabel || ariaLabelledby ? 'false' : 'true'">
+
+  <ng-container *ngIf="imgSrc">
+    <img [src]="imgSrc" class="icon-asset" [style.filter]="disabled ? 'grayscale(100%) opacity(0.5)' : null" alt="">
+  </ng-container>
+
+  <ng-container *ngIf="!imgSrc && svgSrc">
+    <img [src]="svgSrc" class="icon-asset icon-asset--svg" [style.color]="effectiveColor" alt="">
+  </ng-container>
+
+  <!-- Use name binding — resolved from LucideAngularModule.pick() registered in app.config.ts -->
+  <ng-container *ngIf="!imgSrc && !svgSrc">
+    <lucide-icon [name]="iconName" [color]="effectiveColor" [size]="24" [strokeWidth]="1.75"></lucide-icon>
+  </ng-container>
+
+</span>

@@ -1,0 +1,25 @@
+import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { RouterModule, Router } from '@angular/router';
+import { ZivaIconComponent } from '@ziva-components';
+
+@Component({
+    selector: 'app-components-layout',
+    standalone: true,
+    imports: [CommonModule, RouterModule, ZivaIconComponent],
+    templateUrl: './components-layout.component.html',
+    styleUrls: ['./components-layout.component.scss']
+})
+export class ComponentsLayoutComponent {
+    componentNav = [
+        { label: 'Icon', path: '/components/icons', icon: 'Zap' },
+        { label: 'Button', path: '/components/buttons', icon: 'Square' },
+        { label: 'Input', path: '/components/inputs', icon: 'Type' }
+    ];
+
+    constructor(private router: Router) { }
+
+    isActive(path: string): boolean {
+        return this.router.url === path;
+    }
+}
