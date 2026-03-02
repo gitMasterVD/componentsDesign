@@ -16,6 +16,7 @@ export class ButtonShowcaseComponent {
     sizes: 'html',
     icon: 'html',
     disabled: 'html',
+    interactive: 'html',
   };
 
   setTab(section: string, tab: string): void {
@@ -23,7 +24,7 @@ export class ButtonShowcaseComponent {
   }
 
   apiProperties = [
-    { name: 'variant', type: "'primary' | 'secondary' | 'success' | 'error' | 'warning' | 'info'", default: "'primary'", description: 'Sets the color scheme of the button.' },
+    { name: 'variant', type: "'primary' | 'secondary' | 'success' | 'error' | 'warning' | 'info' | 'tertiary'", default: "'primary'", description: 'Sets the color scheme of the button.' },
     { name: 'size', type: "'sm' | 'md' | 'lg'", default: "'md'", description: 'Sets the size of the button.' },
     { name: 'disabled', type: 'boolean', default: 'false', description: 'Toggles the disabled state.' },
   ];
@@ -38,6 +39,7 @@ export class ButtonShowcaseComponent {
     html: `<!-- Brand Variants -->
 <button zivaButton variant="primary">Primary</button>
 <button zivaButton variant="secondary">Secondary</button>
+<button zivaButton variant="tertiary">Tertiary (Ghost)</button>
 
 <!-- Feedback Variants -->
 <button zivaButton variant="success">Success</button>
@@ -63,7 +65,8 @@ export class ButtonShowcaseComponent {
 <button zivaIconButton variant="primary"><ziva-icon iconName="Plus" iconColor="#fff"></ziva-icon></button>
 <button zivaIconButton variant="success"><ziva-icon iconName="Check" iconColor="#fff"></ziva-icon></button>
 <button zivaIconButton variant="error"><ziva-icon iconName="Trash" iconColor="#fff"></ziva-icon></button>
-<button zivaIconButton variant="warning"><ziva-icon iconName="AlertTriangle" iconColor="#fff"></ziva-icon></button>`,
+<button zivaIconButton variant="warning"><ziva-icon iconName="AlertTriangle" iconColor="#fff"></ziva-icon></button>
+<button zivaIconButton variant="tertiary"><ziva-icon iconName="Settings"></ziva-icon></button>`,
   };
 
   disabledCode = {
@@ -75,4 +78,44 @@ export class ButtonShowcaseComponent {
   <ziva-icon iconName="Lock" iconColor="#6b7280"></ziva-icon>
 </button>`,
   };
+
+  interactiveCode = {
+    html: `<!-- Interactive Split Button Example -->
+<div class="split-button-container">
+  <div class="split-button">
+    <button zivaButton variant="primary" (click)="onMainActionClick()">
+      {{ selectedAction }}
+    </button>
+    <button zivaIconButton variant="primary" (click)="toggleDropdown()">
+      <ziva-icon iconName="ChevronDown" iconColor="#fff"></ziva-icon>
+    </button>
+  </div>
+
+  @if (isDropdownOpen) {
+    <div class="dropdown-menu">
+      <div class="dropdown-item" (click)="selectAction('Create Project')">Create Project</div>
+      <div class="dropdown-item" (click)="selectAction('Import Data')">Import Data</div>
+      <div class="dropdown-item" (click)="selectAction('Export Report')">Export Report</div>
+    </div>
+  }
+</div>`,
+  };
+
+  // Interactive state
+  selectedAction = 'Create Project';
+  isDropdownOpen = false;
+
+  toggleDropdown() {
+    this.isDropdownOpen = !this.isDropdownOpen;
+  }
+
+  selectAction(action: string) {
+    this.selectedAction = action;
+    this.isDropdownOpen = false;
+    // console.log(`Action updated to: ${action}`);
+  }
+
+  onMainActionClick() {
+    // console.log(`Executing: ${this.selectedAction}`);
+  }
 }

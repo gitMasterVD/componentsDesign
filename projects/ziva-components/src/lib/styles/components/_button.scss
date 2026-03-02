@@ -17,6 +17,14 @@
     --button-warning-color: var(--color-on-warning);
     --button-info-bg: var(--color-primary);
     --button-info-color: var(--color-on-primary);
+    --button-tertiary-bg: var(--color-hover);
+    --button-tertiary-color: var(--color-primary);
+    --button-pulse-effect: var(--color-pulse-effect);
+
+    // Variant-specific Pulse Colors
+    --button-primary-pulse: #fff;
+    --button-secondary-pulse: var(--color-pulse-effect);
+    --button-tertiary-pulse:  var(--color-pulse-effect);
 
     // Icon button specific
     --icon-button-size: 40px;

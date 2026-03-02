@@ -19,6 +19,7 @@
         <div class="section-preview">
             <button zivaButton variant="primary">Primary</button>
             <button zivaButton variant="secondary">Secondary</button>
+            <button zivaButton variant="tertiary">Tertiary (Ghost)</button>
             <button zivaButton variant="success">Success</button>
             <button zivaButton variant="error">Error</button>
             <button zivaButton variant="warning">Warning</button>
@@ -88,6 +89,9 @@
             <button zivaIconButton variant="warning">
                 <ziva-icon iconName="AlertTriangle" iconColor="#fff"></ziva-icon>
             </button>
+            <button zivaIconButton variant="tertiary">
+                <ziva-icon iconName="Settings"></ziva-icon>
+            </button>
         </div>
 
         <div class="section-tabs">
@@ -98,6 +102,49 @@
             <div class="code-viewer">
                 @if (activeTabs['icon'] === 'html') {
                 <pre><code class="language-html">{{ iconButtonCode.html }}</code></pre>
+                }
+            </div>
+        </div>
+    </div>
+
+    <!-- Section: Interactive Showcase -->
+    <div class="section-card">
+        <div class="section-header">
+            <h2 class="section-title">Interactive Showcase</h2>
+            <p class="section-desc">A complex example demonstrating a split button with a dropdown menu.</p>
+        </div>
+
+        <div class="section-preview" style="min-height: 180px; align-items: flex-start;">
+            <div class="split-button-container">
+                <div class="split-button">
+                    <button zivaButton variant="primary" (click)="onMainActionClick()">
+                        {{ selectedAction }}
+                    </button>
+                    <button zivaIconButton variant="primary"
+                        style="border-radius: 0 8px 8px 0; border-left: 1px solid rgba(255,255,255,0.2);"
+                        (click)="toggleDropdown()">
+                        <ziva-icon iconName="ChevronDown" iconColor="#fff"></ziva-icon>
+                    </button>
+                </div>
+
+                @if (isDropdownOpen) {
+                <div class="dropdown-menu">
+                    <div class="dropdown-item" (click)="selectAction('Create Project')">Create Project</div>
+                    <div class="dropdown-item" (click)="selectAction('Import Data')">Import Data</div>
+                    <div class="dropdown-item" (click)="selectAction('Export Report')">Export Report</div>
+                </div>
+                }
+            </div>
+        </div>
+
+        <div class="section-tabs">
+            <div class="tabs-bar">
+                <button class="tab-btn" [class.active]="activeTabs['interactive'] === 'html'"
+                    (click)="setTab('interactive', 'html')">HTML</button>
+            </div>
+            <div class="code-viewer">
+                @if (activeTabs['interactive'] === 'html') {
+                <pre><code class="language-html">{{ interactiveCode.html }}</code></pre>
                 }
             </div>
         </div>
