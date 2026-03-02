@@ -9,16 +9,20 @@
         </p>
     </div>
 
-    <!-- Selection: Basic Variants -->
+    <!-- Section: Basic Variants -->
     <div class="section-card">
         <div class="section-header">
             <h2 class="section-title">Variants</h2>
-            <p class="section-desc">Choose between primary and secondary variants for different emphasis levels.</p>
+            <p class="section-desc">Choose from brand and feedback variants to convey different semantic meanings.</p>
         </div>
 
         <div class="section-preview">
-            <button zivaButton variant="primary">Primary Button</button>
-            <button zivaButton variant="secondary">Secondary Button</button>
+            <button zivaButton variant="primary">Primary</button>
+            <button zivaButton variant="secondary">Secondary</button>
+            <button zivaButton variant="success">Success</button>
+            <button zivaButton variant="error">Error</button>
+            <button zivaButton variant="warning">Warning</button>
+            <button zivaButton variant="info">Info</button>
         </div>
 
         <div class="section-tabs">
@@ -34,29 +38,55 @@
         </div>
     </div>
 
+    <!-- Section: Sizes -->
+    <div class="section-card">
+        <div class="section-header">
+            <h2 class="section-title">Sizes</h2>
+            <p class="section-desc">Available in small, medium (default), and large sizes.</p>
+        </div>
+
+        <div class="section-preview">
+            <button zivaButton size="sm">Small</button>
+            <button zivaButton size="md">Medium</button>
+            <button zivaButton size="lg">Large</button>
+            <span style="margin: 0 10px; border-left: 1px solid #ddd; height: 30px;"></span>
+            <button zivaIconButton size="sm"><ziva-icon iconName="Plus" iconColor="#fff"></ziva-icon></button>
+            <button zivaIconButton size="md"><ziva-icon iconName="Plus" iconColor="#fff"></ziva-icon></button>
+            <button zivaIconButton size="lg"><ziva-icon iconName="Plus" iconColor="#fff"></ziva-icon></button>
+        </div>
+
+        <div class="section-tabs">
+            <div class="tabs-bar">
+                <button class="tab-btn" [class.active]="activeTabs['sizes'] === 'html'"
+                    (click)="setTab('sizes', 'html')">HTML</button>
+            </div>
+            <div class="code-viewer">
+                @if (activeTabs['sizes'] === 'html') {
+                <pre><code class="language-html">{{ sizeCode.html }}</code></pre>
+                }
+            </div>
+        </div>
+    </div>
+
     <!-- Section: Icon Buttons -->
     <div class="section-card">
         <div class="section-header">
             <h2 class="section-title">Icon Buttons</h2>
-            <p class="section-desc">Circular buttons perfect for compact actions with <code>zivaIconButton</code>.</p>
+            <p class="section-desc">Circular buttons perfect for compact actions with support for all variants.</p>
         </div>
 
         <div class="section-preview">
-            <button zivaButton variant="primary">
-                <ziva-icon iconName="Plus" iconColor="#fff"></ziva-icon>
-                Confirm Action
-            </button>
-
-            <button zivaButton variant="primary">
-                Confirm Action
-                <ziva-icon iconName="Plus" iconColor="#fff"></ziva-icon>
-            </button>
-
             <button zivaIconButton variant="primary">
                 <ziva-icon iconName="Plus" iconColor="#fff"></ziva-icon>
             </button>
-            <button zivaIconButton variant="secondary">
-                <ziva-icon iconName="Settings"></ziva-icon>
+            <button zivaIconButton variant="success">
+                <ziva-icon iconName="Check" iconColor="#fff"></ziva-icon>
+            </button>
+            <button zivaIconButton variant="error">
+                <ziva-icon iconName="Trash" iconColor="#fff"></ziva-icon>
+            </button>
+            <button zivaIconButton variant="warning">
+                <ziva-icon iconName="AlertTriangle" iconColor="#fff"></ziva-icon>
             </button>
         </div>
 

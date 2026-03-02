@@ -13,7 +13,7 @@ import {
   // Hover pairs
   Eye, EyeOff, Heart, HeartCrack, Star, StarOff, Lock, LockOpen,
   // Disabled
-  Save, Trash2, Plus,
+  Save, Trash2, Trash, Plus, Check,
   // Click events
   Download, Share2, Copy,
 } from 'lucide-angular';
@@ -39,7 +39,7 @@ export const appConfig: ApplicationConfig = {
         // Hover pairs
         Eye, EyeOff, Heart, HeartCrack, Star, StarOff, Lock, LockOpen,
         // Disabled
-        Save, Trash2, Plus,
+        Save, Trash2, Trash, Plus, Check,
         // Click events
         Download, Share2, Copy,
       })

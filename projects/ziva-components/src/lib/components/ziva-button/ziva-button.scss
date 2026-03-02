@@ -58,6 +58,48 @@
             background-color: transparent;
         }
     }
+
+    &--success {
+        background-color: var(--button-success-bg);
+        color: var(--button-success-color);
+        border-color: transparent;
+    }
+
+    &--error {
+        background-color: var(--button-error-bg);
+        color: var(--button-error-color);
+        border-color: transparent;
+    }
+
+    &--warning {
+        background-color: var(--button-warning-bg);
+        color: var(--button-warning-color);
+        border-color: transparent;
+    }
+
+    &--info {
+        background-color: var(--button-info-bg);
+        color: var(--button-info-color);
+        border-color: transparent;
+    }
+
+    &--sm {
+        padding: 6px 12px;
+        font-size: 12px;
+        height: 32px;
+    }
+
+    &--md {
+        padding: 10px 20px;
+        font-size: 14px;
+        height: 40px;
+    }
+
+    &--lg {
+        padding: 14px 28px;
+        font-size: 16px;
+        height: 48px;
+    }
 }
 
 .ziva-icon-button {
@@ -89,5 +131,50 @@
             color: var(--color-disabled);
             background-color: transparent;
         }
+    }
+
+    &--success {
+        background-color: var(--button-success-bg);
+        color: var(--button-success-color);
+        border-color: transparent;
+    }
+
+    &--error {
+        background-color: var(--button-error-bg);
+        color: var(--button-error-color);
+        border-color: transparent;
+    }
+
+    &--warning {
+        background-color: var(--button-warning-bg);
+        color: var(--button-warning-color);
+        border-color: transparent;
+    }
+
+    &--info {
+        background-color: var(--button-info-bg);
+        color: var(--button-info-color);
+        border-color: transparent;
+    }
+
+    &--sm {
+        width: 32px;
+        height: 32px;
+        padding: 6px;
+        font-size: 16px;
+    }
+
+    &--md {
+        width: 40px;
+        height: 40px;
+        padding: 10px;
+        font-size: 20px;
+    }
+
+    &--lg {
+        width: 48px;
+        height: 48px;
+        padding: 12px;
+        font-size: 24px;
     }
 }
