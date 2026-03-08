@@ -1,0 +1,142 @@
+<div class="content-body">
+
+    <div class="component-header">
+        <h1 class="component-title">Input</h1>
+        <p class="component-description">
+            <code>zivaInput</code> directive provides styled input fields with multiple appearances,
+            sizes, and states — applied directly to native <code>&lt;input&gt;</code> and <code>&lt;textarea&gt;</code>
+            elements.
+        </p>
+    </div>
+
+    <!-- Section: Appearance -->
+    <div class="section-card">
+        <div class="section-header">
+            <h2 class="section-title">Appearance</h2>
+            <p class="section-desc">Choose from outlined, filled, and standard (underline) appearances.</p>
+        </div>
+
+        <div class="section-preview">
+            <input zivaInput placeholder="Outlined input" />
+            <input zivaInput appearance="filled" placeholder="Filled input" />
+            <input zivaInput appearance="standard" placeholder="Standard input" />
+        </div>
+
+        <div class="section-tabs">
+            <div class="tabs-bar">
+                <button class="tab-btn" [class.active]="activeTabs['appearance'] === 'html'"
+                    (click)="setTab('appearance', 'html')">HTML</button>
+            </div>
+            <div class="code-viewer">
+                @if (activeTabs['appearance'] === 'html') {
+                <pre><code class="language-html">{{ appearanceCode.html }}</code></pre>
+                }
+            </div>
+        </div>
+    </div>
+
+    <!-- Section: Sizes -->
+    <div class="section-card">
+        <div class="section-header">
+            <h2 class="section-title">Sizes</h2>
+            <p class="section-desc">Available in small, medium, and large sizes across all appearances.</p>
+        </div>
+
+        <div class="section-preview">
+            <input zivaInput size="sm" placeholder="Small" />
+            <input zivaInput size="md" placeholder="Medium" />
+            <input zivaInput size="lg" placeholder="Large" />
+        </div>
+
+        <div class="section-tabs">
+            <div class="tabs-bar">
+                <button class="tab-btn" [class.active]="activeTabs['sizes'] === 'html'"
+                    (click)="setTab('sizes', 'html')">HTML</button>
+            </div>
+            <div class="code-viewer">
+                @if (activeTabs['sizes'] === 'html') {
+                <pre><code class="language-html">{{ sizeCode.html }}</code></pre>
+                }
+            </div>
+        </div>
+    </div>
+
+    <!-- Section: States -->
+    <div class="section-card">
+        <div class="section-header">
+            <h2 class="section-title">States</h2>
+            <p class="section-desc">Error and disabled states work across all appearances.</p>
+        </div>
+
+        <div class="section-preview">
+            <input zivaInput [error]="true" placeholder="Error input" />
+            <input zivaInput disabled placeholder="Disabled input" />
+            <input zivaInput appearance="filled" [error]="true" placeholder="Filled error" />
+            <input zivaInput appearance="standard" disabled placeholder="Standard disabled" />
+        </div>
+
+        <div class="section-tabs">
+            <div class="tabs-bar">
+                <button class="tab-btn" [class.active]="activeTabs['states'] === 'html'"
+                    (click)="setTab('states', 'html')">HTML</button>
+            </div>
+            <div class="code-viewer">
+                @if (activeTabs['states'] === 'html') {
+                <pre><code class="language-html">{{ statesCode.html }}</code></pre>
+                }
+            </div>
+        </div>
+    </div>
+
+    <!-- Section: Textarea -->
+    <div class="section-card">
+        <div class="section-header">
+            <h2 class="section-title">Textarea</h2>
+            <p class="section-desc">The same directive works on <code>&lt;textarea&gt;</code> elements with auto-height
+                support.</p>
+        </div>
+
+        <div class="section-preview section-preview--vertical">
+            <textarea zivaInput placeholder="Write something..."></textarea>
+            <textarea zivaInput appearance="filled" placeholder="Filled textarea"></textarea>
+        </div>
+
+        <div class="section-tabs">
+            <div class="tabs-bar">
+                <button class="tab-btn" [class.active]="activeTabs['textarea'] === 'html'"
+                    (click)="setTab('textarea', 'html')">HTML</button>
+            </div>
+            <div class="code-viewer">
+                @if (activeTabs['textarea'] === 'html') {
+                <pre><code class="language-html">{{ textareaCode.html }}</code></pre>
+                }
+            </div>
+        </div>
+    </div>
+
+    <!-- API Reference -->
+    <div class="api-reference">
+        <h2 class="api-reference-title">API Reference</h2>
+        <table class="api-table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Type</th>
+                    <th>Default</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (prop of apiProperties; track prop.name) {
+                <tr>
+                    <td><code>{{ prop.name }}</code></td>
+                    <td><code>{{ prop.type }}</code></td>
+                    <td><code>{{ prop.default }}</code></td>
+                    <td>{{ prop.description }}</td>
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+</div>
