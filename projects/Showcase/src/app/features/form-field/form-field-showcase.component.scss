@@ -3,7 +3,6 @@
     max-width: 1100px;
 }
 
-// ─── Component Header ──────────────────────────────────────────────────────
 .component-header {
     margin-bottom: 3rem;
 
@@ -32,7 +31,6 @@
     }
 }
 
-// ─── Section Card ──────────────────────────────────────────────────────────
 .section-card {
     background: var(--color-surface);
     border: 1px solid var(--color-border);
@@ -42,7 +40,6 @@
     overflow: hidden;
 }
 
-// ─── Section Header (inside card) ─────────────────────────────────────────
 .section-header {
     padding: 1.5rem 1.75rem 1.25rem;
     border-bottom: 1px solid var(--color-border);
@@ -61,19 +58,9 @@
         line-height: 1.5;
         max-width: 680px;
         margin: 0;
-
-        code {
-            font-family: 'Fira Code', monospace;
-            font-size: 0.88rem;
-            color: var(--color-primary);
-            background: var(--color-tertiary);
-            padding: 1px 5px;
-            border-radius: 3px;
-        }
     }
 }
 
-// ─── Section Preview ──────────────────────────────────────────────────────
 .section-preview {
     padding: 2.5rem 2rem;
     background: var(--color-surface);
@@ -81,15 +68,18 @@
     flex-wrap: wrap;
     gap: 1.5rem;
     align-items: center;
+
+    &--vertical {
+        flex-direction: column;
+        align-items: stretch;
+    }
 }
 
-// ─── Section Tabs ────────────────────────────────────────────────────────
 .section-tabs {
     border-top: 1px solid var(--color-border);
 
     .tabs-bar {
         display: flex;
-        gap: 0;
         padding: 0 1.5rem;
         background: var(--color-surface-raised, #f9fafb);
         border-bottom: 1px solid var(--color-border);
@@ -104,8 +94,6 @@
         color: var(--color-text-muted);
         cursor: pointer;
         border-bottom: 2px solid transparent;
-        transition: color 0.15s ease, border-color 0.15s ease;
-        letter-spacing: 0.02em;
 
         &.active {
             color: var(--color-primary);
@@ -127,7 +115,6 @@
             font-size: 0.88rem;
             line-height: 1.7;
             color: var(--color-text-primary);
-            white-space: pre;
         }
     }
 }
@@ -179,73 +166,48 @@
     }
 }
 
-// ─── Interactive Showcase Elements ─────────────────────────────────────────
-.split-button-container {
-    position: relative;
-    display: inline-block;
-}
-
-.split-button {
-    display: flex;
-    align-items: stretch;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-
-    button[zivaButton] {
-        border-radius: 8px 0 0 8px;
-        border-right: none;
-        white-space: nowrap;
+// ---- Custom Input Status States (Showcase only) ----
+:host ::ng-deep {
+    .ziva-input-success {
+        --input-border: var(--color-success);
+        --input-focus-border: var(--color-success);
+        --input-focus-shadow: 0 0 0 3px rgba(34, 197, 94, 0.15);
     }
 
-    button[zivaIconButton] {
-        border-radius: 0 8px 8px 0;
-        border-left: 1px solid rgba(255, 255, 255, 0.2);
-        width: 40px;
-        height: 40px;
+    .ziva-input-warning {
+        --input-border: var(--color-warning);
+        --input-focus-border: var(--color-warning);
+        --input-focus-shadow: 0 0 0 3px rgba(234, 179, 8, 0.15);
     }
-}
 
-.dropdown-menu {
-    position: absolute;
-    top: calc(100% + 8px);
-    left: 0;
-    min-width: 180px;
-    background: var(--color-surface);
-    border: 1px solid var(--color-border);
-    border-radius: 12px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-    padding: 8px;
-    z-index: 100;
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-    animation: slideUp 0.2s ease-out;
+    .ziva-input-info {
+        --input-border: var(--color-info);
+        --input-focus-border: var(--color-info);
+        --input-focus-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+    }
 
-    .dropdown-item {
-        padding: 10px 16px;
-        font-size: 0.9rem;
-        font-weight: 500;
-        color: var(--color-text-primary);
-        cursor: pointer;
-        border-radius: 8px;
-        transition: all 0.15s ease;
+    // Coordinate with Form Field
+    ziva-form-field:has(.ziva-input-success) {
 
-        &:hover {
-            background: var(--color-tertiary);
-            color: var(--color-primary);
+        ziva-label,
+        ziva-footer {
+            color: var(--color-success);
         }
     }
-}
 
-@keyframes slideUp {
-    from {
-        opacity: 0;
-        transform: translateY(10px);
+    ziva-form-field:has(.ziva-input-warning) {
+
+        ziva-label,
+        ziva-footer {
+            color: var(--color-warning);
+        }
     }
 
-    to {
-        opacity: 1;
-        transform: translateY(0);
+    ziva-form-field:has(.ziva-input-info) {
+
+        ziva-label,
+        ziva-footer {
+            color: var(--color-info);
+        }
     }
 }

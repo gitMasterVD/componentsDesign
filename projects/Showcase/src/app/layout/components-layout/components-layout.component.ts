@@ -14,7 +14,8 @@ export class ComponentsLayoutComponent {
     componentNav = [
         { label: 'Icon', path: '/components/icons', icon: 'Zap' },
         { label: 'Button', path: '/components/buttons', icon: 'Square' },
-        { label: 'Input', path: '/components/inputs', icon: 'Type' }
+        { label: 'Input', path: '/components/inputs', icon: 'Type' },
+        { label: 'Form Field', path: '/components/form-field', icon: 'TextSelect' }
     ];
 
     constructor(private router: Router) { }

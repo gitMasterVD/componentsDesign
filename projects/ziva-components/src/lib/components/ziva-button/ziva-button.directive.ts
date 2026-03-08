@@ -1,28 +1,80 @@
-import { Directive, Input, HostBinding, booleanAttribute } from '@angular/core';
+import { Directive, Input, HostBinding, HostListener, booleanAttribute, ElementRef, inject } from '@angular/core';
 
 @Directive({
     selector: '[zivaButton]',
     standalone: true,
 })
 export class ZivaButtonDirective {
-    @Input() variant: 'primary' | 'secondary' = 'primary';
+    private el = inject(ElementRef);
+
+    @Input() variant: 'primary' | 'secondary' | 'success' | 'error' | 'warning' | 'info' | 'tertiary' = 'primary';
+    @Input() size?: 'sm' | 'md' | 'lg';
     @Input({ transform: booleanAttribute }) disabled: boolean = false;
+    @Input({ transform: booleanAttribute }) pulse: boolean = true;
+
+    private isPulsing = false;
 
     @HostBinding('class.ziva-button') readonly baseClass = true;
 
-    @HostBinding('class.ziva-button--primary')
-    get isPrimary() {
-        return this.variant === 'primary';
+    @HostBinding('class')
+    get variantClass() {
+        return `ziva-button--${this.variant}`;
     }
 
-    @HostBinding('class.ziva-button--secondary')
-    get isSecondary() {
-        return this.variant === 'secondary';
+    @HostBinding('class.ziva-button--sm')
+    get isSmall() {
+        return this.size === 'sm';
+    }
+
+    @HostBinding('class.ziva-button--md')
+    get isMedium() {
+        return this.size === 'md';
+    }
+
+    @HostBinding('class.ziva-button--lg')
+    get isLarge() {
+        return this.size === 'lg';
     }
 
     @HostBinding('class.disabled')
     @HostBinding('attr.disabled')
     get isDisabled() {
         return this.disabled ? true : null;
+    }
+
+    @HostBinding('class.ziva-pulse-active')
+    get pulsing() {
+        return this.isPulsing;
+    }
+
+    @HostBinding('style.--ripple-x') rippleX = '0px';
+    @HostBinding('style.--ripple-y') rippleY = '0px';
+    @HostBinding('style.--ripple-size') rippleSize = '0px';
+
+    @HostListener('click', ['$event'])
+    onClick(event: MouseEvent) {
+        if (this.disabled || !this.pulse || this.isPulsing) return;
+
+        const rect = this.el.nativeElement.getBoundingClientRect();
+        const x = event.clientX - rect.left;
+        const y = event.clientY - rect.top;
+
+        // Calculate the maximum possible distance from (x, y) to any corner
+        const cornerDistances = [
+            Math.sqrt(Math.pow(x, 2) + Math.pow(y, 2)),
+            Math.sqrt(Math.pow(rect.width - x, 2) + Math.pow(y, 2)),
+            Math.sqrt(Math.pow(x, 2) + Math.pow(rect.height - y, 2)),
+            Math.sqrt(Math.pow(rect.width - x, 2) + Math.pow(rect.height - y, 2))
+        ];
+        const maxDist = Math.max(...cornerDistances);
+
+        this.rippleX = `${x}px`;
+        this.rippleY = `${y}px`;
+        this.rippleSize = `${maxDist * 2}px`;
+
+        this.isPulsing = true;
+        setTimeout(() => {
+            this.isPulsing = false;
+        }, 800);
     }
 }

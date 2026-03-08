@@ -8,6 +8,24 @@
     --button-font-weight: 500;
     --button-transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 
+    // Variants
+    --button-success-bg: var(--color-success);
+    --button-success-color: var(--color-on-success);
+    --button-error-bg: var(--color-error);
+    --button-error-color: var(--color-on-error);
+    --button-warning-bg: var(--color-warning);
+    --button-warning-color: var(--color-on-warning);
+    --button-info-bg: var(--color-primary);
+    --button-info-color: var(--color-on-primary);
+    --button-tertiary-bg: var(--color-hover);
+    --button-tertiary-color: var(--color-primary);
+    --button-pulse-effect: var(--color-pulse-effect);
+
+    // Variant-specific Pulse Colors
+    --button-primary-pulse: #fff;
+    --button-secondary-pulse: var(--color-pulse-effect);
+    --button-tertiary-pulse:  var(--color-pulse-effect);
+
     // Icon button specific
     --icon-button-size: 40px;
     --icon-button-padding: 8px;

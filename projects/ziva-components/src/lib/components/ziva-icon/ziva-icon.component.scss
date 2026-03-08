@@ -12,7 +12,6 @@
         object-fit: contain;
 
         &--svg {
-            // Allows coloring external SVGs if they use currentColor
             mask-repeat: no-repeat;
             mask-size: contain;
             background-color: currentColor;
