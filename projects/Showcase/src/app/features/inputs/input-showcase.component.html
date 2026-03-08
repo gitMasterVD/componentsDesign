@@ -65,14 +65,12 @@
     <div class="section-card">
         <div class="section-header">
             <h2 class="section-title">States</h2>
-            <p class="section-desc">Error and disabled states work across all appearances.</p>
+            <p class="section-desc">Error (native Material) and disabled states work across all appearances.</p>
         </div>
 
         <div class="section-preview">
-            <input zivaInput [error]="true" placeholder="Error input" />
+            <input zivaInput error placeholder="Error input" />
             <input zivaInput disabled placeholder="Disabled input" />
-            <input zivaInput appearance="filled" [error]="true" placeholder="Filled error" />
-            <input zivaInput appearance="standard" disabled placeholder="Standard disabled" />
         </div>
 
         <div class="section-tabs">
@@ -83,6 +81,62 @@
             <div class="code-viewer">
                 @if (activeTabs['states'] === 'html') {
                 <pre><code class="language-html">{{ statesCode.html }}</code></pre>
+                }
+            </div>
+        </div>
+    </div>
+
+    <!-- Section: Semantic Colors -->
+    <div class="section-card">
+        <div class="section-header">
+            <h2 class="section-title">Semantic Colors (User Side)</h2>
+            <p class="section-desc">For custom states like <code>success</code>, <code>warning</code>, or
+                <code>info</code>
+                that aren't in the native Material set, apply custom classes as shown below.
+            </p>
+        </div>
+
+        <div class="section-preview">
+            <input zivaInput class="ziva-input-success" placeholder="Success input" />
+            <input zivaInput class="ziva-input-warning" placeholder="Warning input" />
+            <input zivaInput class="ziva-input-info" placeholder="Info input" />
+        </div>
+
+        <div class="section-tabs">
+            <div class="tabs-bar">
+                <button class="tab-btn" [class.active]="activeTabs['colors'] === 'html'"
+                    (click)="setTab('colors', 'html')">HTML</button>
+            </div>
+            <div class="code-viewer">
+                @if (activeTabs['colors'] === 'html') {
+                <pre><code class="language-html">{{ colorsCode.html }}</code></pre>
+                }
+            </div>
+        </div>
+    </div>
+
+    <!-- Section: Types & Limits -->
+    <div class="section-card">
+        <div class="section-header">
+            <h2 class="section-title">Types & Limits</h2>
+            <p class="section-desc">Native attributes like <code>type</code> and <code>maxlength</code> work seamlessly.
+            </p>
+        </div>
+
+        <div class="section-preview">
+            <input zivaInput type="password" placeholder="Enter password" />
+            <input zivaInput type="number" placeholder="Enter amount" />
+            <input zivaInput maxlength="10" placeholder="Limit: 10 chars" />
+        </div>
+
+        <div class="section-tabs">
+            <div class="tabs-bar">
+                <button class="tab-btn" [class.active]="activeTabs['types'] === 'html'"
+                    (click)="setTab('types', 'html')">HTML</button>
+            </div>
+            <div class="code-viewer">
+                @if (activeTabs['types'] === 'html') {
+                <pre><code class="language-html">{{ typesCode.html }}</code></pre>
                 }
             </div>
         </div>
@@ -117,6 +171,8 @@
     <!-- API Reference -->
     <div class="api-reference">
         <h2 class="api-reference-title">API Reference</h2>
+
+        <h3 style="margin-top: 2rem; margin-bottom: 1rem; color: var(--color-text-primary);">Directive Inputs</h3>
         <table class="api-table">
             <thead>
                 <tr>

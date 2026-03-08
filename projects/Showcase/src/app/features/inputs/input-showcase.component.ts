@@ -14,7 +14,9 @@ export class InputShowcaseComponent {
         appearance: 'html',
         sizes: 'html',
         states: 'html',
-        textarea: 'html',
+        colors: 'html',
+        types: 'html',
+        textarea: 'html'
     };
 
     setTab(section: string, tab: string): void {
@@ -25,7 +27,7 @@ export class InputShowcaseComponent {
         { name: 'appearance', type: "'outlined' | 'filled' | 'standard'", default: "'outlined'", description: 'Sets the visual style of the input.' },
         { name: 'size', type: "'sm' | 'md' | 'lg'", default: "—", description: 'Sets the size of the input.' },
         { name: 'disabled', type: 'boolean', default: 'false', description: 'Toggles the disabled state.' },
-        { name: 'error', type: 'boolean', default: 'false', description: 'Applies error styling to the input.' },
+        { name: 'error', type: 'boolean', default: 'false', description: 'Native Material status: applies error styling.' },
     ];
 
     appearanceCode = {
@@ -46,17 +48,28 @@ export class InputShowcaseComponent {
     };
 
     statesCode = {
-        html: `<!-- Error state -->
-<input zivaInput [error]="true" placeholder="Error input" />
+        html: `<!-- Error state (Native Material) -->
+<input zivaInput error placeholder="Error input" />
 
 <!-- Disabled state -->
-<input zivaInput disabled placeholder="Disabled input" />
+<input zivaInput disabled placeholder="Disabled input" />`,
+    };
 
-<!-- Filled + Error -->
-<input zivaInput appearance="filled" [error]="true" placeholder="Filled error" />
+    colorsCode = {
+        html: `<!-- Custom Status Colors (User Side Example) -->
+<!-- These are handled via custom classes in the application -->
+<input zivaInput class="ziva-input-success" placeholder="Success input" />
+<input zivaInput class="ziva-input-warning" placeholder="Warning input" />
+<input zivaInput class="ziva-input-info" placeholder="Info input" />`,
+    };
 
-<!-- Standard + Disabled -->
-<input zivaInput appearance="standard" disabled placeholder="Standard disabled" />`,
+    typesCode = {
+        html: `<!-- Native Types -->
+<input zivaInput type="password" placeholder="Enter password" />
+<input zivaInput type="number" placeholder="Enter amount" />
+
+<!-- Native Limits -->
+<input zivaInput maxlength="10" placeholder="Limit: 10 chars" />`,
     };
 
     textareaCode = {

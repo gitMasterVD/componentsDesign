@@ -3,7 +3,6 @@
     max-width: 1100px;
 }
 
-// ─── Component Header ──────────────────────────────────────────────────────
 .component-header {
     margin-bottom: 3rem;
 
@@ -32,7 +31,6 @@
     }
 }
 
-// ─── Section Card ──────────────────────────────────────────────────────────
 .section-card {
     background: var(--color-surface);
     border: 1px solid var(--color-border);
@@ -42,7 +40,6 @@
     overflow: hidden;
 }
 
-// ─── Section Header (inside card) ─────────────────────────────────────────
 .section-header {
     padding: 1.5rem 1.75rem 1.25rem;
     border-bottom: 1px solid var(--color-border);
@@ -61,19 +58,9 @@
         line-height: 1.5;
         max-width: 680px;
         margin: 0;
-
-        code {
-            font-family: 'Fira Code', monospace;
-            font-size: 0.88rem;
-            color: var(--color-primary);
-            background: var(--color-tertiary);
-            padding: 1px 5px;
-            border-radius: 3px;
-        }
     }
 }
 
-// ─── Section Preview ──────────────────────────────────────────────────────
 .section-preview {
     padding: 2.5rem 2rem;
     background: var(--color-surface);
@@ -82,28 +69,17 @@
     gap: 1.5rem;
     align-items: center;
 
-    input[zivaInput],
-    textarea[zivaInput] {
-        max-width: 280px;
-    }
-
     &--vertical {
         flex-direction: column;
         align-items: stretch;
-
-        textarea[zivaInput] {
-            max-width: 100%;
-        }
     }
 }
 
-// ─── Section Tabs ────────────────────────────────────────────────────────
 .section-tabs {
     border-top: 1px solid var(--color-border);
 
     .tabs-bar {
         display: flex;
-        gap: 0;
         padding: 0 1.5rem;
         background: var(--color-surface-raised, #f9fafb);
         border-bottom: 1px solid var(--color-border);
@@ -118,8 +94,6 @@
         color: var(--color-text-muted);
         cursor: pointer;
         border-bottom: 2px solid transparent;
-        transition: color 0.15s ease, border-color 0.15s ease;
-        letter-spacing: 0.02em;
 
         &.active {
             color: var(--color-primary);
@@ -141,7 +115,6 @@
             font-size: 0.88rem;
             line-height: 1.7;
             color: var(--color-text-primary);
-            white-space: pre;
         }
     }
 }
@@ -211,5 +184,30 @@
         --input-border: var(--color-info);
         --input-focus-border: var(--color-info);
         --input-focus-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+    }
+
+    // Coordinate with Form Field
+    ziva-form-field:has(.ziva-input-success) {
+
+        ziva-label,
+        ziva-footer {
+            color: var(--color-success);
+        }
+    }
+
+    ziva-form-field:has(.ziva-input-warning) {
+
+        ziva-label,
+        ziva-footer {
+            color: var(--color-warning);
+        }
+    }
+
+    ziva-form-field:has(.ziva-input-info) {
+
+        ziva-label,
+        ziva-footer {
+            color: var(--color-info);
+        }
     }
 }

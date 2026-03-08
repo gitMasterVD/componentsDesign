@@ -1,0 +1,38 @@
+.ziva-form-field-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 1rem;
+
+    ziva-label {
+        margin-bottom: 6px;
+        font-size: 0.875rem;
+        font-weight: 500;
+        color: var(--color-text-primary);
+        transition: color 0.2s ease;
+    }
+
+    .ziva-input-wrapper {
+        position: relative;
+        width: 100%;
+    }
+
+    .ziva-form-field-footer {
+        padding-top: 4px;
+    }
+
+    // Handle status states of the child input to highlight label/footer
+    &:has(.ziva-input--focused) {
+        ziva-label {
+            color: var(--color-primary);
+        }
+    }
+
+    &:has(.ziva-input--error) {
+
+        ziva-label,
+        .ziva-form-field-footer {
+            color: var(--color-error);
+        }
+    }
+}

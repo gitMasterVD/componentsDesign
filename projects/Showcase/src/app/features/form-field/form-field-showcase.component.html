@@ -1,0 +1,155 @@
+<div class="content-body">
+    <div class="component-header">
+        <h1 class="component-title">Form Field</h1>
+        <p class="component-description">
+            <code>ziva-form-field</code> is a component used to wrap form controls.
+            It provides a common container for elements like labels, hints, and error messages.
+        </p>
+    </div>
+
+    <!-- Section: Basic -->
+    <div class="section-card">
+        <div class="section-header">
+            <h2 class="section-title">Basic Usage</h2>
+            <p class="section-desc">Wrap a <code>ziva-label</code> and a <code>zivaInput</code> inside a
+                <code>ziva-form-field</code>.
+            </p>
+        </div>
+        <div class="section-preview">
+            <ziva-form-field>
+                <ziva-label>First Name</ziva-label>
+                <input zivaInput placeholder="Enter your first name" />
+            </ziva-form-field>
+        </div>
+        <div class="section-tabs">
+            <div class="tabs-bar">
+                <button class="tab-btn" [class.active]="activeTabs['basic'] === 'html'"
+                    (click)="setTab('basic', 'html')">HTML</button>
+            </div>
+            <div class="code-viewer">
+                @if (activeTabs['basic'] === 'html') {
+                <pre><code class="language-html">{{ basicCode.html }}</code></pre>
+                }
+            </div>
+        </div>
+    </div>
+
+    <!-- Section: Footer -->
+    <div class="section-card">
+        <div class="section-header">
+            <h2 class="section-title">Footer</h2>
+            <p class="section-desc">Use <code>ziva-footer</code> to provide additional information below the input.</p>
+        </div>
+        <div class="section-preview">
+            <ziva-form-field>
+                <ziva-label>Username</ziva-label>
+                <input zivaInput placeholder="e.g. jdoe" />
+                <ziva-footer>Your unique identifier on the platform.</ziva-footer>
+            </ziva-form-field>
+        </div>
+        <div class="section-tabs">
+            <div class="tabs-bar">
+                <button class="tab-btn" [class.active]="activeTabs['hints'] === 'html'"
+                    (click)="setTab('hints', 'html')">HTML</button>
+            </div>
+            <div class="code-viewer">
+                @if (activeTabs['hints'] === 'html') {
+                <pre><code class="language-html">{{ hintCode.html }}</code></pre>
+                }
+            </div>
+        </div>
+    </div>
+
+    <!-- Section: Status (User-Side Coordination) -->
+    <div class="section-card">
+        <div class="section-header">
+            <h2 class="section-title">Status & Validation</h2>
+            <p class="section-desc">The form-field automatically coordinates colors for labels and hints based on the
+                input status.
+                Native states like <code>error</code> are handled by the library, while others like <code>success</code>
+                can be applied via custom classes.
+            </p>
+        </div>
+        <div class="section-preview section-preview--vertical">
+            <ziva-form-field>
+                <ziva-label>Discount Code</ziva-label>
+                <input zivaInput class="ziva-input-success" value="SAVE20" />
+                <ziva-footer>Code applied successfully!</ziva-footer>
+            </ziva-form-field>
+
+            <ziva-form-field>
+                <ziva-label>Password Strength</ziva-label>
+                <input zivaInput type="password" class="ziva-input-warning" value="12345" />
+                <ziva-footer>This password is weak.</ziva-footer>
+            </ziva-form-field>
+
+            <ziva-form-field>
+                <ziva-label>Email Address</ziva-label>
+                <input zivaInput type="email" error value="invalid-email" />
+                <ziva-footer>Please enter a valid email address.</ziva-footer>
+            </ziva-form-field>
+        </div>
+        <div class="section-tabs">
+            <div class="tabs-bar">
+                <button class="tab-btn" [class.active]="activeTabs['status'] === 'html'"
+                    (click)="setTab('status', 'html')">HTML</button>
+            </div>
+            <div class="code-viewer">
+                @if (activeTabs['status'] === 'html') {
+                <pre><code class="language-html">{{ statusCode.html }}</code></pre>
+                }
+            </div>
+        </div>
+    </div>
+
+    <!-- Section: Textarea -->
+    <div class="section-card">
+        <div class="section-header">
+            <h2 class="section-title">Textarea Support</h2>
+            <p class="section-desc">Works the same way with textareas.</p>
+        </div>
+        <div class="section-preview">
+            <ziva-form-field>
+                <ziva-label>Bio</ziva-label>
+                <textarea zivaInput placeholder="Describe yourself..."></textarea>
+                <ziva-footer>Limited to 200 characters.</ziva-footer>
+            </ziva-form-field>
+        </div>
+        <div class="section-tabs">
+            <div class="tabs-bar">
+                <button class="tab-btn" [class.active]="activeTabs['textarea'] === 'html'"
+                    (click)="setTab('textarea', 'html')">HTML</button>
+            </div>
+            <div class="code-viewer">
+                @if (activeTabs['textarea'] === 'html') {
+                <pre><code class="language-html">{{ textareaCode.html }}</code></pre>
+                }
+            </div>
+        </div>
+    </div>
+
+    <!-- API Reference -->
+    <div class="api-reference">
+        <h2 class="api-reference-title">API Reference</h2>
+
+        <h3 style="margin-top: 2rem; margin-bottom: 1rem; color: var(--color-text-primary);">Components</h3>
+        <table class="api-table">
+            <thead>
+                <tr>
+                    <th>Selector</th>
+                    <th>Type</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (prop of apiProperties; track prop.name) {
+                <tr>
+                    <td><code>{{ prop.name }}</code></td>
+                    <td><code>{{ prop.type }}</code></td>
+                    <td>{{ prop.description }}</td>
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

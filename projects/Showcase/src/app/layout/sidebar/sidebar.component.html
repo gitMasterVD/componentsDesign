@@ -20,11 +20,10 @@
         <div class="nav-section">
             <h3 class="nav-section-title">GUIDE</h3>
             <ul class="nav-list">
-                @for (item of navItems; track item.label) {
+                @for (item of guideItems; track item.label) {
                 <li class="nav-item">
-                    <a [href]="item.link" class="nav-link" [class.active]="item.active">
-                        <ziva-icon [iconName]="item.icon"
-                            [iconColor]="item.active ? 'var(--color-primary)' : 'var(--color-text-secondary)'"></ziva-icon>
+                    <a [href]="item.link" class="nav-link">
+                        <ziva-icon [iconName]="item.icon" iconColor="var(--color-text-secondary)"></ziva-icon>
                         <span>{{ item.label }}</span>
                     </a>
                 </li>
@@ -35,10 +34,11 @@
         <div class="nav-section">
             <h3 class="nav-section-title">COMPONENTS</h3>
             <ul class="nav-list">
-                @for (comp of components; track comp.label) {
+                @for (item of componentItems; track item.label) {
                 <li class="nav-item">
-                    <a [href]="comp.link" class="nav-link">
-                        <span>{{ comp.label }}</span>
+                    <a [routerLink]="item.link" routerLinkActive="active" class="nav-link">
+                        <ziva-icon [iconName]="item.icon" iconColor="var(--color-text-secondary)"></ziva-icon>
+                        <span>{{ item.label }}</span>
                     </a>
                 </li>
                 }
