@@ -1,8 +1,11 @@
-import { Directive, Input, HostBinding, HostListener, booleanAttribute } from '@angular/core';
+import { Component, Input, HostBinding, HostListener, booleanAttribute, ViewEncapsulation } from '@angular/core';
 
-@Directive({
+@Component({
     selector: '[zivaInput]',
     standalone: true,
+    template: '',
+    styleUrls: ['./ziva-input.scss'],
+    encapsulation: ViewEncapsulation.None
 })
 export class ZivaInputDirective {
 

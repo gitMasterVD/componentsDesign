@@ -1,8 +1,11 @@
-import { Directive, Input, HostBinding, HostListener, booleanAttribute, ElementRef, inject } from '@angular/core';
+import { Component, Input, HostBinding, HostListener, booleanAttribute, ElementRef, inject, ViewEncapsulation } from '@angular/core';
 
-@Directive({
+@Component({
     selector: '[zivaIconButton]',
     standalone: true,
+    template: '<ng-content></ng-content>',
+    styleUrls: ['./ziva-button.scss'],
+    encapsulation: ViewEncapsulation.None
 })
 export class ZivaIconButtonDirective {
     private el = inject(ElementRef);
