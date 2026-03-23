@@ -42,8 +42,8 @@
     <span class="ziva-checkbox__box" aria-hidden="true">
         <!-- Checkmark icon -->
         <svg
-            *ngIf="checked && !indeterminate"
-            class="ziva-checkbox__icon ziva-checkbox__icon--check"
+            class="ziva-checkbox__icon"
+            [class.ziva-checkbox__icon--check]="checked && !indeterminate"
             viewBox="0 0 16 16"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -59,8 +59,8 @@
 
         <!-- Indeterminate dash icon -->
         <svg
-            *ngIf="indeterminate"
-            class="ziva-checkbox__icon ziva-checkbox__icon--indeterminate"
+            class="ziva-checkbox__icon"
+            [class.ziva-checkbox__icon--indeterminate]="indeterminate"
             viewBox="0 0 16 16"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
