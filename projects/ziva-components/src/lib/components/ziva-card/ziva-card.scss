@@ -1,0 +1,18 @@
+.ziva-card {
+    display: block;
+    width: 100%;
+    height: 100%;
+
+    .ziva-card-wrapper {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+        background-color: var(--card-bg);
+        padding: var(--card-padding);
+        border: var(--card-border);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--card-shadow);
+        box-sizing: border-box;
+    }
+}

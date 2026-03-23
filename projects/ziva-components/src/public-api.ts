@@ -8,4 +8,5 @@ export * from './lib/components/ziva-button';
 export * from './lib/components/ziva-input';
 export * from './lib/components/ziva-form-field';
 export * from './lib/components/ziva-checkbox';
+export * from './lib/components/ziva-card';
 

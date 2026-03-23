@@ -1,5 +1,6 @@
-@forward 'button';
-@forward 'checkbox';
-@forward 'icon';
-@forward 'input';
-@forward 'form-field';
+@use 'button';
+@use 'checkbox';
+@use 'icon';
+@use 'input';
+@use 'form-field';
+@use 'card';

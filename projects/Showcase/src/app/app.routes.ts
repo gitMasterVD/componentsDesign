@@ -6,6 +6,7 @@ import { ButtonShowcaseComponent } from './features/buttons/button-showcase.comp
 import { InputShowcaseComponent } from './features/inputs/input-showcase.component';
 import { FormFieldShowcaseComponent } from './features/form-field/form-field-showcase.component';
 import { CheckboxShowcaseComponent } from './features/checkbox/checkbox-showcase.component';
+import { CardShowcaseComponent } from './features/card/card-showcase.component';
 import { ComingSoonComponent } from './features/common/coming-soon/coming-soon.component';
 
 export const routes: Routes = [
@@ -26,6 +27,7 @@ export const routes: Routes = [
                     { path: 'inputs', component: InputShowcaseComponent },
                     { path: 'form-field', component: FormFieldShowcaseComponent },
                     { path: 'checkbox', component: CheckboxShowcaseComponent },
+                    { path: 'card', component: CardShowcaseComponent },
                 ]
             }
         ]

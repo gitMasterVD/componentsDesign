@@ -10,7 +10,6 @@ import {
     ElementRef,
     ViewChild,
 } from '@angular/core';
-import { NgIf } from '@angular/common';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 /** Unique ID counter for checkbox instances */
@@ -19,7 +18,7 @@ let nextCheckboxId = 0;
 @Component({
     selector: 'ziva-checkbox',
     standalone: true,
-    imports: [NgIf],
+    imports: [],
     changeDetection: ChangeDetectionStrategy.OnPush,
     encapsulation: ViewEncapsulation.None,
     templateUrl: './ziva-checkbox.html',
