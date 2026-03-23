@@ -25,10 +25,20 @@
             <div class="tabs-bar">
                 <button class="tab-btn" [class.active]="activeTabs['basic'] === 'html'"
                     (click)="setTab('basic', 'html')">HTML</button>
+                <button class="tab-btn" [class.active]="activeTabs['basic'] === 'ts'"
+                    (click)="setTab('basic', 'ts')">TS</button>
+                <button class="tab-btn" [class.active]="activeTabs['basic'] === 'scss'"
+                    (click)="setTab('basic', 'scss')">SCSS</button>
             </div>
             <div class="code-viewer">
                 @if (activeTabs['basic'] === 'html') {
                 <pre><code class="language-html">{{ basicCode.html }}</code></pre>
+                }
+                @if (activeTabs['basic'] === 'ts') {
+                <pre><code class="language-typescript">{{ basicCode.ts }}</code></pre>
+                }
+                @if (activeTabs['basic'] === 'scss') {
+                <pre><code class="language-scss">{{ basicCode.scss }}</code></pre>
                 }
             </div>
         </div>
@@ -52,10 +62,20 @@
             <div class="tabs-bar">
                 <button class="tab-btn" [class.active]="activeTabs['colors'] === 'html'"
                     (click)="setTab('colors', 'html')">HTML</button>
+                <button class="tab-btn" [class.active]="activeTabs['colors'] === 'ts'"
+                    (click)="setTab('colors', 'ts')">TS</button>
+                <button class="tab-btn" [class.active]="activeTabs['colors'] === 'scss'"
+                    (click)="setTab('colors', 'scss')">SCSS</button>
             </div>
             <div class="code-viewer">
                 @if (activeTabs['colors'] === 'html') {
                 <pre><code class="language-html">{{ colorCode.html }}</code></pre>
+                }
+                @if (activeTabs['colors'] === 'ts') {
+                <pre><code class="language-typescript">{{ colorCode.ts }}</code></pre>
+                }
+                @if (activeTabs['colors'] === 'scss') {
+                <pre><code class="language-scss">{{ colorCode.scss }}</code></pre>
                 }
             </div>
         </div>
@@ -78,10 +98,20 @@
             <div class="tabs-bar">
                 <button class="tab-btn" [class.active]="activeTabs['sizes'] === 'html'"
                     (click)="setTab('sizes', 'html')">HTML</button>
+                <button class="tab-btn" [class.active]="activeTabs['sizes'] === 'ts'"
+                    (click)="setTab('sizes', 'ts')">TS</button>
+                <button class="tab-btn" [class.active]="activeTabs['sizes'] === 'scss'"
+                    (click)="setTab('sizes', 'scss')">SCSS</button>
             </div>
             <div class="code-viewer">
                 @if (activeTabs['sizes'] === 'html') {
                 <pre><code class="language-html">{{ sizeCode.html }}</code></pre>
+                }
+                @if (activeTabs['sizes'] === 'ts') {
+                <pre><code class="language-typescript">{{ sizeCode.ts }}</code></pre>
+                }
+                @if (activeTabs['sizes'] === 'scss') {
+                <pre><code class="language-scss">{{ sizeCode.scss }}</code></pre>
                 }
             </div>
         </div>
@@ -114,10 +144,20 @@
             <div class="tabs-bar">
                 <button class="tab-btn" [class.active]="activeTabs['indeterminate'] === 'html'"
                     (click)="setTab('indeterminate', 'html')">HTML</button>
+                <button class="tab-btn" [class.active]="activeTabs['indeterminate'] === 'ts'"
+                    (click)="setTab('indeterminate', 'ts')">TS</button>
+                <button class="tab-btn" [class.active]="activeTabs['indeterminate'] === 'scss'"
+                    (click)="setTab('indeterminate', 'scss')">SCSS</button>
             </div>
             <div class="code-viewer">
                 @if (activeTabs['indeterminate'] === 'html') {
                 <pre><code class="language-html">{{ indeterminateCode.html }}</code></pre>
+                }
+                @if (activeTabs['indeterminate'] === 'ts') {
+                <pre><code class="language-typescript">{{ indeterminateCode.ts }}</code></pre>
+                }
+                @if (activeTabs['indeterminate'] === 'scss') {
+                <pre><code class="language-scss">{{ indeterminateCode.scss }}</code></pre>
                 }
             </div>
         </div>
@@ -140,10 +180,20 @@
             <div class="tabs-bar">
                 <button class="tab-btn" [class.active]="activeTabs['disabled'] === 'html'"
                     (click)="setTab('disabled', 'html')">HTML</button>
+                <button class="tab-btn" [class.active]="activeTabs['disabled'] === 'ts'"
+                    (click)="setTab('disabled', 'ts')">TS</button>
+                <button class="tab-btn" [class.active]="activeTabs['disabled'] === 'scss'"
+                    (click)="setTab('disabled', 'scss')">SCSS</button>
             </div>
             <div class="code-viewer">
                 @if (activeTabs['disabled'] === 'html') {
                 <pre><code class="language-html">{{ disabledCode.html }}</code></pre>
+                }
+                @if (activeTabs['disabled'] === 'ts') {
+                <pre><code class="language-typescript">{{ disabledCode.ts }}</code></pre>
+                }
+                @if (activeTabs['disabled'] === 'scss') {
+                <pre><code class="language-scss">{{ disabledCode.scss }}</code></pre>
                 }
             </div>
         </div>
@@ -174,10 +224,20 @@
             <div class="tabs-bar">
                 <button class="tab-btn" [class.active]="activeTabs['forms'] === 'html'"
                     (click)="setTab('forms', 'html')">HTML</button>
+                <button class="tab-btn" [class.active]="activeTabs['forms'] === 'ts'"
+                    (click)="setTab('forms', 'ts')">TS</button>
+                <button class="tab-btn" [class.active]="activeTabs['forms'] === 'scss'"
+                    (click)="setTab('forms', 'scss')">SCSS</button>
             </div>
             <div class="code-viewer">
                 @if (activeTabs['forms'] === 'html') {
                 <pre><code class="language-html">{{ formsCode.html }}</code></pre>
+                }
+                @if (activeTabs['forms'] === 'ts') {
+                <pre><code class="language-typescript">{{ formsCode.ts }}</code></pre>
+                }
+                @if (activeTabs['forms'] === 'scss') {
+                <pre><code class="language-scss">{{ formsCode.scss }}</code></pre>
                 }
             </div>
         </div>

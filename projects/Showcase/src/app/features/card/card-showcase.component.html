@@ -1,70 +1,173 @@
-<div class="showcase-container">
-  <header class="showcase-header">
-    <h1>Card</h1>
-    <p>A versatile container for grouping content with a consistent look and feel.</p>
-  </header>
+<div class="content-body">
 
-  <section class="showcase-section">
-    <h2>Basic Card</h2>
-    <div class="example-box">
-      <div class="card-container">
-        <ziva-card>
-          <div class="card-content">
-            <h3>Standard Card</h3>
-            <p>This is a basic card with default padding, border, and shadow.</p>
-          </div>
-        </ziva-card>
-      </div>
+    <div class="component-header">
+        <h1 class="component-title">Card</h1>
+        <p class="component-description">
+            The <code>ziva-card</code> component is a flexible container for grouping content components together
+            with consistent borders, shadows, and spacing.
+        </p>
     </div>
-  </section>
 
-  <section class="showcase-section">
-    <h2>Content Types</h2>
-    <div class="example-box grid">
-      <div class="card-container">
-        <ziva-card>
-          <div class="card-content">
-            <h3 style="margin-top: 0">Card with Text</h3>
-            <p>Cards are perfect for displaying snippets of information, blog posts, or feature descriptions.</p>
-            <button style="margin-top: 1rem; padding: 8px 16px; cursor: pointer;">Action</button>
-          </div>
-        </ziva-card>
-      </div>
+    <!-- Section: Basic Card -->
+    <div class="section-card">
+        <div class="section-header">
+            <h2 class="section-title">Basic Card</h2>
+            <p class="section-desc">A simple card container with default styling using <code>ng-content</code>.</p>
+        </div>
 
-      <div class="card-container">
-        <ziva-card>
-          <div class="card-image-content">
-             <div class="placeholder-image">Image Area</div>
-             <div class="card-content">
-                <h3>Card with Image</h3>
-                <p>You can easily place images or other media inside the card.</p>
-             </div>
-          </div>
-        </ziva-card>
-      </div>
+        <div class="section-preview">
+            <div style="width: 100%; max-width: 500px;">
+                <ziva-card>
+                    <div class="card-content">
+                        <h3>Standard Card</h3>
+                        <p>This is a basic card with default padding, border, and shadow.</p>
+                    </div>
+                </ziva-card>
+            </div>
+        </div>
+
+        <div class="section-tabs">
+            <div class="tabs-bar">
+                <button class="tab-btn" [class.active]="activeTabs['basic'] === 'html'"
+                    (click)="setTab('basic', 'html')">HTML</button>
+                <button class="tab-btn" [class.active]="activeTabs['basic'] === 'ts'"
+                    (click)="setTab('basic', 'ts')">TS</button>
+                <button class="tab-btn" [class.active]="activeTabs['basic'] === 'scss'"
+                    (click)="setTab('basic', 'scss')">SCSS</button>
+            </div>
+            <div class="code-viewer">
+                @if (activeTabs['basic'] === 'html') {
+                <pre><code class="language-html">{{ basicCode.html }}</code></pre>
+                }
+                @if (activeTabs['basic'] === 'ts') {
+                <pre><code class="language-typescript">{{ basicCode.ts }}</code></pre>
+                }
+                @if (activeTabs['basic'] === 'scss') {
+                <pre><code class="language-scss">{{ basicCode.scss }}</code></pre>
+                }
+            </div>
+        </div>
     </div>
-  </section>
 
-  <section class="showcase-section">
-    <h2>Sizing & Layout</h2>
-    <p>Cards take up 100% of their parent container's width and height.</p>
-    <div class="example-box flex-row">
-      <div class="card-container small">
-        <ziva-card>
-          <div class="card-content">
-            <h3>Small</h3>
-            <p>Width: 200px</p>
-          </div>
-        </ziva-card>
-      </div>
-      <div class="card-container medium">
-        <ziva-card>
-          <div class="card-content">
-            <h3>Medium</h3>
-            <p>Width: 350px</p>
-          </div>
-        </ziva-card>
-      </div>
+    <!-- Section: Card with Content & Button -->
+    <div class="section-card">
+        <div class="section-header">
+            <h2 class="section-title">Card with Action</h2>
+            <p class="section-desc">Integrating other Ziva components like <code>zivaButton</code> inside the card.
+            </p>
+        </div>
+
+        <div class="section-preview">
+            <div style="width: 100%; max-width: 500px;">
+                <ziva-card>
+                    <div class="card-content">
+                        <h3 style="margin-top: 0">Card with Text & Action</h3>
+                        <p>Cards are perfect for displaying snippets of information, blog posts, or feature
+                            descriptions.</p>
+                        <button zivaButton variant="primary" style="margin-top: 1rem;">View More</button>
+                    </div>
+                </ziva-card>
+            </div>
+        </div>
+
+        <div class="section-tabs">
+            <div class="tabs-bar">
+                <button class="tab-btn" [class.active]="activeTabs['content'] === 'html'"
+                    (click)="setTab('content', 'html')">HTML</button>
+                <button class="tab-btn" [class.active]="activeTabs['content'] === 'ts'"
+                    (click)="setTab('content', 'ts')">TS</button>
+                <button class="tab-btn" [class.active]="activeTabs['content'] === 'scss'"
+                    (click)="setTab('content', 'scss')">SCSS</button>
+            </div>
+            <div class="code-viewer">
+                @if (activeTabs['content'] === 'html') {
+                <pre><code class="language-html">{{ contentCode.html }}</code></pre>
+                }
+                @if (activeTabs['content'] === 'ts') {
+                <pre><code class="language-typescript">{{ contentCode.ts }}</code></pre>
+                }
+                @if (activeTabs['content'] === 'scss') {
+                <pre><code class="language-scss">{{ contentCode.scss }}</code></pre>
+                }
+            </div>
+        </div>
     </div>
-  </section>
+
+    <!-- Section: Complex Example -->
+    <div class="section-card">
+        <div class="section-header">
+            <h2 class="section-title">Complex Composition</h2>
+            <p class="section-desc">A rich example combining icons, headers, and multiple action buttons.</p>
+        </div>
+
+        <div class="section-preview">
+            <div style="width: 100%; max-width: 500px;">
+                <ziva-card>
+                    <div class="card-content">
+                        <div
+                            style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem;">
+                            <h3 style="margin: 0;">Project Alpha</h3>
+                            <ziva-icon iconName="Star" iconColor="#f59e0b"></ziva-icon>
+                        </div>
+                        <p style="margin-bottom: 1.5rem; color: var(--color-text-secondary);">
+                            A comprehensive enterprise solution for managing supply chain logistics and real-time
+                            tracking.
+                        </p>
+                        <div style="display: flex; gap: 0.75rem;">
+                            <button zivaButton variant="primary">Edit</button>
+                            <button zivaButton variant="tertiary">Archive</button>
+                        </div>
+                    </div>
+                </ziva-card>
+            </div>
+        </div>
+
+        <div class="section-tabs">
+            <div class="tabs-bar">
+                <button class="tab-btn" [class.active]="activeTabs['complex'] === 'html'"
+                    (click)="setTab('complex', 'html')">HTML</button>
+                <button class="tab-btn" [class.active]="activeTabs['complex'] === 'ts'"
+                    (click)="setTab('complex', 'ts')">TS</button>
+                <button class="tab-btn" [class.active]="activeTabs['complex'] === 'scss'"
+                    (click)="setTab('complex', 'scss')">SCSS</button>
+            </div>
+            <div class="code-viewer">
+                @if (activeTabs['complex'] === 'html') {
+                <pre><code class="language-html">{{ complexCode.html }}</code></pre>
+                }
+                @if (activeTabs['complex'] === 'ts') {
+                <pre><code class="language-typescript">{{ complexCode.ts }}</code></pre>
+                }
+                @if (activeTabs['complex'] === 'scss') {
+                <pre><code class="language-scss">{{ complexCode.scss }}</code></pre>
+                }
+            </div>
+        </div>
+    </div>
+
+    <!-- API Reference -->
+    <div class="api-reference">
+        <h2 class="api-reference-title">API Reference</h2>
+        <table class="api-table">
+            <thead>
+                <tr>
+                    <th>Target</th>
+                    <th>Type</th>
+                    <th>Default</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (prop of apiProperties; track prop.name) {
+                <tr>
+                    <td><code>{{ prop.name }}</code></td>
+                    <td><code>{{ prop.type }}</code></td>
+                    <td><code>{{ prop.default }}</code></td>
+                    <td>{{ prop.description }}</td>
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
 </div>

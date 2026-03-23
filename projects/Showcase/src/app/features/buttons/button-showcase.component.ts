@@ -33,6 +33,13 @@ export class ButtonShowcaseComponent {
     html: `<button zivaButton>Default Button</button>
 <button zivaButton variant="primary">Primary Button</button>
 <button zivaButton variant="secondary">Secondary Button</button>`,
+    ts: `import { ZivaButtonDirective } from '@ziva-components';
+
+@Component({
+  imports: [ZivaButtonDirective],
+  // ...
+})`,
+    scss: `/* Default button styles are applied via directive */`
   };
 
   variantCode = {
@@ -46,6 +53,13 @@ export class ButtonShowcaseComponent {
 <button zivaButton variant="error">Error</button>
 <button zivaButton variant="warning">Warning</button>
 <button zivaButton variant="info">Info</button>`,
+    ts: `import { ZivaButtonDirective } from '@ziva-components';
+
+@Component({
+  imports: [ZivaButtonDirective],
+  // ...
+})`,
+    scss: `/* Variants are handled by the [variant] input */`
   };
 
   sizeCode = {
@@ -58,6 +72,13 @@ export class ButtonShowcaseComponent {
 <button zivaIconButton size="sm"><ziva-icon iconName="Plus" iconColor="#fff"></ziva-icon></button>
 <button zivaIconButton size="md"><ziva-icon iconName="Plus" iconColor="#fff"></ziva-icon></button>
 <button zivaIconButton size="lg"><ziva-icon iconName="Plus" iconColor="#fff"></ziva-icon></button>`,
+    ts: `import { ZivaButtonDirective, ZivaIconButtonDirective, ZivaIconComponent } from '@ziva-components';
+
+@Component({
+  imports: [ZivaButtonDirective, ZivaIconButtonDirective, ZivaIconComponent],
+  // ...
+})`,
+    scss: `/* Sizes are handled by the [size] input */`
   };
 
   iconButtonCode = {
@@ -67,6 +88,13 @@ export class ButtonShowcaseComponent {
 <button zivaIconButton variant="error"><ziva-icon iconName="Trash" iconColor="#fff"></ziva-icon></button>
 <button zivaIconButton variant="warning"><ziva-icon iconName="AlertTriangle" iconColor="#fff"></ziva-icon></button>
 <button zivaIconButton variant="tertiary"><ziva-icon iconName="Settings"></ziva-icon></button>`,
+    ts: `import { ZivaIconButtonDirective, ZivaIconComponent } from '@ziva-components';
+
+@Component({
+  imports: [ZivaIconButtonDirective, ZivaIconComponent],
+  // ...
+})`,
+    scss: `/* Icon buttons use zivaIconButton directive */`
   };
 
   disabledCode = {
@@ -77,6 +105,13 @@ export class ButtonShowcaseComponent {
 <button zivaIconButton disabled>
   <ziva-icon iconName="Lock" iconColor="#6b7280"></ziva-icon>
 </button>`,
+    ts: `import { ZivaButtonDirective, ZivaIconButtonDirective } from '@ziva-components';
+
+@Component({
+  imports: [ZivaButtonDirective, ZivaIconButtonDirective],
+  // ...
+})`,
+    scss: `/* Disabled styles are applied via [disabled] attribute */`
   };
 
   interactiveCode = {
@@ -99,6 +134,25 @@ export class ButtonShowcaseComponent {
     </div>
   }
 </div>`,
+    ts: `export class ExampleComponent {
+  selectedAction = 'Create Project';
+  isDropdownOpen = false;
+
+  toggleDropdown() {
+    this.isDropdownOpen = !this.isDropdownOpen;
+  }
+
+  selectAction(action: string) {
+    this.selectedAction = action;
+    this.isDropdownOpen = false;
+  }
+}`,
+    scss: `.split-button {
+  display: flex;
+  overflow: hidden;
+  button[zivaButton] { border-radius: 8px 0 0 8px; }
+  button[zivaIconButton] { border-radius: 0 8px 8px 0; }
+}`
   };
 
   // Interactive state

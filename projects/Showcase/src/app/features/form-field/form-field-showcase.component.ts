@@ -25,7 +25,14 @@ export class FormFieldShowcaseComponent {
     html: `<ziva-form-field>
   <ziva-label>First Name</ziva-label>
   <input zivaInput placeholder="Enter your first name" />
-</ziva-form-field>`
+</ziva-form-field>`,
+    ts: `import { ZivaFormFieldComponent, ZivaLabelComponent, ZivaInputDirective } from '@ziva-components';
+
+@Component({
+  imports: [ZivaFormFieldComponent, ZivaLabelComponent, ZivaInputDirective],
+  // ...
+})`,
+    scss: `/* Form field handles label and input layout automatically */`
   };
 
   hintCode = {
@@ -33,7 +40,14 @@ export class FormFieldShowcaseComponent {
   <ziva-label>Username</ziva-label>
   <input zivaInput placeholder="e.g. jdoe" />
   <ziva-footer>Your unique identifier on the platform.</ziva-footer>
-</ziva-form-field>`
+</ziva-form-field>`,
+    ts: `import { ZivaFormFieldComponent, ZivaLabelComponent, ZivaInputDirective, ZivaFooterComponent } from '@ziva-components';
+
+@Component({
+  imports: [ZivaFormFieldComponent, ZivaLabelComponent, ZivaInputDirective, ZivaFooterComponent],
+  // ...
+})`,
+    scss: `/* ZivaFooter is useful for display-only hints and descriptions */`
   };
 
   statusCode = {
@@ -56,7 +70,14 @@ export class FormFieldShowcaseComponent {
   <ziva-label>Email Address</ziva-label>
   <input zivaInput type="email" [error]="true" value="invalid-email" />
   <ziva-footer>Please enter a valid email address.</ziva-footer>
-</ziva-form-field>`
+</ziva-form-field>`,
+    ts: `@Component({
+  templateUrl: './example.html'
+})
+export class StatusExample {
+  emailError = true;
+}`,
+    scss: `/* Status colors are applied via [status] and [error] inputs */`
   };
 
   textareaCode = {
@@ -64,7 +85,11 @@ export class FormFieldShowcaseComponent {
   <ziva-label>Bio</ziva-label>
   <textarea zivaInput placeholder="Describe yourself..."></textarea>
   <ziva-footer>Limited to 200 characters.</ziva-footer>
-</ziva-form-field>`
+</ziva-form-field>`,
+    ts: `@Component({
+  template: '...'
+})`,
+    scss: `/* Form fields fully support textarea elements */`
   };
 
   apiProperties = [

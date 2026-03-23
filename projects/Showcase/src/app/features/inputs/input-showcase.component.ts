@@ -39,12 +39,26 @@ export class InputShowcaseComponent {
 
 <!-- Standard (underline) -->
 <input zivaInput appearance="standard" placeholder="Standard input" />`,
+        ts: `import { ZivaInputDirective } from '@ziva-components';
+
+@Component({
+  imports: [ZivaInputDirective],
+  // ...
+})`,
+        scss: `/* Appearance is handled by the [appearance] input */`
     };
 
     sizeCode = {
         html: `<input zivaInput size="sm" placeholder="Small" />
 <input zivaInput size="md" placeholder="Medium" />
 <input zivaInput size="lg" placeholder="Large" />`,
+        ts: `import { ZivaInputDirective } from '@ziva-components';
+
+@Component({
+  imports: [ZivaInputDirective],
+  // ...
+})`,
+        scss: `/* Sizes are handled by the [size] input */`
     };
 
     statesCode = {
@@ -53,6 +67,13 @@ export class InputShowcaseComponent {
 
 <!-- Disabled state -->
 <input zivaInput disabled placeholder="Disabled input" />`,
+        ts: `import { ZivaInputDirective } from '@ziva-components';
+
+@Component({
+  imports: [ZivaInputDirective],
+  // ...
+})`,
+        scss: `/* States are handled by [error] and [disabled] attributes */`
     };
 
     colorsCode = {
@@ -61,6 +82,24 @@ export class InputShowcaseComponent {
 <input zivaInput class="ziva-input-success" placeholder="Success input" />
 <input zivaInput class="ziva-input-warning" placeholder="Warning input" />
 <input zivaInput class="ziva-input-info" placeholder="Info input" />`,
+        ts: `import { ZivaInputDirective } from '@ziva-components';
+
+@Component({
+  imports: [ZivaInputDirective],
+  // ...
+})`,
+        scss: `.ziva-input-success {
+  --input-focus-border: var(--color-success);
+  --input-focus-shadow: 0 0 0 4px var(--color-success-tertiary);
+}
+.ziva-input-warning {
+  --input-focus-border: var(--color-warning);
+  --input-focus-shadow: 0 0 0 4px var(--color-warning-tertiary);
+}
+.ziva-input-info {
+  --input-focus-border: var(--color-info);
+  --input-focus-shadow: 0 0 0 4px var(--color-info-tertiary);
+}`
     };
 
     typesCode = {
@@ -70,6 +109,13 @@ export class InputShowcaseComponent {
 
 <!-- Native Limits -->
 <input zivaInput maxlength="10" placeholder="Limit: 10 chars" />`,
+        ts: `import { ZivaInputDirective } from '@ziva-components';
+
+@Component({
+  imports: [ZivaInputDirective],
+  // ...
+})`,
+        scss: `/* Native input types work seamlessly with zivaInput */`
     };
 
     textareaCode = {
@@ -78,5 +124,12 @@ export class InputShowcaseComponent {
 
 <!-- Filled textarea -->
 <textarea zivaInput appearance="filled" placeholder="Filled textarea"></textarea>`,
+        ts: `import { ZivaInputDirective } from '@ziva-components';
+
+@Component({
+  imports: [ZivaInputDirective],
+  // ...
+})`,
+        scss: `/* zivaInput directive also supports set of textarea styles */`
     };
 }

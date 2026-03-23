@@ -45,6 +45,13 @@ export class CheckboxShowcaseComponent {
     html: `<ziva-checkbox>Accept terms and conditions</ziva-checkbox>
 <ziva-checkbox [checked]="true">Pre-checked option</ziva-checkbox>
 <ziva-checkbox>Subscribe to newsletter</ziva-checkbox>`,
+    ts: `import { ZivaCheckboxComponent } from '@ziva-components';
+
+@Component({
+  imports: [ZivaCheckboxComponent],
+  // ...
+})`,
+    scss: `/* Checkbox is a standalone component */`
   };
 
   colorCode = {
@@ -52,12 +59,26 @@ export class CheckboxShowcaseComponent {
 <ziva-checkbox color="success" [checked]="true">Success</ziva-checkbox>
 <ziva-checkbox color="error" [checked]="true">Error</ziva-checkbox>
 <ziva-checkbox color="warning" [checked]="true">Warning</ziva-checkbox>`,
+    ts: `import { ZivaCheckboxComponent } from '@ziva-components';
+
+@Component({
+  imports: [ZivaCheckboxComponent],
+  // ...
+})`,
+    scss: `/* Colors are applied via the [color] input */`
   };
 
   sizeCode = {
     html: `<ziva-checkbox size="sm" [checked]="true">Small</ziva-checkbox>
 <ziva-checkbox size="md" [checked]="true">Medium</ziva-checkbox>
 <ziva-checkbox size="lg" [checked]="true">Large</ziva-checkbox>`,
+    ts: `import { ZivaCheckboxComponent } from '@ziva-components';
+
+@Component({
+  imports: [ZivaCheckboxComponent],
+  // ...
+})`,
+    scss: `/* Sizes are handled by the [size] input */`
   };
 
   indeterminateCode = {
@@ -68,12 +89,26 @@ export class CheckboxShowcaseComponent {
 <ziva-checkbox [checked]="true">Item 1 (selected)</ziva-checkbox>
 <ziva-checkbox>Item 2 (not selected)</ziva-checkbox>
 <ziva-checkbox [checked]="true">Item 3 (selected)</ziva-checkbox>`,
+    ts: `@Component({
+  templateUrl: './example.html'
+})
+export class CheckboxExample {
+  isIndeterminate = true;
+}`,
+    scss: `/* Indeterminate state is visual only, does not affect value */`
   };
 
   disabledCode = {
     html: `<ziva-checkbox [disabled]="true">Disabled unchecked</ziva-checkbox>
 <ziva-checkbox [disabled]="true" [checked]="true">Disabled checked</ziva-checkbox>
 <ziva-checkbox [disabled]="true" [indeterminate]="true">Disabled indeterminate</ziva-checkbox>`,
+    ts: `import { ZivaCheckboxComponent } from '@ziva-components';
+
+@Component({
+  imports: [ZivaCheckboxComponent],
+  // ...
+})`,
+    scss: `/* Disabled state is handled by the [disabled] input */`
   };
 
   formsCode = {
@@ -87,6 +122,10 @@ export class CheckboxShowcaseComponent {
 <ziva-checkbox [error]="true" [required]="true">
   This field is required
 </ziva-checkbox>`,
+    ts: `export class FormExample {
+  agreedToTerms = false;
+}`,
+    scss: `/* Checkbox supports two-way binding on [checked] property */`
   };
 
   // Interactive state
