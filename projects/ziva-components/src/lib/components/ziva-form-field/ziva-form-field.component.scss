@@ -2,13 +2,13 @@
     display: flex;
     flex-direction: column;
     width: 100%;
-    margin-bottom: 1rem;
+    margin-bottom: var(--form-field-container-margin-bottom);
 
     ziva-label {
-        margin-bottom: 6px;
-        font-size: 0.875rem;
-        font-weight: 500;
-        color: var(--color-text-primary);
+        margin-bottom: var(--form-field-label-margin);
+        font-size: var(--form-field-label-font-size);
+        font-weight: var(--form-field-label-font-weight);
+        color: var(--form-field-label-color);
         transition: color 0.2s ease;
     }
 
@@ -18,13 +18,13 @@
     }
 
     .ziva-form-field-footer {
-        padding-top: 4px;
+        padding-top: var(--form-field-footer-margin);
     }
 
     // Handle status states of the child input to highlight label/footer
     &:has(.ziva-input--focused) {
         ziva-label {
-            color: var(--color-primary);
+            color: var(--form-field-focus-label-color);
         }
     }
 
@@ -32,7 +32,7 @@
 
         ziva-label,
         .ziva-form-field-footer {
-            color: var(--color-error);
+            color: var(--form-field-error-color);
         }
     }
 }

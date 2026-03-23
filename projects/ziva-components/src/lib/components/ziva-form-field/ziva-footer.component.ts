@@ -7,9 +7,9 @@ import { Component } from '@angular/core';
   styles: [`
     :host {
       display: block;
-      margin-top: 4px;
-      font-size: 12px;
-      color: var(--color-text-secondary);
+      margin-top: var(--form-field-footer-margin);
+      font-size: var(--form-field-footer-font-size);
+      color: var(--form-field-footer-color);
     }
   `]
 })

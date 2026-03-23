@@ -7,10 +7,10 @@ import { Component } from '@angular/core';
     styles: [`
     :host {
       display: block;
-      margin-bottom: 4px;
-      font-size: 14px;
-      font-weight: 500;
-      color: var(--color-text-secondary);
+      margin-bottom: var(--form-field-label-margin);
+      font-size: var(--form-field-label-font-size);
+      font-weight: var(--form-field-label-font-weight);
+      color: var(--form-field-label-color);
     }
   `]
 })
