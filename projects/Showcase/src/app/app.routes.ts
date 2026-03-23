@@ -5,6 +5,7 @@ import { IconShowcaseComponent } from './features/icons/icon-showcase.component'
 import { ButtonShowcaseComponent } from './features/buttons/button-showcase.component';
 import { InputShowcaseComponent } from './features/inputs/input-showcase.component';
 import { FormFieldShowcaseComponent } from './features/form-field/form-field-showcase.component';
+import { CheckboxShowcaseComponent } from './features/checkbox/checkbox-showcase.component';
 import { ComingSoonComponent } from './features/common/coming-soon/coming-soon.component';
 
 export const routes: Routes = [
@@ -24,6 +25,7 @@ export const routes: Routes = [
                     { path: 'buttons', component: ButtonShowcaseComponent },
                     { path: 'inputs', component: InputShowcaseComponent },
                     { path: 'form-field', component: FormFieldShowcaseComponent },
+                    { path: 'checkbox', component: CheckboxShowcaseComponent },
                 ]
             }
         ]

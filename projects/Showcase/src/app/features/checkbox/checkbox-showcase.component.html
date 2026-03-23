@@ -1,0 +1,211 @@
+<div class="content-body">
+
+    <div class="component-header">
+        <h1 class="component-title">Checkbox</h1>
+        <p class="component-description">
+            <code>ziva-checkbox</code> provides an accessible checkbox component with built-in label,
+            keyboard navigation, screen-reader support, and Angular forms integration.
+        </p>
+    </div>
+
+    <!-- Section: Basic Usage -->
+    <div class="section-card">
+        <div class="section-header">
+            <h2 class="section-title">Basic Usage</h2>
+            <p class="section-desc">Simple checkboxes with projected label content. Click the label or the box to toggle.</p>
+        </div>
+
+        <div class="section-preview">
+            <ziva-checkbox>Accept terms and conditions</ziva-checkbox>
+            <ziva-checkbox [checked]="true">Pre-checked option</ziva-checkbox>
+            <ziva-checkbox>Subscribe to newsletter</ziva-checkbox>
+        </div>
+
+        <div class="section-tabs">
+            <div class="tabs-bar">
+                <button class="tab-btn" [class.active]="activeTabs['basic'] === 'html'"
+                    (click)="setTab('basic', 'html')">HTML</button>
+            </div>
+            <div class="code-viewer">
+                @if (activeTabs['basic'] === 'html') {
+                <pre><code class="language-html">{{ basicCode.html }}</code></pre>
+                }
+            </div>
+        </div>
+    </div>
+
+    <!-- Section: Color Variants -->
+    <div class="section-card">
+        <div class="section-header">
+            <h2 class="section-title">Color Variants</h2>
+            <p class="section-desc">Choose from brand and feedback colors to convey different semantic meanings.</p>
+        </div>
+
+        <div class="section-preview">
+            <ziva-checkbox color="primary" [checked]="true">Primary</ziva-checkbox>
+            <ziva-checkbox color="success" [checked]="true">Success</ziva-checkbox>
+            <ziva-checkbox color="error" [checked]="true">Error</ziva-checkbox>
+            <ziva-checkbox color="warning" [checked]="true">Warning</ziva-checkbox>
+        </div>
+
+        <div class="section-tabs">
+            <div class="tabs-bar">
+                <button class="tab-btn" [class.active]="activeTabs['colors'] === 'html'"
+                    (click)="setTab('colors', 'html')">HTML</button>
+            </div>
+            <div class="code-viewer">
+                @if (activeTabs['colors'] === 'html') {
+                <pre><code class="language-html">{{ colorCode.html }}</code></pre>
+                }
+            </div>
+        </div>
+    </div>
+
+    <!-- Section: Sizes -->
+    <div class="section-card">
+        <div class="section-header">
+            <h2 class="section-title">Sizes</h2>
+            <p class="section-desc">Available in small, medium (default), and large sizes.</p>
+        </div>
+
+        <div class="section-preview">
+            <ziva-checkbox size="sm" [checked]="true">Small</ziva-checkbox>
+            <ziva-checkbox size="md" [checked]="true">Medium</ziva-checkbox>
+            <ziva-checkbox size="lg" [checked]="true">Large</ziva-checkbox>
+        </div>
+
+        <div class="section-tabs">
+            <div class="tabs-bar">
+                <button class="tab-btn" [class.active]="activeTabs['sizes'] === 'html'"
+                    (click)="setTab('sizes', 'html')">HTML</button>
+            </div>
+            <div class="code-viewer">
+                @if (activeTabs['sizes'] === 'html') {
+                <pre><code class="language-html">{{ sizeCode.html }}</code></pre>
+                }
+            </div>
+        </div>
+    </div>
+
+    <!-- Section: Indeterminate -->
+    <div class="section-card">
+        <div class="section-header">
+            <h2 class="section-title">Indeterminate State</h2>
+            <p class="section-desc">The indeterminate (mixed) state is common for "select all" patterns where only some children are selected.</p>
+        </div>
+
+        <div class="section-preview">
+            <div class="checkbox-group">
+                <ziva-checkbox
+                    [checked]="isAllChecked"
+                    [indeterminate]="isIndeterminate"
+                    (checkedChange)="onSelectAllChange($event)">
+                    Select all items
+                </ziva-checkbox>
+                <div class="checkbox-children">
+                    <ziva-checkbox [(checked)]="child1" (checkedChange)="onChildChange()">Item 1</ziva-checkbox>
+                    <ziva-checkbox [(checked)]="child2" (checkedChange)="onChildChange()">Item 2</ziva-checkbox>
+                    <ziva-checkbox [(checked)]="child3" (checkedChange)="onChildChange()">Item 3</ziva-checkbox>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-tabs">
+            <div class="tabs-bar">
+                <button class="tab-btn" [class.active]="activeTabs['indeterminate'] === 'html'"
+                    (click)="setTab('indeterminate', 'html')">HTML</button>
+            </div>
+            <div class="code-viewer">
+                @if (activeTabs['indeterminate'] === 'html') {
+                <pre><code class="language-html">{{ indeterminateCode.html }}</code></pre>
+                }
+            </div>
+        </div>
+    </div>
+
+    <!-- Section: Disabled State -->
+    <div class="section-card">
+        <div class="section-header">
+            <h2 class="section-title">Disabled State</h2>
+            <p class="section-desc">Disabled checkboxes prevent interaction and apply visual dimming.</p>
+        </div>
+
+        <div class="section-preview">
+            <ziva-checkbox [disabled]="true">Disabled unchecked</ziva-checkbox>
+            <ziva-checkbox [disabled]="true" [checked]="true">Disabled checked</ziva-checkbox>
+            <ziva-checkbox [disabled]="true" [indeterminate]="true">Disabled indeterminate</ziva-checkbox>
+        </div>
+
+        <div class="section-tabs">
+            <div class="tabs-bar">
+                <button class="tab-btn" [class.active]="activeTabs['disabled'] === 'html'"
+                    (click)="setTab('disabled', 'html')">HTML</button>
+            </div>
+            <div class="code-viewer">
+                @if (activeTabs['disabled'] === 'html') {
+                <pre><code class="language-html">{{ disabledCode.html }}</code></pre>
+                }
+            </div>
+        </div>
+    </div>
+
+    <!-- Section: Forms Integration -->
+    <div class="section-card">
+        <div class="section-header">
+            <h2 class="section-title">Forms &amp; Validation</h2>
+            <p class="section-desc">Two-way binding with <code>[(checked)]</code> and error state for validation feedback.</p>
+        </div>
+
+        <div class="section-preview">
+            <div class="forms-demo">
+                <ziva-checkbox [(checked)]="agreedToTerms">
+                    I agree to the terms and conditions
+                </ziva-checkbox>
+                <span class="status-badge" [class.status-badge--active]="agreedToTerms">
+                    {{ agreedToTerms ? '✓ Agreed' : '✗ Not agreed' }}
+                </span>
+            </div>
+            <ziva-checkbox [error]="true" [required]="true">
+                This field is required
+            </ziva-checkbox>
+        </div>
+
+        <div class="section-tabs">
+            <div class="tabs-bar">
+                <button class="tab-btn" [class.active]="activeTabs['forms'] === 'html'"
+                    (click)="setTab('forms', 'html')">HTML</button>
+            </div>
+            <div class="code-viewer">
+                @if (activeTabs['forms'] === 'html') {
+                <pre><code class="language-html">{{ formsCode.html }}</code></pre>
+                }
+            </div>
+        </div>
+    </div>
+
+    <!-- API Reference -->
+    <div class="api-reference">
+        <h2 class="api-reference-title">API Reference</h2>
+        <table class="api-table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Type</th>
+                    <th>Default</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (prop of apiProperties; track prop.name) {
+                <tr>
+                    <td><code>{{ prop.name }}</code></td>
+                    <td><code>{{ prop.type }}</code></td>
+                    <td><code>{{ prop.default }}</code></td>
+                    <td>{{ prop.description }}</td>
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+</div>

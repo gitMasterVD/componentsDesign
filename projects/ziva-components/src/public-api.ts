@@ -3,10 +3,9 @@
  */
 
 export * from './lib/ziva-components';
-export * from './lib/components/ziva-icon/ziva-icon.component';
-export * from './lib/components/ziva-button/ziva-button.directive';
-export * from './lib/components/ziva-button/ziva-icon-button.directive';
-export * from './lib/components/ziva-input/ziva-input.directive';
-export * from './lib/components/ziva-form-field/ziva-label.component';
-export * from './lib/components/ziva-form-field/ziva-footer.component';
-export * from './lib/components/ziva-form-field/ziva-form-field.component';
+export * from './lib/components/ziva-icon';
+export * from './lib/components/ziva-button';
+export * from './lib/components/ziva-input';
+export * from './lib/components/ziva-form-field';
+export * from './lib/components/ziva-checkbox';
+

@@ -1,0 +1,19 @@
+// =============================================================================
+// ZIVA FORM FIELD TOKENS — _form-field.scss
+// Design tokens and styles for form-field, label, and footer.
+// =============================================================================
+
+:root {
+    --form-field-label-color: var(--color-text-primary);
+    --form-field-label-font-size: 0.875rem;
+    --form-field-label-font-weight: 500;
+    --form-field-label-margin: 6px;
+
+    --form-field-footer-color: var(--color-text-secondary);
+    --form-field-footer-font-size: 0.75rem;
+    --form-field-footer-margin: 4px;
+
+    --form-field-focus-label-color: var(--color-primary);
+    --form-field-error-color: var(--color-error);
+}
+

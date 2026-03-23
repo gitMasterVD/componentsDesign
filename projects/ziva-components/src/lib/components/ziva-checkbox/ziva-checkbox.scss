@@ -1,0 +1,244 @@
+// =============================================================================
+// ZIVA CHECKBOX STYLES — ziva-checkbox.scss
+// Styles for the ziva-checkbox component.
+// =============================================================================
+
+.ziva-checkbox {
+    display: inline-flex;
+    align-items: flex-start;
+    gap: var(--checkbox-label-gap);
+    cursor: pointer;
+    user-select: none;
+    position: relative;
+    line-height: 1;
+
+    // -------------------------------------------------------------------------
+    // VISUALLY HIDDEN NATIVE INPUT (screen-reader accessible)
+    // -------------------------------------------------------------------------
+    &__input {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+    }
+
+    // -------------------------------------------------------------------------
+    // CUSTOM VISUAL BOX
+    // -------------------------------------------------------------------------
+    &__box {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        width: var(--checkbox-size);
+        height: var(--checkbox-size);
+        border: var(--checkbox-border-width) solid var(--checkbox-border);
+        border-radius: var(--checkbox-radius);
+        background-color: var(--checkbox-bg);
+        transition: var(--checkbox-transition);
+        position: relative;
+    }
+
+    // -------------------------------------------------------------------------
+    // CHECK / INDETERMINATE ICON
+    // -------------------------------------------------------------------------
+    &__icon {
+        width: 70%;
+        height: 70%;
+        color: var(--checkbox-check-color);
+        opacity: 0;
+        transform: scale(0.4);
+        transition: opacity 0.15s ease, transform 0.15s ease;
+
+        &--check,
+        &--indeterminate {
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+
+    // -------------------------------------------------------------------------
+    // LABEL
+    // -------------------------------------------------------------------------
+    &__label {
+        color: var(--checkbox-label-color);
+        font-size: var(--checkbox-label-font-size);
+        font-weight: var(--checkbox-label-font-weight);
+        line-height: var(--checkbox-size);
+        transition: color 0.2s ease;
+    }
+
+    // =========================================================================
+    // STATES
+    // =========================================================================
+
+    // --- Hover ---
+    &:hover:not(.ziva-checkbox--disabled) {
+        .ziva-checkbox__box {
+            border-color: var(--checkbox-hover-border);
+        }
+    }
+
+    // --- Focus visible (keyboard only) ---
+    &--focused:not(.ziva-checkbox--disabled) {
+        .ziva-checkbox__box {
+            box-shadow: var(--checkbox-focus-shadow);
+            border-color: var(--checkbox-hover-border);
+        }
+    }
+
+    // --- Checked ---
+    &--checked:not(.ziva-checkbox--disabled) {
+        .ziva-checkbox__box {
+            background-color: var(--checkbox-checked-bg);
+            border-color: var(--checkbox-checked-border);
+        }
+    }
+
+    // --- Indeterminate ---
+    &--indeterminate:not(.ziva-checkbox--disabled) {
+        .ziva-checkbox__box {
+            background-color: var(--checkbox-checked-bg);
+            border-color: var(--checkbox-checked-border);
+        }
+    }
+
+    // --- Disabled ---
+    &--disabled {
+        cursor: not-allowed;
+        opacity: 0.55;
+
+        .ziva-checkbox__box {
+            background-color: var(--checkbox-disabled-bg);
+            border-color: var(--checkbox-disabled-border);
+        }
+
+        .ziva-checkbox__icon {
+            color: var(--checkbox-disabled-check-color);
+        }
+
+        .ziva-checkbox__label {
+            color: var(--checkbox-label-disabled-color);
+        }
+    }
+
+    &--disabled.ziva-checkbox--checked,
+    &--disabled.ziva-checkbox--indeterminate {
+        .ziva-checkbox__box {
+            background-color: var(--checkbox-disabled-bg);
+            border-color: var(--checkbox-disabled-border);
+        }
+    }
+
+    // --- Error ---
+    &--error:not(.ziva-checkbox--disabled) {
+        .ziva-checkbox__box {
+            border-color: var(--checkbox-error-border);
+        }
+
+        &.ziva-checkbox--focused .ziva-checkbox__box {
+            box-shadow: var(--checkbox-error-shadow);
+        }
+    }
+
+    // =========================================================================
+    // COLOR VARIANTS (override checked background)
+    // =========================================================================
+
+    &--primary.ziva-checkbox--checked:not(.ziva-checkbox--disabled),
+    &--primary.ziva-checkbox--indeterminate:not(.ziva-checkbox--disabled) {
+        .ziva-checkbox__box {
+            background-color: var(--checkbox-checked-bg);
+            border-color: var(--checkbox-checked-border);
+        }
+    }
+
+    &--success.ziva-checkbox--checked:not(.ziva-checkbox--disabled),
+    &--success.ziva-checkbox--indeterminate:not(.ziva-checkbox--disabled) {
+        .ziva-checkbox__box {
+            background-color: var(--checkbox-success-bg);
+            border-color: var(--checkbox-success-border);
+        }
+
+        .ziva-checkbox__icon {
+            color: var(--checkbox-success-check);
+        }
+    }
+
+    &--error-color.ziva-checkbox--checked:not(.ziva-checkbox--disabled),
+    &--error-color.ziva-checkbox--indeterminate:not(.ziva-checkbox--disabled) {
+        .ziva-checkbox__box {
+            background-color: var(--checkbox-error-bg);
+            border-color: var(--checkbox-error-border-checked);
+        }
+
+        .ziva-checkbox__icon {
+            color: var(--checkbox-error-check);
+        }
+    }
+
+    &--warning.ziva-checkbox--checked:not(.ziva-checkbox--disabled),
+    &--warning.ziva-checkbox--indeterminate:not(.ziva-checkbox--disabled) {
+        .ziva-checkbox__box {
+            background-color: var(--checkbox-warning-bg);
+            border-color: var(--checkbox-warning-border);
+        }
+
+        .ziva-checkbox__icon {
+            color: var(--checkbox-warning-check);
+        }
+    }
+
+    // =========================================================================
+    // SIZE VARIANTS
+    // =========================================================================
+
+    &--sm {
+        gap: 8px;
+
+        .ziva-checkbox__box {
+            width: 14px;
+            height: 14px;
+            border-radius: 3px;
+        }
+
+        .ziva-checkbox__label {
+            font-size: 12px;
+            line-height: 14px;
+        }
+    }
+
+    &--md {
+        gap: 10px;
+
+        .ziva-checkbox__box {
+            width: 18px;
+            height: 18px;
+        }
+
+        .ziva-checkbox__label {
+            font-size: 14px;
+            line-height: 18px;
+        }
+    }
+
+    &--lg {
+        gap: 12px;
+
+        .ziva-checkbox__box {
+            width: 22px;
+            height: 22px;
+            border-radius: 5px;
+        }
+
+        .ziva-checkbox__label {
+            font-size: 16px;
+            line-height: 22px;
+        }
+    }
+}

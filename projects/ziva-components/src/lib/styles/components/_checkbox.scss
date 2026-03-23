@@ -1,0 +1,57 @@
+// =============================================================================
+// ZIVA CHECKBOX TOKENS — _checkbox.scss
+// Design tokens for the ziva-checkbox component.
+// Override in _light.scss / _dark.scss for theme switching.
+// =============================================================================
+
+:root {
+    // --- Dimensions ---
+    --checkbox-size: 18px;
+    --checkbox-radius: 4px;
+    --checkbox-label-gap: 10px;
+
+    // --- Base ---
+    --checkbox-bg: transparent;
+    --checkbox-border: var(--color-border);
+    --checkbox-border-width: 2px;
+    --checkbox-transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+
+    // --- Checked ---
+    --checkbox-checked-bg: var(--color-primary);
+    --checkbox-checked-border: var(--color-primary);
+    --checkbox-check-color: var(--color-on-primary);
+
+    // --- Focus ---
+    --checkbox-focus-shadow: none;
+
+    // --- Hover ---
+    --checkbox-hover-border: var(--color-primary);
+
+    // --- Disabled ---
+    --checkbox-disabled-bg: var(--color-disabled);
+    --checkbox-disabled-border: var(--color-disabled);
+    --checkbox-disabled-check-color: var(--color-on-disabled);
+
+    // --- Error ---
+    --checkbox-error-border: var(--color-error);
+    --checkbox-error-shadow: none;
+
+    // --- Label ---
+    --checkbox-label-color: var(--color-text-primary);
+    --checkbox-label-font-size: 14px;
+    --checkbox-label-font-weight: 400;
+    --checkbox-label-disabled-color: var(--color-on-disabled);
+
+    // --- Color variants ---
+    --checkbox-success-bg: var(--color-success);
+    --checkbox-success-border: var(--color-success);
+    --checkbox-success-check: var(--color-on-success);
+
+    --checkbox-error-bg: var(--color-error);
+    --checkbox-error-border-checked: var(--color-error);
+    --checkbox-error-check: var(--color-on-error);
+
+    --checkbox-warning-bg: var(--color-warning);
+    --checkbox-warning-border: var(--color-warning);
+    --checkbox-warning-check: var(--color-on-warning);
+}

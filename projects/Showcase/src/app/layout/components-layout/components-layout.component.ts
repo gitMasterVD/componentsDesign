@@ -15,8 +15,10 @@ export class ComponentsLayoutComponent {
         { label: 'Icon', path: '/components/icons', icon: 'Zap' },
         { label: 'Button', path: '/components/buttons', icon: 'Square' },
         { label: 'Input', path: '/components/inputs', icon: 'Type' },
-        { label: 'Form Field', path: '/components/form-field', icon: 'TextSelect' }
+        { label: 'Form Field', path: '/components/form-field', icon: 'TextSelect' },
+        { label: 'Checkbox', path: '/components/checkbox', icon: 'Type' }
     ];
+
 
     constructor(private router: Router) { }
 

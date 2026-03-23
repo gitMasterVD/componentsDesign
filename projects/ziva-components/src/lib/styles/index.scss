@@ -5,12 +5,5 @@
 @forward './theme/light';
 @forward './theme/dark';
 
-// Components
-@forward './components/button';
-@forward '../components/ziva-button/ziva-button';
-@forward './components/icon';
-
-// Input
-@forward './components/input';
-@forward '../components/ziva-input/ziva-input';
-@forward '../components/ziva-form-field/ziva-form-field.component';
+// Components & Tokens
+@use './components';

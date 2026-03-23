@@ -21,6 +21,7 @@ export class SidebarComponent {
         { label: 'Icon', link: '/components/icons', icon: 'Image' },
         { label: 'Button', link: '/components/buttons', icon: 'Square' },
         { label: 'Input', link: '/components/inputs', icon: 'Type' },
-        { label: 'Form Field', link: '/components/form-field', icon: 'TextSelect' }
+        { label: 'Form Field', link: '/components/form-field', icon: 'TextSelect' },
+        { label: 'Checkbox', link: '/components/checkbox', icon: 'Type' }
     ];
 }
