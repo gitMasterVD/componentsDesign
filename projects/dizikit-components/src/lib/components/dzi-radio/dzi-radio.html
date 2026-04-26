@@ -1,0 +1,49 @@
+<label
+    class="dzi-radio"
+    [class.dzi-radio--checked]="checked"
+    [class.dzi-radio--disabled]="disabled"
+    [class.dzi-radio--error]="error"
+    [class.dzi-radio--focused]="isFocused"
+    [class.dzi-radio--sm]="size === 'sm'"
+    [class.dzi-radio--md]="size === 'md'"
+    [class.dzi-radio--lg]="size === 'lg'"
+    [class.dzi-radio--primary]="color === 'primary'"
+    [class.dzi-radio--success]="color === 'success'"
+    [class.dzi-radio--error-color]="color === 'error'"
+    [class.dzi-radio--warning]="color === 'warning'"
+    [attr.for]="inputId"
+>
+    <!-- Visually hidden native radio for accessibility -->
+    <input
+        #inputEl
+        type="radio"
+        class="dzi-radio__input"
+        [id]="inputId"
+        [checked]="checked"
+        [disabled]="disabled"
+        [required]="required"
+        [attr.name]="name"
+        [attr.value]="value"
+        [attr.aria-checked]="checked"
+        [attr.aria-disabled]="disabled"
+        [attr.aria-required]="required || null"
+        [attr.aria-label]="ariaLabel || null"
+        [attr.aria-labelledby]="ariaLabelledBy || null"
+        [attr.aria-describedby]="ariaDescribedBy || null"
+        [attr.tabindex]="disabled ? -1 : 0"
+        (change)="onInputChange($event)"
+        (focus)="onFocus()"
+        (blur)="onBlur()"
+    />
+
+    <!-- Custom visual radio -->
+    <span class="dzi-radio__box" aria-hidden="true">
+        <!-- Radio inner dot -->
+        <span class="dzi-radio__dot" [class.dzi-radio__dot--visible]="checked"></span>
+    </span>
+
+    <!-- Label content (projected) -->
+    <span class="dzi-radio__label">
+        <ng-content></ng-content>
+    </span>
+</label>

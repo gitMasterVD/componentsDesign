@@ -15,7 +15,7 @@ import {
   // Disabled
   Save, Trash2, Trash, Plus, Check, TextSelect,
   // Click events
-  Download, Share2, Copy, ChevronDown,
+  Download, Share2, Copy, ChevronDown, CircleDot, Layout
 } from 'lucide-angular';
 
 /**
@@ -41,7 +41,7 @@ export const appConfig: ApplicationConfig = {
         // Disabled
         Save, Trash2, Trash, Plus, Check, TextSelect,
         // Click events
-        Download, Share2, Copy, ChevronDown,
+        Download, Share2, Copy, ChevronDown, CircleDot, Layout,
       })
     ),
   ],

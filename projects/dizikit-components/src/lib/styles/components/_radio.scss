@@ -1,0 +1,55 @@
+// =============================================================================
+// DIZIKIT RADIO TOKENS — _radio.scss
+// Design tokens for the dzi-radio component.
+// =============================================================================
+
+:root {
+    // --- Dimensions ---
+    --radio-size: 18px;
+    --radio-label-gap: 10px;
+
+    // --- Base ---
+    --radio-bg: transparent;
+    --radio-border: var(--color-border);
+    --radio-border-width: 2px;
+    --radio-transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+
+    // --- Checked ---
+    --radio-checked-bg: transparent;
+    --radio-checked-border: var(--color-primary);
+    --radio-check-color: var(--color-primary);
+
+    // --- Focus ---
+    --radio-focus-shadow: none;
+
+    // --- Hover ---
+    --radio-hover-border: var(--color-primary);
+
+    // --- Disabled ---
+    --radio-disabled-bg: var(--color-disabled);
+    --radio-disabled-border: var(--color-disabled);
+    --radio-disabled-check-color: var(--color-on-disabled);
+
+    // --- Error ---
+    --radio-error-border: var(--color-error);
+    --radio-error-shadow: none;
+
+    // --- Label ---
+    --radio-label-color: var(--color-text-primary);
+    --radio-label-font-size: 14px;
+    --radio-label-font-weight: 400;
+    --radio-label-disabled-color: var(--color-on-disabled);
+
+    // --- Color variants ---
+    --radio-success-bg: transparent;
+    --radio-success-border: var(--color-success);
+    --radio-success-check: var(--color-success);
+
+    --radio-error-bg: transparent;
+    --radio-error-border-checked: var(--color-error);
+    --radio-error-check: var(--color-error);
+
+    --radio-warning-bg: transparent;
+    --radio-warning-border: var(--color-warning);
+    --radio-warning-check: var(--color-warning);
+}

@@ -1,7 +1,9 @@
-﻿import { Component } from '@angular/core';
+import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { DziIconComponent } from '@dizikit';
+
+import { GUIDE_NAV, COMPONENT_NAV } from '../../core/constants/navigation';
 
 @Component({
     selector: 'app-sidebar',
@@ -11,17 +13,6 @@ import { DziIconComponent } from '@dizikit';
     styleUrls: ['./sidebar.component.scss']
 })
 export class SidebarComponent {
-    guideItems = [
-        { label: 'Introduction', icon: 'Info', link: '#' },
-        { label: 'Colors', icon: 'Palette', link: '#' },
-        { label: 'Icons', icon: 'Zap', link: '#' },
-    ];
-
-    componentItems = [
-        { label: 'Icon', link: '/components/icons', icon: 'Image' },
-        { label: 'Button', link: '/components/buttons', icon: 'Square' },
-        { label: 'Input', link: '/components/inputs', icon: 'Type' },
-        { label: 'Form Field', link: '/components/form-field', icon: 'TextSelect' },
-        { label: 'Checkbox', link: '/components/checkbox', icon: 'Type' }
-    ];
+    guideItems = GUIDE_NAV;
+    componentItems = COMPONENT_NAV;
 }

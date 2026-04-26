@@ -1,0 +1,222 @@
+<div class="content-body">
+
+    <div class="component-header">
+        <h1 class="component-title">Radio</h1>
+        <p class="component-description">
+            <code>dzi-radio</code> provides an accessible radio button component with built-in label,
+            keyboard navigation, screen-reader support, and Angular forms integration.
+        </p>
+    </div>
+
+    <!-- Section: Basic Usage -->
+    <div class="section-card">
+        <div class="section-header">
+            <h2 class="section-title">Basic Usage</h2>
+            <p class="section-desc">Radio buttons allow a user to select one option from a set. Use the <code>name</code> attribute to group them.</p>
+        </div>
+
+        <div class="section-preview">
+            <div style="display: flex; flex-direction: column; gap: 12px;">
+                <dzi-radio name="basic" value="option1" [(ngModel)]="selectedBasic">Option 1</dzi-radio>
+                <dzi-radio name="basic" value="option2" [(ngModel)]="selectedBasic">Option 2</dzi-radio>
+                <dzi-radio name="basic" value="option3" [(ngModel)]="selectedBasic">Option 3</dzi-radio>
+            </div>
+            <p style="margin-top: 16px; font-size: 14px; color: var(--color-text-secondary);">Selected: <strong>{{ selectedBasic }}</strong></p>
+        </div>
+
+        <div class="section-tabs">
+            <div class="tabs-bar">
+                <button class="tab-btn" [class.active]="activeTabs['basic'] === 'html'"
+                    (click)="setTab('basic', 'html')">HTML</button>
+                <button class="tab-btn" [class.active]="activeTabs['basic'] === 'ts'"
+                    (click)="setTab('basic', 'ts')">TS</button>
+                <button class="tab-btn" [class.active]="activeTabs['basic'] === 'scss'"
+                    (click)="setTab('basic', 'scss')">SCSS</button>
+            </div>
+            <div class="code-viewer">
+                @if (activeTabs['basic'] === 'html') {
+                <pre><code class="language-html">{{ basicCode.html }}</code></pre>
+                }
+                @if (activeTabs['basic'] === 'ts') {
+                <pre><code class="language-typescript">{{ basicCode.ts }}</code></pre>
+                }
+                @if (activeTabs['basic'] === 'scss') {
+                <pre><code class="language-scss">{{ basicCode.scss }}</code></pre>
+                }
+            </div>
+        </div>
+    </div>
+
+    <!-- Section: Color Variants -->
+    <div class="section-card">
+        <div class="section-header">
+            <h2 class="section-title">Color Variants</h2>
+            <p class="section-desc">Choose from brand and feedback colors to convey different semantic meanings.</p>
+        </div>
+
+        <div class="section-preview">
+            <dzi-radio color="primary" [checked]="true">Primary</dzi-radio>
+            <dzi-radio color="success" [checked]="true">Success</dzi-radio>
+            <dzi-radio color="error" [checked]="true">Error</dzi-radio>
+            <dzi-radio color="warning" [checked]="true">Warning</dzi-radio>
+        </div>
+
+        <div class="section-tabs">
+            <div class="tabs-bar">
+                <button class="tab-btn" [class.active]="activeTabs['colors'] === 'html'"
+                    (click)="setTab('colors', 'html')">HTML</button>
+                <button class="tab-btn" [class.active]="activeTabs['colors'] === 'ts'"
+                    (click)="setTab('colors', 'ts')">TS</button>
+                <button class="tab-btn" [class.active]="activeTabs['colors'] === 'scss'"
+                    (click)="setTab('colors', 'scss')">SCSS</button>
+            </div>
+            <div class="code-viewer">
+                @if (activeTabs['colors'] === 'html') {
+                <pre><code class="language-html">{{ colorCode.html }}</code></pre>
+                }
+                @if (activeTabs['colors'] === 'ts') {
+                <pre><code class="language-typescript">{{ colorCode.ts }}</code></pre>
+                }
+                @if (activeTabs['colors'] === 'scss') {
+                <pre><code class="language-scss">{{ colorCode.scss }}</code></pre>
+                }
+            </div>
+        </div>
+    </div>
+
+    <!-- Section: Sizes -->
+    <div class="section-card">
+        <div class="section-header">
+            <h2 class="section-title">Sizes</h2>
+            <p class="section-desc">Available in small, medium (default), and large sizes.</p>
+        </div>
+
+        <div class="section-preview">
+            <dzi-radio size="sm" [checked]="true">Small</dzi-radio>
+            <dzi-radio size="md" [checked]="true">Medium</dzi-radio>
+            <dzi-radio size="lg" [checked]="true">Large</dzi-radio>
+        </div>
+
+        <div class="section-tabs">
+            <div class="tabs-bar">
+                <button class="tab-btn" [class.active]="activeTabs['sizes'] === 'html'"
+                    (click)="setTab('sizes', 'html')">HTML</button>
+                <button class="tab-btn" [class.active]="activeTabs['sizes'] === 'ts'"
+                    (click)="setTab('sizes', 'ts')">TS</button>
+                <button class="tab-btn" [class.active]="activeTabs['sizes'] === 'scss'"
+                    (click)="setTab('sizes', 'scss')">SCSS</button>
+            </div>
+            <div class="code-viewer">
+                @if (activeTabs['sizes'] === 'html') {
+                <pre><code class="language-html">{{ sizeCode.html }}</code></pre>
+                }
+                @if (activeTabs['sizes'] === 'ts') {
+                <pre><code class="language-typescript">{{ sizeCode.ts }}</code></pre>
+                }
+                @if (activeTabs['sizes'] === 'scss') {
+                <pre><code class="language-scss">{{ sizeCode.scss }}</code></pre>
+                }
+            </div>
+        </div>
+    </div>
+
+    <!-- Section: Disabled State -->
+    <div class="section-card">
+        <div class="section-header">
+            <h2 class="section-title">Disabled State</h2>
+            <p class="section-desc">Disabled radio buttons prevent interaction and apply visual dimming.</p>
+        </div>
+
+        <div class="section-preview">
+            <dzi-radio [disabled]="true">Disabled unchecked</dzi-radio>
+            <dzi-radio [disabled]="true" [checked]="true">Disabled checked</dzi-radio>
+        </div>
+
+        <div class="section-tabs">
+            <div class="tabs-bar">
+                <button class="tab-btn" [class.active]="activeTabs['disabled'] === 'html'"
+                    (click)="setTab('disabled', 'html')">HTML</button>
+                <button class="tab-btn" [class.active]="activeTabs['disabled'] === 'ts'"
+                    (click)="setTab('disabled', 'ts')">TS</button>
+                <button class="tab-btn" [class.active]="activeTabs['disabled'] === 'scss'"
+                    (click)="setTab('disabled', 'scss')">SCSS</button>
+            </div>
+            <div class="code-viewer">
+                @if (activeTabs['disabled'] === 'html') {
+                <pre><code class="language-html">{{ disabledCode.html }}</code></pre>
+                }
+                @if (activeTabs['disabled'] === 'ts') {
+                <pre><code class="language-typescript">{{ disabledCode.ts }}</code></pre>
+                }
+                @if (activeTabs['disabled'] === 'scss') {
+                <pre><code class="language-scss">{{ disabledCode.scss }}</code></pre>
+                }
+            </div>
+        </div>
+    </div>
+
+    <!-- Section: Forms Integration -->
+    <div class="section-card">
+        <div class="section-header">
+            <h2 class="section-title">Forms &amp; Validation</h2>
+            <p class="section-desc">Full integration with Angular forms via <code>ControlValueAccessor</code>.</p>
+        </div>
+
+        <div class="section-preview">
+            <div style="display: flex; gap: 16px;">
+                <dzi-radio name="framework" value="angular" [(ngModel)]="favoriteFramework">Angular</dzi-radio>
+                <dzi-radio name="framework" value="react" [(ngModel)]="favoriteFramework">React</dzi-radio>
+                <dzi-radio name="framework" value="vue" [(ngModel)]="favoriteFramework">Vue</dzi-radio>
+            </div>
+            <p style="margin-top: 16px; font-size: 14px; color: var(--color-text-secondary);">Favorite framework: <strong>{{ favoriteFramework }}</strong></p>
+        </div>
+
+        <div class="section-tabs">
+            <div class="tabs-bar">
+                <button class="tab-btn" [class.active]="activeTabs['forms'] === 'html'"
+                    (click)="setTab('forms', 'html')">HTML</button>
+                <button class="tab-btn" [class.active]="activeTabs['forms'] === 'ts'"
+                    (click)="setTab('forms', 'ts')">TS</button>
+                <button class="tab-btn" [class.active]="activeTabs['forms'] === 'scss'"
+                    (click)="setTab('forms', 'scss')">SCSS</button>
+            </div>
+            <div class="code-viewer">
+                @if (activeTabs['forms'] === 'html') {
+                <pre><code class="language-html">{{ formsCode.html }}</code></pre>
+                }
+                @if (activeTabs['forms'] === 'ts') {
+                <pre><code class="language-typescript">{{ formsCode.ts }}</code></pre>
+                }
+                @if (activeTabs['forms'] === 'scss') {
+                <pre><code class="language-scss">{{ formsCode.scss }}</code></pre>
+                }
+            </div>
+        </div>
+    </div>
+
+    <!-- API Reference -->
+    <div class="api-reference">
+        <h2 class="api-reference-title">API Reference</h2>
+        <table class="api-table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Type</th>
+                    <th>Default</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (prop of apiProperties; track prop.name) {
+                <tr>
+                    <td><code>{{ prop.name }}</code></td>
+                    <td><code>{{ prop.type }}</code></td>
+                    <td><code>{{ prop.default }}</code></td>
+                    <td>{{ prop.description }}</td>
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+</div>
