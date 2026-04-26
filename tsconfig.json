@@ -1,4 +1,4 @@
-/* To learn more about Typescript configuration file: https://www.typescriptlang.org/docs/handbook/tsconfig-json.html. */
+﻿/* To learn more about Typescript configuration file: https://www.typescriptlang.org/docs/handbook/tsconfig-json.html. */
 /* To learn more about Angular compiler options: https://angular.dev/reference/configs/angular-compiler-options. */
 {
   "compileOnSave": false,
@@ -15,8 +15,8 @@
     "target": "ES2022",
     "module": "preserve",
     "paths": {
-      "@ziva-components": [
-        "./projects/ziva-components/src/public-api.ts"
+      "@dizikit": [
+        "./projects/dizikit-components/src/public-api.ts"
       ]
     }
   },
@@ -29,10 +29,10 @@
   "files": [],
   "references": [
     {
-      "path": "./projects/ziva-components/tsconfig.lib.json"
+      "path": "./projects/dizikit-components/tsconfig.lib.json"
     },
     {
-      "path": "./projects/ziva-components/tsconfig.spec.json"
+      "path": "./projects/dizikit-components/tsconfig.spec.json"
     },
     {
       "path": "./projects/showcase/tsconfig.app.json"

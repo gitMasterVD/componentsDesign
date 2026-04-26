@@ -1,11 +1,11 @@
-import { Component } from '@angular/core';
+﻿import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ZivaInputDirective } from '@ziva-components';
+import { DziInputDirective } from '@dizikit';
 
 @Component({
     selector: 'app-input-showcase',
     standalone: true,
-    imports: [CommonModule, ZivaInputDirective],
+    imports: [CommonModule, DziInputDirective],
     templateUrl: './input-showcase.component.html',
     styleUrls: ['./input-showcase.component.scss']
 })
@@ -32,30 +32,30 @@ export class InputShowcaseComponent {
 
     appearanceCode = {
         html: `<!-- Outlined (default) -->
-<input zivaInput placeholder="Outlined input" />
+<input dziInput placeholder="Outlined input" />
 
 <!-- Filled -->
-<input zivaInput appearance="filled" placeholder="Filled input" />
+<input dziInput appearance="filled" placeholder="Filled input" />
 
 <!-- Standard (underline) -->
-<input zivaInput appearance="standard" placeholder="Standard input" />`,
-        ts: `import { ZivaInputDirective } from '@ziva-components';
+<input dziInput appearance="standard" placeholder="Standard input" />`,
+        ts: `import { DziInputDirective } from '@dizikit';
 
 @Component({
-  imports: [ZivaInputDirective],
+  imports: [DziInputDirective],
   // ...
 })`,
         scss: `/* Appearance is handled by the [appearance] input */`
     };
 
     sizeCode = {
-        html: `<input zivaInput size="sm" placeholder="Small" />
-<input zivaInput size="md" placeholder="Medium" />
-<input zivaInput size="lg" placeholder="Large" />`,
-        ts: `import { ZivaInputDirective } from '@ziva-components';
+        html: `<input dziInput size="sm" placeholder="Small" />
+<input dziInput size="md" placeholder="Medium" />
+<input dziInput size="lg" placeholder="Large" />`,
+        ts: `import { DziInputDirective } from '@dizikit';
 
 @Component({
-  imports: [ZivaInputDirective],
+  imports: [DziInputDirective],
   // ...
 })`,
         scss: `/* Sizes are handled by the [size] input */`
@@ -63,14 +63,14 @@ export class InputShowcaseComponent {
 
     statesCode = {
         html: `<!-- Error state (Native Material) -->
-<input zivaInput error placeholder="Error input" />
+<input dziInput error placeholder="Error input" />
 
 <!-- Disabled state -->
-<input zivaInput disabled placeholder="Disabled input" />`,
-        ts: `import { ZivaInputDirective } from '@ziva-components';
+<input dziInput disabled placeholder="Disabled input" />`,
+        ts: `import { DziInputDirective } from '@dizikit';
 
 @Component({
-  imports: [ZivaInputDirective],
+  imports: [DziInputDirective],
   // ...
 })`,
         scss: `/* States are handled by [error] and [disabled] attributes */`
@@ -79,24 +79,24 @@ export class InputShowcaseComponent {
     colorsCode = {
         html: `<!-- Custom Status Colors (User Side Example) -->
 <!-- These are handled via custom classes in the application -->
-<input zivaInput class="ziva-input-success" placeholder="Success input" />
-<input zivaInput class="ziva-input-warning" placeholder="Warning input" />
-<input zivaInput class="ziva-input-info" placeholder="Info input" />`,
-        ts: `import { ZivaInputDirective } from '@ziva-components';
+<input dziInput class="dzi-input-success" placeholder="Success input" />
+<input dziInput class="dzi-input-warning" placeholder="Warning input" />
+<input dziInput class="dzi-input-info" placeholder="Info input" />`,
+        ts: `import { DziInputDirective } from '@dizikit';
 
 @Component({
-  imports: [ZivaInputDirective],
+  imports: [DziInputDirective],
   // ...
 })`,
-        scss: `.ziva-input-success {
+        scss: `.dzi-input-success {
   --input-focus-border: var(--color-success);
   --input-focus-shadow: 0 0 0 4px var(--color-success-tertiary);
 }
-.ziva-input-warning {
+.dzi-input-warning {
   --input-focus-border: var(--color-warning);
   --input-focus-shadow: 0 0 0 4px var(--color-warning-tertiary);
 }
-.ziva-input-info {
+.dzi-input-info {
   --input-focus-border: var(--color-info);
   --input-focus-shadow: 0 0 0 4px var(--color-info-tertiary);
 }`
@@ -104,32 +104,32 @@ export class InputShowcaseComponent {
 
     typesCode = {
         html: `<!-- Native Types -->
-<input zivaInput type="password" placeholder="Enter password" />
-<input zivaInput type="number" placeholder="Enter amount" />
+<input dziInput type="password" placeholder="Enter password" />
+<input dziInput type="number" placeholder="Enter amount" />
 
 <!-- Native Limits -->
-<input zivaInput maxlength="10" placeholder="Limit: 10 chars" />`,
-        ts: `import { ZivaInputDirective } from '@ziva-components';
+<input dziInput maxlength="10" placeholder="Limit: 10 chars" />`,
+        ts: `import { DziInputDirective } from '@dizikit';
 
 @Component({
-  imports: [ZivaInputDirective],
+  imports: [DziInputDirective],
   // ...
 })`,
-        scss: `/* Native input types work seamlessly with zivaInput */`
+        scss: `/* Native input types work seamlessly with dziInput */`
     };
 
     textareaCode = {
         html: `<!-- Outlined textarea -->
-<textarea zivaInput placeholder="Write something..."></textarea>
+<textarea dziInput placeholder="Write something..."></textarea>
 
 <!-- Filled textarea -->
-<textarea zivaInput appearance="filled" placeholder="Filled textarea"></textarea>`,
-        ts: `import { ZivaInputDirective } from '@ziva-components';
+<textarea dziInput appearance="filled" placeholder="Filled textarea"></textarea>`,
+        ts: `import { DziInputDirective } from '@dizikit';
 
 @Component({
-  imports: [ZivaInputDirective],
+  imports: [DziInputDirective],
   // ...
 })`,
-        scss: `/* zivaInput directive also supports set of textarea styles */`
+        scss: `/* dziInput directive also supports set of textarea styles */`
     };
 }

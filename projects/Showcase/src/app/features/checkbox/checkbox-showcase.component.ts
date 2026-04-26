@@ -1,12 +1,12 @@
-import { Component } from '@angular/core';
+﻿import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { ZivaCheckboxComponent } from '@ziva-components';
+import { DziCheckboxComponent } from '@dizikit';
 
 @Component({
   selector: 'app-checkbox-showcase',
   standalone: true,
-  imports: [CommonModule, FormsModule, ZivaCheckboxComponent],
+  imports: [CommonModule, FormsModule, DziCheckboxComponent],
   templateUrl: './checkbox-showcase.component.html',
   styleUrls: ['./checkbox-showcase.component.scss']
 })
@@ -42,40 +42,40 @@ export class CheckboxShowcaseComponent {
   ];
 
   basicCode = {
-    html: `<ziva-checkbox>Accept terms and conditions</ziva-checkbox>
-<ziva-checkbox [checked]="true">Pre-checked option</ziva-checkbox>
-<ziva-checkbox>Subscribe to newsletter</ziva-checkbox>`,
-    ts: `import { ZivaCheckboxComponent } from '@ziva-components';
+    html: `<dzi-checkbox>Accept terms and conditions</dzi-checkbox>
+<dzi-checkbox [checked]="true">Pre-checked option</dzi-checkbox>
+<dzi-checkbox>Subscribe to newsletter</dzi-checkbox>`,
+    ts: `import { DziCheckboxComponent } from '@dizikit';
 
 @Component({
-  imports: [ZivaCheckboxComponent],
+  imports: [DziCheckboxComponent],
   // ...
 })`,
     scss: `/* Checkbox is a standalone component */`
   };
 
   colorCode = {
-    html: `<ziva-checkbox color="primary" [checked]="true">Primary</ziva-checkbox>
-<ziva-checkbox color="success" [checked]="true">Success</ziva-checkbox>
-<ziva-checkbox color="error" [checked]="true">Error</ziva-checkbox>
-<ziva-checkbox color="warning" [checked]="true">Warning</ziva-checkbox>`,
-    ts: `import { ZivaCheckboxComponent } from '@ziva-components';
+    html: `<dzi-checkbox color="primary" [checked]="true">Primary</dzi-checkbox>
+<dzi-checkbox color="success" [checked]="true">Success</dzi-checkbox>
+<dzi-checkbox color="error" [checked]="true">Error</dzi-checkbox>
+<dzi-checkbox color="warning" [checked]="true">Warning</dzi-checkbox>`,
+    ts: `import { DziCheckboxComponent } from '@dizikit';
 
 @Component({
-  imports: [ZivaCheckboxComponent],
+  imports: [DziCheckboxComponent],
   // ...
 })`,
     scss: `/* Colors are applied via the [color] input */`
   };
 
   sizeCode = {
-    html: `<ziva-checkbox size="sm" [checked]="true">Small</ziva-checkbox>
-<ziva-checkbox size="md" [checked]="true">Medium</ziva-checkbox>
-<ziva-checkbox size="lg" [checked]="true">Large</ziva-checkbox>`,
-    ts: `import { ZivaCheckboxComponent } from '@ziva-components';
+    html: `<dzi-checkbox size="sm" [checked]="true">Small</dzi-checkbox>
+<dzi-checkbox size="md" [checked]="true">Medium</dzi-checkbox>
+<dzi-checkbox size="lg" [checked]="true">Large</dzi-checkbox>`,
+    ts: `import { DziCheckboxComponent } from '@dizikit';
 
 @Component({
-  imports: [ZivaCheckboxComponent],
+  imports: [DziCheckboxComponent],
   // ...
 })`,
     scss: `/* Sizes are handled by the [size] input */`
@@ -83,12 +83,12 @@ export class CheckboxShowcaseComponent {
 
   indeterminateCode = {
     html: `<!-- Parent with indeterminate state -->
-<ziva-checkbox [indeterminate]="true">Select all items</ziva-checkbox>
+<dzi-checkbox [indeterminate]="true">Select all items</dzi-checkbox>
 
 <!-- Child checkboxes -->
-<ziva-checkbox [checked]="true">Item 1 (selected)</ziva-checkbox>
-<ziva-checkbox>Item 2 (not selected)</ziva-checkbox>
-<ziva-checkbox [checked]="true">Item 3 (selected)</ziva-checkbox>`,
+<dzi-checkbox [checked]="true">Item 1 (selected)</dzi-checkbox>
+<dzi-checkbox>Item 2 (not selected)</dzi-checkbox>
+<dzi-checkbox [checked]="true">Item 3 (selected)</dzi-checkbox>`,
     ts: `@Component({
   templateUrl: './example.html'
 })
@@ -99,13 +99,13 @@ export class CheckboxExample {
   };
 
   disabledCode = {
-    html: `<ziva-checkbox [disabled]="true">Disabled unchecked</ziva-checkbox>
-<ziva-checkbox [disabled]="true" [checked]="true">Disabled checked</ziva-checkbox>
-<ziva-checkbox [disabled]="true" [indeterminate]="true">Disabled indeterminate</ziva-checkbox>`,
-    ts: `import { ZivaCheckboxComponent } from '@ziva-components';
+    html: `<dzi-checkbox [disabled]="true">Disabled unchecked</dzi-checkbox>
+<dzi-checkbox [disabled]="true" [checked]="true">Disabled checked</dzi-checkbox>
+<dzi-checkbox [disabled]="true" [indeterminate]="true">Disabled indeterminate</dzi-checkbox>`,
+    ts: `import { DziCheckboxComponent } from '@dizikit';
 
 @Component({
-  imports: [ZivaCheckboxComponent],
+  imports: [DziCheckboxComponent],
   // ...
 })`,
     scss: `/* Disabled state is handled by the [disabled] input */`
@@ -113,15 +113,15 @@ export class CheckboxExample {
 
   formsCode = {
     html: `<!-- Two-way binding -->
-<ziva-checkbox [(checked)]="agreedToTerms">
+<dzi-checkbox [(checked)]="agreedToTerms">
   I agree to the terms
-</ziva-checkbox>
+</dzi-checkbox>
 <p>Agreed: {{ agreedToTerms }}</p>
 
 <!-- Error state for validation -->
-<ziva-checkbox [error]="true" [required]="true">
+<dzi-checkbox [error]="true" [required]="true">
   This field is required
-</ziva-checkbox>`,
+</dzi-checkbox>`,
     ts: `export class FormExample {
   agreedToTerms = false;
 }`,

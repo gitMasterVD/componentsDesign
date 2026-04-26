@@ -1,11 +1,11 @@
-import { Component } from '@angular/core';
+﻿import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ZivaCardComponent, ZivaButtonDirective, ZivaIconComponent } from '@ziva-components';
+import { DziCardComponent, DziButtonDirective, DziIconComponent } from '@dizikit';
 
 @Component({
     selector: 'app-card-showcase',
     standalone: true,
-    imports: [CommonModule, ZivaCardComponent, ZivaButtonDirective, ZivaIconComponent],
+    imports: [CommonModule, DziCardComponent, DziButtonDirective, DziIconComponent],
     templateUrl: './card-showcase.component.html',
     styleUrls: ['./card-showcase.component.scss']
 })
@@ -61,33 +61,33 @@ export class CardShowcaseComponent {
     }
 
     basicCode = {
-        html: `<ziva-card>
+        html: `<dzi-card>
   <div class="card-content">
     <h3>Standard Card</h3>
     <p>This is a basic card with default padding, border, and shadow.</p>
   </div>
-</ziva-card>`,
-        ts: `import { ZivaCardComponent } from '@ziva-components';
+</dzi-card>`,
+        ts: `import { DziCardComponent } from '@dizikit';
 
 @Component({
-  imports: [ZivaCardComponent],
+  imports: [DziCardComponent],
   // ...
 })`,
         scss: `/* No custom styles needed for basic card */`
     };
 
     contentCode = {
-        html: `<ziva-card>
+        html: `<dzi-card>
   <div class="card-content">
     <h3>Card with Text & Action</h3>
     <p>Cards are perfect for displaying snippets of information, blog posts, or feature descriptions.</p>
-    <button zivaButton variant="primary" style="margin-top: 1rem;">View More</button>
+    <button dziButton variant="primary" style="margin-top: 1rem;">View More</button>
   </div>
-</ziva-card>`,
-        ts: `import { ZivaCardComponent, ZivaButtonDirective } from '@ziva-components';
+</dzi-card>`,
+        ts: `import { DziCardComponent, DziButtonDirective } from '@dizikit';
 
 @Component({
-  imports: [ZivaCardComponent, ZivaButtonDirective],
+  imports: [DziCardComponent, DziButtonDirective],
   // ...
 })`,
         scss: `.card-content {
@@ -97,25 +97,25 @@ export class CardShowcaseComponent {
     };
 
     complexCode = {
-        html: `<ziva-card>
+        html: `<dzi-card>
   <div class="card-content">
     <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem;">
       <h3 style="margin: 0;">Project Alpha</h3>
-      <ziva-icon iconName="Star" iconColor="#f59e0b"></ziva-icon>
+      <dzi-icon iconName="Star" iconColor="#f59e0b"></dzi-icon>
     </div>
     <p style="margin-bottom: 1.5rem; color: var(--color-text-secondary);">
       A comprehensive enterprise solution for managing supply chain logistics and real-time tracking.
     </p>
     <div style="display: flex; gap: 0.75rem;">
-      <button zivaButton variant="primary">Edit</button>
-      <button zivaButton variant="tertiary">Archive</button>
+      <button dziButton variant="primary">Edit</button>
+      <button dziButton variant="tertiary">Archive</button>
     </div>
   </div>
-</ziva-card>`,
-        ts: `import { ZivaCardComponent, ZivaButtonDirective, ZivaIconComponent } from '@ziva-components';
+</dzi-card>`,
+        ts: `import { DziCardComponent, DziButtonDirective, DziIconComponent } from '@dizikit';
 
 @Component({
-  imports: [ZivaCardComponent, ZivaButtonDirective, ZivaIconComponent],
+  imports: [DziCardComponent, DziButtonDirective, DziIconComponent],
   // ...
 })`,
         scss: `.card-header {

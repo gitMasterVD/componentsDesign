@@ -1,12 +1,12 @@
-import { Component } from '@angular/core';
+﻿import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Router } from '@angular/router';
-import { ZivaIconComponent } from '@ziva-components';
+import { DziIconComponent } from '@dizikit';
 
 @Component({
     selector: 'app-components-layout',
     standalone: true,
-    imports: [CommonModule, RouterModule, ZivaIconComponent],
+    imports: [CommonModule, RouterModule, DziIconComponent],
     templateUrl: './components-layout.component.html',
     styleUrls: ['./components-layout.component.scss']
 })

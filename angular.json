@@ -1,4 +1,4 @@
-{
+﻿{
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
   "cli": {
@@ -7,20 +7,20 @@
   },
   "newProjectRoot": "projects",
   "projects": {
-    "ziva-components": {
+    "dizikit-components": {
       "projectType": "library",
-      "root": "projects/ziva-components",
-      "sourceRoot": "projects/ziva-components/src",
+      "root": "projects/dizikit-components",
+      "sourceRoot": "projects/dizikit-components/src",
       "prefix": "lib",
       "architect": {
         "build": {
           "builder": "@angular/build:ng-packagr",
           "configurations": {
             "production": {
-              "tsConfig": "projects/ziva-components/tsconfig.lib.prod.json"
+              "tsConfig": "projects/dizikit-components/tsconfig.lib.prod.json"
             },
             "development": {
-              "tsConfig": "projects/ziva-components/tsconfig.lib.json"
+              "tsConfig": "projects/dizikit-components/tsconfig.lib.json"
             }
           },
           "defaultConfiguration": "production"
@@ -28,7 +28,7 @@
         "test": {
           "builder": "@angular/build:unit-test",
           "options": {
-            "tsConfig": "projects/ziva-components/tsconfig.spec.json"
+            "tsConfig": "projects/dizikit-components/tsconfig.spec.json"
           }
         }
       }
@@ -57,7 +57,7 @@
               }
             ],
             "styles": [
-              "projects/ziva-components/src/lib/styles/index.scss",
+              "projects/dizikit-components/src/lib/styles/index.scss",
               "projects/showcase/src/styles.scss"
             ]
           },

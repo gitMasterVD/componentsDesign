@@ -1,0 +1,241 @@
+﻿.dzi-button,
+.dzi-icon-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    gap: 8px;
+    border: 1px solid var(--button-border);
+    border-radius: var(--button-radius);
+    padding: var(--button-padding);
+    font-size: var(--button-font-size);
+    font-weight: var(--button-font-weight);
+    cursor: pointer;
+    transition: var(--button-transition);
+    user-select: none;
+    outline: none;
+    position: relative;
+    overflow: hidden;
+
+
+    &:hover:not(.disabled):not(:disabled) {
+        filter: brightness(1.1);
+    }
+
+    &:active:not(.disabled):not(:disabled) {
+        transform: scale(0.96);
+    }
+
+    &.dzi-pulse-active::after {
+        content: '';
+        position: absolute;
+        top: var(--ripple-y);
+        left: var(--ripple-x);
+        width: var(--ripple-size);
+        height: var(--ripple-size);
+        background: var(--button-pulse-effect);
+        border-radius: 50%;
+        transform: translate(-50%, -50%) scale(0);
+        opacity: 0.4;
+        animation: pointerRipple 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+        pointer-events: none;
+    }
+
+    &.disabled,
+    &:disabled {
+        cursor: not-allowed;
+        opacity: 0.5;
+    }
+}
+
+@keyframes pointerRipple {
+    0% {
+        transform: translate(-50%, -50%) scale(0);
+        opacity: 0.4;
+    }
+
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0;
+    }
+}
+
+.dzi-button {
+    &--primary {
+        background-color: var(--button-bg);
+        color: var(--button-color);
+        --button-pulse-effect: var(--button-primary-pulse);
+
+        &.disabled,
+        &:disabled {
+            background-color: var(--color-disabled);
+            color: var(--color-on-disabled);
+            border-color: transparent;
+        }
+    }
+
+    &--secondary {
+        background-color: transparent;
+        border-color: var(--button-bg);
+        color: var(--button-bg);
+        --button-pulse-effect: var(--button-secondary-pulse);
+
+        &.disabled,
+        &:disabled {
+            border-color: var(--color-disabled);
+            color: var(--color-disabled);
+            background-color: transparent;
+        }
+    }
+
+    &--success {
+        background-color: var(--button-success-bg);
+        color: var(--button-success-color);
+        border-color: transparent;
+        --button-pulse-effect: var(--button-primary-pulse);
+    }
+
+    &--error {
+        background-color: var(--button-error-bg);
+        color: var(--button-error-color);
+        border-color: transparent;
+        --button-pulse-effect: var(--button-primary-pulse);
+    }
+
+    &--warning {
+        background-color: var(--button-warning-bg);
+        color: var(--button-warning-color);
+        border-color: transparent;
+        --button-pulse-effect: var(--button-primary-pulse);
+    }
+
+    &--info {
+        background-color: var(--button-info-bg);
+        color: var(--button-info-color);
+        border-color: transparent;
+        --button-pulse-effect: var(--button-primary-pulse);
+    }
+
+    &--tertiary {
+        background-color: transparent;
+        color: var(--button-tertiary-color);
+        border-color: transparent;
+        --button-pulse-effect: var(--button-tertiary-pulse);
+
+        &:hover:not(.disabled):not(:disabled) {
+            background-color: var(--button-tertiary-bg);
+        }
+    }
+
+    &--sm {
+        padding: 6px 12px;
+        font-size: 12px;
+        height: 32px;
+    }
+
+    &--md {
+        padding: 10px 20px;
+        font-size: 14px;
+        height: 40px;
+    }
+
+    &--lg {
+        padding: 14px 28px;
+        font-size: 16px;
+        height: 48px;
+    }
+}
+
+.dzi-icon-button {
+    padding: var(--icon-button-padding);
+    border-radius: 50%;
+    width: var(--icon-button-size);
+    height: var(--icon-button-size);
+
+    &--primary {
+        background-color: var(--button-bg);
+        color: var(--button-color);
+        --button-pulse-effect: var(--button-primary-pulse);
+
+        &.disabled,
+        &:disabled {
+            background-color: var(--color-disabled);
+            color: var(--color-on-disabled);
+            border-color: transparent;
+        }
+    }
+
+    &--secondary {
+        background-color: transparent;
+        border-color: var(--button-bg);
+        color: var(--button-bg);
+        --button-pulse-effect: var(--button-secondary-pulse);
+
+        &.disabled,
+        &:disabled {
+            border-color: var(--color-disabled);
+            color: var(--color-disabled);
+            background-color: transparent;
+        }
+    }
+
+    &--success {
+        background-color: var(--button-success-bg);
+        color: var(--button-success-color);
+        border-color: transparent;
+        --button-pulse-effect: var(--button-primary-pulse);
+    }
+
+    &--error {
+        background-color: var(--button-error-bg);
+        color: var(--button-error-color);
+        border-color: transparent;
+        --button-pulse-effect: var(--button-primary-pulse);
+    }
+
+    &--warning {
+        background-color: var(--button-warning-bg);
+        color: var(--button-warning-color);
+        border-color: transparent;
+        --button-pulse-effect: var(--button-primary-pulse);
+    }
+
+    &--info {
+        background-color: var(--button-info-bg);
+        color: var(--button-info-color);
+        border-color: transparent;
+        --button-pulse-effect: var(--button-primary-pulse);
+    }
+
+    &--tertiary {
+        background-color: transparent;
+        color: var(--button-tertiary-color);
+        border-color: transparent;
+        --button-pulse-effect: var(--button-tertiary-pulse);
+
+        &:hover:not(.disabled):not(:disabled) {
+            background-color: var(--button-tertiary-bg);
+        }
+    }
+
+    &--sm {
+        width: 32px;
+        height: 32px;
+        padding: 6px;
+        font-size: 16px;
+    }
+
+    &--md {
+        width: 40px;
+        height: 40px;
+        padding: 10px;
+        font-size: 20px;
+    }
+
+    &--lg {
+        width: 48px;
+        height: 48px;
+        padding: 12px;
+        font-size: 24px;
+    }
+}

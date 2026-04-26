@@ -1,0 +1,36 @@
+﻿// =============================================================================
+// DIZIKIT INPUT TOKENS — _input.scss
+// Design tokens for the dziInput directive.
+// Override in _light.scss / _dark.scss for theme switching.
+// =============================================================================
+
+:root {
+    // --- Base ---
+    --input-bg: transparent;
+    --input-color: var(--color-text-primary);
+    --input-border: var(--color-border);
+    --input-radius: 8px;
+    --input-padding: 10px 14px;
+    --input-font-size: 14px;
+    --input-font-weight: 400;
+    --input-line-height: 1.5;
+    --input-transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+
+    // --- Placeholder ---
+    --input-placeholder: var(--color-text-muted);
+
+    // --- Focus ---
+    --input-focus-border: var(--color-primary);
+    --input-focus-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+
+    // --- Error ---
+    --input-error-border: var(--color-error);
+    --input-error-shadow: 0 0 0 3px rgba(239, 68, 68, 0.15);
+
+    // --- Disabled ---
+    --input-disabled-bg: var(--color-disabled);
+    --input-disabled-color: var(--color-on-disabled);
+
+    // --- Filled variant ---
+    --input-filled-bg: var(--color-surface-raised);
+}

@@ -1,4 +1,4 @@
-.content-body {
+﻿.content-body {
     padding: 3rem 2.5rem;
     max-width: 1100px;
 }
@@ -168,45 +168,45 @@
 
 // ---- Custom Input Status States (Showcase only) ----
 :host ::ng-deep {
-    .ziva-input-success {
+    .dzi-input-success {
         --input-border: var(--color-success);
         --input-focus-border: var(--color-success);
         --input-focus-shadow: 0 0 0 3px rgba(34, 197, 94, 0.15);
     }
 
-    .ziva-input-warning {
+    .dzi-input-warning {
         --input-border: var(--color-warning);
         --input-focus-border: var(--color-warning);
         --input-focus-shadow: 0 0 0 3px rgba(234, 179, 8, 0.15);
     }
 
-    .ziva-input-info {
+    .dzi-input-info {
         --input-border: var(--color-info);
         --input-focus-border: var(--color-info);
         --input-focus-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
     }
 
     // Coordinate with Form Field
-    ziva-form-field:has(.ziva-input-success) {
+    dzi-form-field:has(.dzi-input-success) {
 
-        ziva-label,
-        ziva-footer {
+        dzi-label,
+        dzi-footer {
             color: var(--color-success);
         }
     }
 
-    ziva-form-field:has(.ziva-input-warning) {
+    dzi-form-field:has(.dzi-input-warning) {
 
-        ziva-label,
-        ziva-footer {
+        dzi-label,
+        dzi-footer {
             color: var(--color-warning);
         }
     }
 
-    ziva-form-field:has(.ziva-input-info) {
+    dzi-form-field:has(.dzi-input-info) {
 
-        ziva-label,
-        ziva-footer {
+        dzi-label,
+        dzi-footer {
             color: var(--color-info);
         }
     }

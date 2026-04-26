@@ -1,11 +1,11 @@
-import { Component } from '@angular/core';
+﻿import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ZivaIconComponent } from '@ziva-components';
+import { DziIconComponent } from '@dizikit';
 
 @Component({
   selector: 'app-icon-showcase',
   standalone: true,
-  imports: [CommonModule, ZivaIconComponent],
+  imports: [CommonModule, DziIconComponent],
   templateUrl: './icon-showcase.component.html',
   styleUrls: ['./icon-showcase.component.scss']
 })
@@ -35,7 +35,7 @@ importProvidersFrom(
   LucideAngularModule.pick({ Home, User, Settings })
 )`,
     usage: `<!-- In your component.html -->
-<ziva-icon iconName="Home"></ziva-icon>`,
+<dzi-icon iconName="Home"></dzi-icon>`,
   };
 
   // ─── API Properties ────────────────────────────────────────────────────────
@@ -60,11 +60,11 @@ importProvidersFrom(
 
   basicCode = {
     html: `<!-- Basic icon with default styling -->
-<ziva-icon iconName="Home" ariaLabel="Home"></ziva-icon>
-<ziva-icon iconName="Settings" ariaLabel="Settings"></ziva-icon>
-<ziva-icon iconName="User" ariaLabel="User"></ziva-icon>
-<ziva-icon iconName="Bell" ariaLabel="Bell"></ziva-icon>
-<ziva-icon iconName="Search" ariaLabel="Search"></ziva-icon>`,
+<dzi-icon iconName="Home" ariaLabel="Home"></dzi-icon>
+<dzi-icon iconName="Settings" ariaLabel="Settings"></dzi-icon>
+<dzi-icon iconName="User" ariaLabel="User"></dzi-icon>
+<dzi-icon iconName="Bell" ariaLabel="Bell"></dzi-icon>
+<dzi-icon iconName="Search" ariaLabel="Search"></dzi-icon>`,
     ts: `// Icons must be registered in app.config.ts
 import { Home, Settings, User, Bell, Search } from 'lucide-angular';
 
@@ -90,11 +90,11 @@ import { Home, Settings, User, Bell, Search } from 'lucide-angular';
 
   colorCode = {
     html: `<!-- Use semantic tokens or any CSS color value -->
-<ziva-icon iconName="Zap"           iconColor="var(--color-primary)"></ziva-icon>
-<ziva-icon iconName="CheckCircle"   iconColor="var(--color-success)"></ziva-icon>
-<ziva-icon iconName="XCircle"       iconColor="var(--color-error)"></ziva-icon>
-<ziva-icon iconName="AlertTriangle" iconColor="#f59e0b"></ziva-icon>
-<ziva-icon iconName="Info"          iconColor="#3b82f6"></ziva-icon>`,
+<dzi-icon iconName="Zap"           iconColor="var(--color-primary)"></dzi-icon>
+<dzi-icon iconName="CheckCircle"   iconColor="var(--color-success)"></dzi-icon>
+<dzi-icon iconName="XCircle"       iconColor="var(--color-error)"></dzi-icon>
+<dzi-icon iconName="AlertTriangle" iconColor="#f59e0b"></dzi-icon>
+<dzi-icon iconName="Info"          iconColor="#3b82f6"></dzi-icon>`,
     ts: `// Bind color dynamically from component
 status: 'success' | 'error' | 'warning' = 'success';
 
@@ -126,12 +126,12 @@ get statusColor(): string {
 
   hoverCode = {
     html: `<!-- Swap icon on hover using Angular binding -->
-<ziva-icon
+<dzi-icon
   [iconName]="isHovered ? 'EyeOff' : 'Eye'"
   iconColor="var(--color-primary)"
   (mouseenter)="isHovered = true"
   (mouseleave)="isHovered = false">
-</ziva-icon>`,
+</dzi-icon>`,
     ts: `isHovered = false;
 
 // Or track index for a list of hover icons
@@ -158,10 +158,10 @@ hoveredIndex: number | null = null;`,
 
   disabledCode = {
     html: `<!-- Set 'disabled' as a tag to apply the disabled state -->
-<ziva-icon iconName="Home"     disabled></ziva-icon>
-<ziva-icon iconName="Settings" disabled></ziva-icon>
-<ziva-icon iconName="Save"     disabled></ziva-icon>
-<ziva-icon iconName="Trash2"   disabled></ziva-icon>`,
+<dzi-icon iconName="Home"     disabled></dzi-icon>
+<dzi-icon iconName="Settings" disabled></dzi-icon>
+<dzi-icon iconName="Save"     disabled></dzi-icon>
+<dzi-icon iconName="Trash2"   disabled></dzi-icon>`,
     ts: `// Bind disabled dynamically
 isLoading = true;
 
@@ -187,13 +187,13 @@ isLoading = true;
   clickLog: any[] = [];
 
   clickCode = {
-    html: `<!-- Listen to native (click) event on ziva-icon -->
-<ziva-icon
+    html: `<!-- Listen to native (click) event on dzi-icon -->
+<dzi-icon
   iconName="Download"
   iconColor="var(--color-primary)"
   ariaLabel="Download"
   (click)="onIconClick('Download')">
-</ziva-icon>`,
+</dzi-icon>`,
     ts: `clickLog: string[] = [];
 
 onIconClick(label: string): void {

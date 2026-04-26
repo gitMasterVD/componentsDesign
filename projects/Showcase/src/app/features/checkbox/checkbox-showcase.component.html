@@ -1,9 +1,9 @@
-<div class="content-body">
+﻿<div class="content-body">
 
     <div class="component-header">
         <h1 class="component-title">Checkbox</h1>
         <p class="component-description">
-            <code>ziva-checkbox</code> provides an accessible checkbox component with built-in label,
+            <code>dzi-checkbox</code> provides an accessible checkbox component with built-in label,
             keyboard navigation, screen-reader support, and Angular forms integration.
         </p>
     </div>
@@ -16,9 +16,9 @@
         </div>
 
         <div class="section-preview">
-            <ziva-checkbox>Accept terms and conditions</ziva-checkbox>
-            <ziva-checkbox [checked]="true">Pre-checked option</ziva-checkbox>
-            <ziva-checkbox>Subscribe to newsletter</ziva-checkbox>
+            <dzi-checkbox>Accept terms and conditions</dzi-checkbox>
+            <dzi-checkbox [checked]="true">Pre-checked option</dzi-checkbox>
+            <dzi-checkbox>Subscribe to newsletter</dzi-checkbox>
         </div>
 
         <div class="section-tabs">
@@ -52,10 +52,10 @@
         </div>
 
         <div class="section-preview">
-            <ziva-checkbox color="primary" [checked]="true">Primary</ziva-checkbox>
-            <ziva-checkbox color="success" [checked]="true">Success</ziva-checkbox>
-            <ziva-checkbox color="error" [checked]="true">Error</ziva-checkbox>
-            <ziva-checkbox color="warning" [checked]="true">Warning</ziva-checkbox>
+            <dzi-checkbox color="primary" [checked]="true">Primary</dzi-checkbox>
+            <dzi-checkbox color="success" [checked]="true">Success</dzi-checkbox>
+            <dzi-checkbox color="error" [checked]="true">Error</dzi-checkbox>
+            <dzi-checkbox color="warning" [checked]="true">Warning</dzi-checkbox>
         </div>
 
         <div class="section-tabs">
@@ -89,9 +89,9 @@
         </div>
 
         <div class="section-preview">
-            <ziva-checkbox size="sm" [checked]="true">Small</ziva-checkbox>
-            <ziva-checkbox size="md" [checked]="true">Medium</ziva-checkbox>
-            <ziva-checkbox size="lg" [checked]="true">Large</ziva-checkbox>
+            <dzi-checkbox size="sm" [checked]="true">Small</dzi-checkbox>
+            <dzi-checkbox size="md" [checked]="true">Medium</dzi-checkbox>
+            <dzi-checkbox size="lg" [checked]="true">Large</dzi-checkbox>
         </div>
 
         <div class="section-tabs">
@@ -126,16 +126,16 @@
 
         <div class="section-preview">
             <div class="checkbox-group">
-                <ziva-checkbox
+                <dzi-checkbox
                     [checked]="isAllChecked"
                     [indeterminate]="isIndeterminate"
                     (checkedChange)="onSelectAllChange($event)">
                     Select all items
-                </ziva-checkbox>
+                </dzi-checkbox>
                 <div class="checkbox-children">
-                    <ziva-checkbox [(checked)]="child1" (checkedChange)="onChildChange()">Item 1</ziva-checkbox>
-                    <ziva-checkbox [(checked)]="child2" (checkedChange)="onChildChange()">Item 2</ziva-checkbox>
-                    <ziva-checkbox [(checked)]="child3" (checkedChange)="onChildChange()">Item 3</ziva-checkbox>
+                    <dzi-checkbox [(checked)]="child1" (checkedChange)="onChildChange()">Item 1</dzi-checkbox>
+                    <dzi-checkbox [(checked)]="child2" (checkedChange)="onChildChange()">Item 2</dzi-checkbox>
+                    <dzi-checkbox [(checked)]="child3" (checkedChange)="onChildChange()">Item 3</dzi-checkbox>
                 </div>
             </div>
         </div>
@@ -171,9 +171,9 @@
         </div>
 
         <div class="section-preview">
-            <ziva-checkbox [disabled]="true">Disabled unchecked</ziva-checkbox>
-            <ziva-checkbox [disabled]="true" [checked]="true">Disabled checked</ziva-checkbox>
-            <ziva-checkbox [disabled]="true" [indeterminate]="true">Disabled indeterminate</ziva-checkbox>
+            <dzi-checkbox [disabled]="true">Disabled unchecked</dzi-checkbox>
+            <dzi-checkbox [disabled]="true" [checked]="true">Disabled checked</dzi-checkbox>
+            <dzi-checkbox [disabled]="true" [indeterminate]="true">Disabled indeterminate</dzi-checkbox>
         </div>
 
         <div class="section-tabs">
@@ -208,16 +208,16 @@
 
         <div class="section-preview">
             <div class="forms-demo">
-                <ziva-checkbox [(checked)]="agreedToTerms">
+                <dzi-checkbox [(checked)]="agreedToTerms">
                     I agree to the terms and conditions
-                </ziva-checkbox>
+                </dzi-checkbox>
                 <span class="status-badge" [class.status-badge--active]="agreedToTerms">
                     {{ agreedToTerms ? '✓ Agreed' : '✗ Not agreed' }}
                 </span>
             </div>
-            <ziva-checkbox [error]="true" [required]="true">
+            <dzi-checkbox [error]="true" [required]="true">
                 This field is required
-            </ziva-checkbox>
+            </dzi-checkbox>
         </div>
 
         <div class="section-tabs">

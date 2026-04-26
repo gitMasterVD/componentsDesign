@@ -1,11 +1,11 @@
-import { Component } from '@angular/core';
+﻿import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ZivaButtonDirective, ZivaIconButtonDirective, ZivaIconComponent } from '@ziva-components';
+import { DziButtonDirective, DziIconButtonDirective, DziIconComponent } from '@dizikit';
 
 @Component({
   selector: 'app-button-showcase',
   standalone: true,
-  imports: [CommonModule, ZivaButtonDirective, ZivaIconButtonDirective, ZivaIconComponent],
+  imports: [CommonModule, DziButtonDirective, DziIconButtonDirective, DziIconComponent],
   templateUrl: './button-showcase.component.html',
   styleUrls: ['./button-showcase.component.scss']
 })
@@ -30,13 +30,13 @@ export class ButtonShowcaseComponent {
   ];
 
   basicCode = {
-    html: `<button zivaButton>Default Button</button>
-<button zivaButton variant="primary">Primary Button</button>
-<button zivaButton variant="secondary">Secondary Button</button>`,
-    ts: `import { ZivaButtonDirective } from '@ziva-components';
+    html: `<button dziButton>Default Button</button>
+<button dziButton variant="primary">Primary Button</button>
+<button dziButton variant="secondary">Secondary Button</button>`,
+    ts: `import { DziButtonDirective } from '@dizikit';
 
 @Component({
-  imports: [ZivaButtonDirective],
+  imports: [DziButtonDirective],
   // ...
 })`,
     scss: `/* Default button styles are applied via directive */`
@@ -44,19 +44,19 @@ export class ButtonShowcaseComponent {
 
   variantCode = {
     html: `<!-- Brand Variants -->
-<button zivaButton variant="primary">Primary</button>
-<button zivaButton variant="secondary">Secondary</button>
-<button zivaButton variant="tertiary">Tertiary (Ghost)</button>
+<button dziButton variant="primary">Primary</button>
+<button dziButton variant="secondary">Secondary</button>
+<button dziButton variant="tertiary">Tertiary (Ghost)</button>
 
 <!-- Feedback Variants -->
-<button zivaButton variant="success">Success</button>
-<button zivaButton variant="error">Error</button>
-<button zivaButton variant="warning">Warning</button>
-<button zivaButton variant="info">Info</button>`,
-    ts: `import { ZivaButtonDirective } from '@ziva-components';
+<button dziButton variant="success">Success</button>
+<button dziButton variant="error">Error</button>
+<button dziButton variant="warning">Warning</button>
+<button dziButton variant="info">Info</button>`,
+    ts: `import { DziButtonDirective } from '@dizikit';
 
 @Component({
-  imports: [ZivaButtonDirective],
+  imports: [DziButtonDirective],
   // ...
 })`,
     scss: `/* Variants are handled by the [variant] input */`
@@ -64,18 +64,18 @@ export class ButtonShowcaseComponent {
 
   sizeCode = {
     html: `<!-- Standard Buttons -->
-<button zivaButton size="sm">Small</button>
-<button zivaButton size="md">Medium</button>
-<button zivaButton size="lg">Large</button>
+<button dziButton size="sm">Small</button>
+<button dziButton size="md">Medium</button>
+<button dziButton size="lg">Large</button>
 
 <!-- Icon Buttons -->
-<button zivaIconButton size="sm"><ziva-icon iconName="Plus" iconColor="#fff"></ziva-icon></button>
-<button zivaIconButton size="md"><ziva-icon iconName="Plus" iconColor="#fff"></ziva-icon></button>
-<button zivaIconButton size="lg"><ziva-icon iconName="Plus" iconColor="#fff"></ziva-icon></button>`,
-    ts: `import { ZivaButtonDirective, ZivaIconButtonDirective, ZivaIconComponent } from '@ziva-components';
+<button dziIconButton size="sm"><dzi-icon iconName="Plus" iconColor="#fff"></dzi-icon></button>
+<button dziIconButton size="md"><dzi-icon iconName="Plus" iconColor="#fff"></dzi-icon></button>
+<button dziIconButton size="lg"><dzi-icon iconName="Plus" iconColor="#fff"></dzi-icon></button>`,
+    ts: `import { DziButtonDirective, DziIconButtonDirective, DziIconComponent } from '@dizikit';
 
 @Component({
-  imports: [ZivaButtonDirective, ZivaIconButtonDirective, ZivaIconComponent],
+  imports: [DziButtonDirective, DziIconButtonDirective, DziIconComponent],
   // ...
 })`,
     scss: `/* Sizes are handled by the [size] input */`
@@ -83,32 +83,32 @@ export class ButtonShowcaseComponent {
 
   iconButtonCode = {
     html: `<!-- Circular Icon Buttons with Variants -->
-<button zivaIconButton variant="primary"><ziva-icon iconName="Plus" iconColor="#fff"></ziva-icon></button>
-<button zivaIconButton variant="success"><ziva-icon iconName="Check" iconColor="#fff"></ziva-icon></button>
-<button zivaIconButton variant="error"><ziva-icon iconName="Trash" iconColor="#fff"></ziva-icon></button>
-<button zivaIconButton variant="warning"><ziva-icon iconName="AlertTriangle" iconColor="#fff"></ziva-icon></button>
-<button zivaIconButton variant="tertiary"><ziva-icon iconName="Settings"></ziva-icon></button>`,
-    ts: `import { ZivaIconButtonDirective, ZivaIconComponent } from '@ziva-components';
+<button dziIconButton variant="primary"><dzi-icon iconName="Plus" iconColor="#fff"></dzi-icon></button>
+<button dziIconButton variant="success"><dzi-icon iconName="Check" iconColor="#fff"></dzi-icon></button>
+<button dziIconButton variant="error"><dzi-icon iconName="Trash" iconColor="#fff"></dzi-icon></button>
+<button dziIconButton variant="warning"><dzi-icon iconName="AlertTriangle" iconColor="#fff"></dzi-icon></button>
+<button dziIconButton variant="tertiary"><dzi-icon iconName="Settings"></dzi-icon></button>`,
+    ts: `import { DziIconButtonDirective, DziIconComponent } from '@dizikit';
 
 @Component({
-  imports: [ZivaIconButtonDirective, ZivaIconComponent],
+  imports: [DziIconButtonDirective, DziIconComponent],
   // ...
 })`,
-    scss: `/* Icon buttons use zivaIconButton directive */`
+    scss: `/* Icon buttons use dziIconButton directive */`
   };
 
   disabledCode = {
     html: `<!-- Disabled state applies to all variants and sizes -->
-<button zivaButton disabled>Disabled Button</button>
-<button zivaButton variant="success" disabled>Disabled Success</button>
+<button dziButton disabled>Disabled Button</button>
+<button dziButton variant="success" disabled>Disabled Success</button>
 
-<button zivaIconButton disabled>
-  <ziva-icon iconName="Lock" iconColor="#6b7280"></ziva-icon>
+<button dziIconButton disabled>
+  <dzi-icon iconName="Lock" iconColor="#6b7280"></dzi-icon>
 </button>`,
-    ts: `import { ZivaButtonDirective, ZivaIconButtonDirective } from '@ziva-components';
+    ts: `import { DziButtonDirective, DziIconButtonDirective } from '@dizikit';
 
 @Component({
-  imports: [ZivaButtonDirective, ZivaIconButtonDirective],
+  imports: [DziButtonDirective, DziIconButtonDirective],
   // ...
 })`,
     scss: `/* Disabled styles are applied via [disabled] attribute */`
@@ -118,11 +118,11 @@ export class ButtonShowcaseComponent {
     html: `<!-- Interactive Split Button Example -->
 <div class="split-button-container">
   <div class="split-button">
-    <button zivaButton variant="primary" (click)="onMainActionClick()">
+    <button dziButton variant="primary" (click)="onMainActionClick()">
       {{ selectedAction }}
     </button>
-    <button zivaIconButton variant="primary" (click)="toggleDropdown()">
-      <ziva-icon iconName="ChevronDown" iconColor="#fff"></ziva-icon>
+    <button dziIconButton variant="primary" (click)="toggleDropdown()">
+      <dzi-icon iconName="ChevronDown" iconColor="#fff"></dzi-icon>
     </button>
   </div>
 
@@ -150,8 +150,8 @@ export class ButtonShowcaseComponent {
     scss: `.split-button {
   display: flex;
   overflow: hidden;
-  button[zivaButton] { border-radius: 8px 0 0 8px; }
-  button[zivaIconButton] { border-radius: 0 8px 8px 0; }
+  button[dziButton] { border-radius: 8px 0 0 8px; }
+  button[dziIconButton] { border-radius: 0 8px 8px 0; }
 }`
   };
 
