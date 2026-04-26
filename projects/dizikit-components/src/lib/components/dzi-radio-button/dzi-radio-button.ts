@@ -16,26 +16,26 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 let nextRadioId = 0;
 
 @Component({
-    selector: 'dzi-radio',
+    selector: 'dzi-radio-button',
     standalone: true,
     imports: [],
     changeDetection: ChangeDetectionStrategy.OnPush,
     encapsulation: ViewEncapsulation.None,
-    templateUrl: './dzi-radio.html',
-    styleUrls: ['./dzi-radio.scss'],
+    templateUrl: './dzi-radio-button.html',
+    styleUrls: ['./dzi-radio-button.scss'],
     providers: [
         {
             provide: NG_VALUE_ACCESSOR,
-            useExisting: forwardRef(() => DziRadioComponent),
+            useExisting: forwardRef(() => DziRadioButtonComponent),
             multi: true,
         },
     ],
 })
-export class DziRadioComponent implements ControlValueAccessor {
+export class DziRadioButtonComponent implements ControlValueAccessor {
     @ViewChild('inputEl', { static: true }) inputEl!: ElementRef<HTMLInputElement>;
 
     /** Unique ID for this radio instance */
-    readonly inputId = `dzi-radio-${nextRadioId++}`;
+    readonly inputId = `dzi-radio-button-${nextRadioId++}`;
 
     // -------------------------------------------------------------------------
     // INPUTS
@@ -114,6 +114,11 @@ export class DziRadioComponent implements ControlValueAccessor {
 
     onFocus(): void {
         this.isFocused = true;
+    }
+
+    onFocusOut(): void {
+        this.isFocused = false;
+        this.onTouched();
     }
 
     onBlur(): void {

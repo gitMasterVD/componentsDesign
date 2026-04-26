@@ -1,0 +1,114 @@
+<div class="content-body">
+
+    <div class="component-header">
+        <h1 class="component-title">Sidebar</h1>
+        <p class="component-description">
+            A highly flexible, content-driven side navigation. 
+            It intelligently handles collapsed states by showing only your icons and hiding the rest of the content automatically.
+        </p>
+    </div>
+
+    <!-- ─── SECTION: Basic Usage ────────────────────────────────────────── -->
+    <div class="section-card">
+        <div class="section-header">
+            <h2 class="section-title">Basic Usage</h2>
+            <p class="section-desc">Place your icons and text directly. The sidebar handles the rest.</p>
+        </div>
+
+        <div class="section-preview" style="height: 350px; background: var(--color-surface-raised); padding: 0; align-items: stretch; border-radius: 12px; overflow: hidden;">
+            <dzi-sidebar>
+                <a dziSidebarItem>
+                    <dzi-icon iconName="Home"></dzi-icon>
+                    <span>Home</span>
+                </a>
+                <a dziSidebarItem>
+                    <dzi-icon iconName="BarChart"></dzi-icon>
+                    <span>Analytics</span>
+                </a>
+                <a dziSidebarItem>
+                    <dzi-icon iconName="Settings"></dzi-icon>
+                    <span>Settings</span>
+                </a>
+            </dzi-sidebar>
+            <div style="flex: 1; display: flex; align-items: center; justify-content: center; color: var(--color-text-muted);">
+                Content Area
+            </div>
+        </div>
+
+        <div class="section-tabs">
+            <div class="tabs-bar">
+                <button class="tab-btn" [class.active]="activeTabs['basic'] === 'html'" (click)="setTab('basic', 'html')">HTML</button>
+            </div>
+            <div class="code-viewer">
+                @if (activeTabs['basic'] === 'html') { <pre><code class="language-html">{{ basicCode.html }}</code></pre> }
+            </div>
+        </div>
+    </div>
+
+    <!-- ─── SECTION: Full Layout ────────────────────────────────────────── -->
+    <div class="section-card">
+        <div class="section-header">
+            <h2 class="section-title">Full Application Layout</h2>
+            <p class="section-desc">Intelligent content projection allows for complex item structures that "just work" in mini-mode.</p>
+        </div>
+
+        <div class="section-preview" style="height: 550px; background: var(--color-surface-raised); padding: 0; align-items: stretch; border-radius: 12px; overflow: hidden;">
+            <dzi-sidebar [(collapsed)]="isCollapsed">
+                <!-- Header -->
+                <div dziSidebarHeader style="display: flex; align-items: center; gap: 12px; padding: 1rem 0.5rem;">
+                    <div style="width: 36px; height: 36px; background: var(--color-tertiary); border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                        <dzi-icon iconName="Layers" iconColor="var(--color-primary)"></dzi-icon>
+                    </div>
+                    <span *ngIf="!isCollapsed" style="font-weight: 800; letter-spacing: 1px;">DIZIKIT</span>
+                </div>
+
+                <!-- Sections -->
+                <dzi-sidebar-section title="General">
+                    <a dziSidebarItem [active]="true">
+                        <dzi-icon iconName="Layout"></dzi-icon>
+                        <span>Dashboard</span>
+                    </a>
+                    <a dziSidebarItem>
+                        <dzi-icon iconName="User"></dzi-icon>
+                        <span>Users</span>
+                        <span class="dzi-sidebar__badge">NEW</span>
+                    </a>
+                </dzi-sidebar-section>
+
+                <dzi-sidebar-section title="System">
+                    <a dziSidebarItem>
+                        <dzi-icon iconName="Settings"></dzi-icon>
+                        <span>Config</span>
+                    </a>
+                </dzi-sidebar-section>
+
+                <!-- Footer -->
+                <div dziSidebarFooter *ngIf="!isCollapsed">
+                    <button style="display: flex; align-items: center; gap: 8px; width: 100%; padding: 10px; border: 1px solid var(--color-border); border-radius: 8px; background: white; cursor: pointer; font-family: inherit;">
+                        <dzi-icon iconName="LogOut"></dzi-icon>
+                        <span style="font-weight: 600;">Logout</span>
+                    </button>
+                </div>
+            </dzi-sidebar>
+
+            <div style="flex: 1; padding: 2rem;">
+                <button class="theme-toggle" (click)="isCollapsed = !isCollapsed" style="padding: 10px 20px; border-radius: 8px;">
+                    Toggle Sidebar State
+                </button>
+                <div style="margin-top: 2rem; color: var(--color-text-secondary);">
+                    Current State: <strong>{{ isCollapsed ? 'Collapsed (Mini)' : 'Expanded' }}</strong>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-tabs">
+            <div class="tabs-bar">
+                <button class="tab-btn" [class.active]="activeTabs['layout'] === 'html'" (click)="setTab('layout', 'html')">HTML</button>
+            </div>
+            <div class="code-viewer">
+                @if (activeTabs['layout'] === 'html') { <pre><code class="language-html">{{ layoutCode.html }}</code></pre> }
+            </div>
+        </div>
+    </div>
+
+</div>

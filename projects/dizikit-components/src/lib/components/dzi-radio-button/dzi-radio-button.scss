@@ -1,9 +1,9 @@
 // =============================================================================
-// DIZIKIT RADIO STYLES — dzi-radio.scss
-// Styles for the dzi-radio component.
+// DIZIKIT RADIO BUTTON STYLES — dzi-radio-button.scss
+// Styles for the dzi-radio-button component.
 // =============================================================================
 
-.dzi-radio {
+.dzi-radio-button {
     display: inline-flex;
     align-items: flex-start;
     gap: var(--radio-label-gap);
@@ -83,23 +83,23 @@
     // =========================================================================
 
     // --- Hover ---
-    &:hover:not(.dzi-radio--disabled) {
-        .dzi-radio__box {
+    &:hover:not(.dzi-radio-button--disabled) {
+        .dzi-radio-button__box {
             border-color: var(--radio-hover-border);
         }
     }
 
     // --- Focus ---
-    &--focused:not(.dzi-radio--disabled) {
-        .dzi-radio__box {
+    &--focused:not(.dzi-radio-button--disabled) {
+        .dzi-radio-button__box {
             box-shadow: var(--radio-focus-shadow);
             border-color: var(--radio-hover-border);
         }
     }
 
     // --- Checked ---
-    &--checked:not(.dzi-radio--disabled) {
-        .dzi-radio__box {
+    &--checked:not(.dzi-radio-button--disabled) {
+        .dzi-radio-button__box {
             background-color: var(--radio-checked-bg);
             border-color: var(--radio-checked-border);
         }
@@ -110,23 +110,23 @@
         cursor: not-allowed;
         opacity: 0.55;
 
-        .dzi-radio__box {
+        .dzi-radio-button__box {
             background-color: var(--radio-disabled-bg);
             border-color: var(--radio-disabled-border);
         }
 
-        .dzi-radio__dot {
+        .dzi-radio-button__dot {
             background-color: var(--radio-disabled-check-color);
         }
 
-        .dzi-radio__label {
+        .dzi-radio-button__label {
             color: var(--radio-label-disabled-color);
         }
     }
 
     // --- Error ---
-    &--error:not(.dzi-radio--disabled) {
-        .dzi-radio__box {
+    &--error:not(.dzi-radio-button--disabled) {
+        .dzi-radio-button__box {
             border-color: var(--radio-error-border);
         }
     }
@@ -135,35 +135,35 @@
     // COLOR VARIANTS
     // =========================================================================
 
-    &--primary.dzi-radio--checked:not(.dzi-radio--disabled) {
-        .dzi-radio__box {
+    &--primary.dzi-radio-button--checked:not(.dzi-radio-button--disabled) {
+        .dzi-radio-button__box {
             background-color: var(--radio-checked-bg);
             border-color: var(--radio-checked-border);
         }
     }
 
-    &--success.dzi-radio--checked:not(.dzi-radio--disabled) {
-        .dzi-radio__box {
+    &--success.dzi-radio-button--checked:not(.dzi-radio-button--disabled) {
+        .dzi-radio-button__box {
             background-color: var(--radio-success-bg);
             border-color: var(--radio-success-border);
         }
-        .dzi-radio__dot { background-color: var(--radio-success-check); }
+        .dzi-radio-button__dot { background-color: var(--radio-success-check); }
     }
 
-    &--error-color.dzi-radio--checked:not(.dzi-radio--disabled) {
-        .dzi-radio__box {
+    &--error-color.dzi-radio-button--checked:not(.dzi-radio-button--disabled) {
+        .dzi-radio-button__box {
             background-color: var(--radio-error-bg);
             border-color: var(--radio-error-border-checked);
         }
-        .dzi-radio__dot { background-color: var(--radio-error-check); }
+        .dzi-radio-button__dot { background-color: var(--radio-error-check); }
     }
 
-    &--warning.dzi-radio--checked:not(.dzi-radio--disabled) {
-        .dzi-radio__box {
+    &--warning.dzi-radio-button--checked:not(.dzi-radio-button--disabled) {
+        .dzi-radio-button__box {
             background-color: var(--radio-warning-bg);
             border-color: var(--radio-warning-border);
         }
-        .dzi-radio__dot { background-color: var(--radio-warning-check); }
+        .dzi-radio-button__dot { background-color: var(--radio-warning-check); }
     }
 
     // =========================================================================
@@ -172,19 +172,19 @@
 
     &--sm {
         gap: 8px;
-        .dzi-radio__box { width: 14px; height: 14px; }
-        .dzi-radio__label { font-size: 12px; line-height: 14px; }
+        .dzi-radio-button__box { width: 14px; height: 14px; }
+        .dzi-radio-button__label { font-size: 12px; line-height: 14px; }
     }
 
     &--md {
         gap: 10px;
-        .dzi-radio__box { width: 18px; height: 18px; }
-        .dzi-radio__label { font-size: 14px; line-height: 18px; }
+        .dzi-radio-button__box { width: 18px; height: 18px; }
+        .dzi-radio-button__label { font-size: 14px; line-height: 18px; }
     }
 
     &--lg {
         gap: 12px;
-        .dzi-radio__box { width: 22px; height: 22px; }
-        .dzi-radio__label { font-size: 16px; line-height: 22px; }
+        .dzi-radio-button__box { width: 22px; height: 22px; }
+        .dzi-radio-button__label { font-size: 16px; line-height: 22px; }
     }
 }

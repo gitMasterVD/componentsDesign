@@ -1,0 +1,26 @@
+<aside class="dzi-sidebar" [class.dzi-sidebar--collapsed]="collapsed">
+    
+    <!-- Logo / Header Area -->
+    <div class="dzi-sidebar__header">
+        <ng-content select="[dziSidebarHeader]"></ng-content>
+    </div>
+
+    <!-- Navigation / Main Content -->
+    <nav class="dzi-sidebar__nav">
+        <ng-content></ng-content>
+    </nav>
+
+    <!-- Footer Area (Toggle button and more) -->
+    <div class="dzi-sidebar__footer-wrapper">
+        <div class="dzi-sidebar__custom-footer">
+            <ng-content select="[dziSidebarFooter]"></ng-content>
+        </div>
+        
+        <div class="dzi-sidebar__toggle-container">
+            <button class="dzi-sidebar__toggle" (click)="toggleCollapse()" [title]="collapsed ? 'Expand' : 'Collapse'">
+                <dzi-icon [iconName]="collapsed ? 'ChevronRight' : 'ChevronLeft'"
+                    iconColor="var(--color-text-secondary)"></dzi-icon>
+            </button>
+        </div>
+    </div>
+</aside>

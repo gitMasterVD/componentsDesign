@@ -8,6 +8,7 @@ import { FormFieldShowcaseComponent } from './features/form-field/form-field-sho
 import { CheckboxShowcaseComponent } from './features/checkbox/checkbox-showcase.component';
 import { CardShowcaseComponent } from './features/card/card-showcase.component';
 import { RadioShowcaseComponent } from './features/radio/radio-showcase.component';
+import { SidebarShowcaseComponent } from './features/sidebar/sidebar-showcase.component';
 import { ComingSoonComponent } from './features/common/coming-soon/coming-soon.component';
 
 export const routes: Routes = [
@@ -29,6 +30,7 @@ export const routes: Routes = [
                     { path: 'form-field', component: FormFieldShowcaseComponent },
                     { path: 'checkbox', component: CheckboxShowcaseComponent },
                     { path: 'radio', component: RadioShowcaseComponent },
+                    { path: 'sidebar', component: SidebarShowcaseComponent },
                     { path: 'card', component: CardShowcaseComponent },
                 ]
             }
