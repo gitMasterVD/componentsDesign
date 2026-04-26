@@ -1,9 +1,9 @@
-<div class="content-body">
+﻿<div class="content-body">
 
     <div class="component-header">
         <h1 class="component-title">Button</h1>
         <p class="component-description">
-            <code>zivaButton</code> and <code>zivaIconButton</code> directives provide standard and icon-only button
+            <code>dziButton</code> and <code>dziIconButton</code> directives provide standard and icon-only button
             styles
             with built-in animations and variants.
         </p>
@@ -17,13 +17,13 @@
         </div>
 
         <div class="section-preview">
-            <button zivaButton variant="primary">Primary</button>
-            <button zivaButton variant="secondary">Secondary</button>
-            <button zivaButton variant="tertiary">Tertiary (Ghost)</button>
-            <button zivaButton variant="success">Success</button>
-            <button zivaButton variant="error">Error</button>
-            <button zivaButton variant="warning">Warning</button>
-            <button zivaButton variant="info">Info</button>
+            <button dziButton variant="primary">Primary</button>
+            <button dziButton variant="secondary">Secondary</button>
+            <button dziButton variant="tertiary">Tertiary (Ghost)</button>
+            <button dziButton variant="success">Success</button>
+            <button dziButton variant="error">Error</button>
+            <button dziButton variant="warning">Warning</button>
+            <button dziButton variant="info">Info</button>
         </div>
 
         <div class="section-tabs">
@@ -57,13 +57,13 @@
         </div>
 
         <div class="section-preview">
-            <button zivaButton size="sm">Small</button>
-            <button zivaButton size="md">Medium</button>
-            <button zivaButton size="lg">Large</button>
+            <button dziButton size="sm">Small</button>
+            <button dziButton size="md">Medium</button>
+            <button dziButton size="lg">Large</button>
             <span style="margin: 0 10px; border-left: 1px solid #ddd; height: 30px;"></span>
-            <button zivaIconButton size="sm"><ziva-icon iconName="Plus" iconColor="#fff"></ziva-icon></button>
-            <button zivaIconButton size="md"><ziva-icon iconName="Plus" iconColor="#fff"></ziva-icon></button>
-            <button zivaIconButton size="lg"><ziva-icon iconName="Plus" iconColor="#fff"></ziva-icon></button>
+            <button dziIconButton size="sm"><dzi-icon iconName="Plus" iconColor="#fff"></dzi-icon></button>
+            <button dziIconButton size="md"><dzi-icon iconName="Plus" iconColor="#fff"></dzi-icon></button>
+            <button dziIconButton size="lg"><dzi-icon iconName="Plus" iconColor="#fff"></dzi-icon></button>
         </div>
 
         <div class="section-tabs">
@@ -97,20 +97,20 @@
         </div>
 
         <div class="section-preview">
-            <button zivaIconButton variant="primary">
-                <ziva-icon iconName="Plus" iconColor="#fff"></ziva-icon>
+            <button dziIconButton variant="primary">
+                <dzi-icon iconName="Plus" iconColor="#fff"></dzi-icon>
             </button>
-            <button zivaIconButton variant="success">
-                <ziva-icon iconName="Check" iconColor="#fff"></ziva-icon>
+            <button dziIconButton variant="success">
+                <dzi-icon iconName="Check" iconColor="#fff"></dzi-icon>
             </button>
-            <button zivaIconButton variant="error">
-                <ziva-icon iconName="Trash" iconColor="#fff"></ziva-icon>
+            <button dziIconButton variant="error">
+                <dzi-icon iconName="Trash" iconColor="#fff"></dzi-icon>
             </button>
-            <button zivaIconButton variant="warning">
-                <ziva-icon iconName="AlertTriangle" iconColor="#fff"></ziva-icon>
+            <button dziIconButton variant="warning">
+                <dzi-icon iconName="AlertTriangle" iconColor="#fff"></dzi-icon>
             </button>
-            <button zivaIconButton variant="tertiary">
-                <ziva-icon iconName="Settings"></ziva-icon>
+            <button dziIconButton variant="tertiary">
+                <dzi-icon iconName="Settings"></dzi-icon>
             </button>
         </div>
 
@@ -147,13 +147,13 @@
         <div class="section-preview" style="min-height: 180px; align-items: flex-start;">
             <div class="split-button-container">
                 <div class="split-button">
-                    <button zivaButton variant="primary" (click)="onMainActionClick()">
+                    <button dziButton variant="primary" (click)="onMainActionClick()">
                         {{ selectedAction }}
                     </button>
-                    <button zivaIconButton variant="primary"
+                    <button dziIconButton variant="primary"
                         style="border-radius: 0 8px 8px 0; border-left: 1px solid rgba(255,255,255,0.2);"
                         (click)="toggleDropdown()">
-                        <ziva-icon iconName="ChevronDown" iconColor="#fff"></ziva-icon>
+                        <dzi-icon iconName="ChevronDown" iconColor="#fff"></dzi-icon>
                     </button>
                 </div>
 
@@ -199,12 +199,12 @@
         </div>
 
         <div class="section-preview">
-            <button zivaButton disabled>Disabled Button</button>
-            <button zivaIconButton disabled>
-                <ziva-icon iconName="Lock" iconColor="#6b7280"></ziva-icon>
+            <button dziButton disabled>Disabled Button</button>
+            <button dziIconButton disabled>
+                <dzi-icon iconName="Lock" iconColor="#6b7280"></dzi-icon>
             </button>
-            <button zivaIconButton variant="secondary" disabled>
-                <ziva-icon iconName="Lock" iconColor="#6b7280"></ziva-icon>
+            <button dziIconButton variant="secondary" disabled>
+                <dzi-icon iconName="Lock" iconColor="#6b7280"></dzi-icon>
             </button>
         </div>
 

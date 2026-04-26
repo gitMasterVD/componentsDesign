@@ -1,10 +1,10 @@
-<div class="content-body">
+﻿<div class="content-body">
 
     <!-- ===== HEADER — plain text only ===== -->
     <div class="component-header">
         <h1 class="component-title">Icon</h1>
         <p class="component-description">
-            <code>ziva-icon</code> renders icons from the registered Lucide set.
+            <code>dzi-icon</code> renders icons from the registered Lucide set.
             Icons are declared once in <code>app.config.ts</code> via <code>LucideAngularModule.pick()</code>.
         </p>
     </div>
@@ -13,12 +13,12 @@
     <div class="section-card">
         <div class="section-header">
             <h2 class="section-title">Installation & Configuration</h2>
-            <p class="section-desc">Follow these steps to set up Lucide icons in your Ziva application.</p>
+            <p class="section-desc">Follow these steps to set up Lucide icons in your Dizikit application.</p>
         </div>
 
         <div class="section-preview setup-preview">
             <div class="setup-hint">
-                <ziva-icon iconName="Settings" iconColor="var(--color-primary)"></ziva-icon>
+                <dzi-icon iconName="Settings" iconColor="var(--color-primary)"></dzi-icon>
                 <span>Follow the tabs below to configure your project.</span>
             </div>
         </div>
@@ -53,7 +53,7 @@
         <div class="section-preview">
             <div class="icons-row">
                 @for (item of basicIcons; track item.label) {
-                <ziva-icon [iconName]="item.iconName"></ziva-icon>
+                <dzi-icon [iconName]="item.iconName"></dzi-icon>
                 }
             </div>
         </div>
@@ -88,7 +88,7 @@
         <div class="section-preview">
             <div class="icons-row">
                 @for (item of colorIcons; track item.label) {
-                <ziva-icon [iconName]="item.iconName" [iconColor]="item.color" [ariaLabel]="item.ariaLabel"></ziva-icon>
+                <dzi-icon [iconName]="item.iconName" [iconColor]="item.color" [ariaLabel]="item.ariaLabel"></dzi-icon>
                 }
             </div>
         </div>
@@ -123,10 +123,10 @@
         <div class="section-preview">
             <div class="icons-row">
                 @for (item of hoverIcons; track item.label; let i = $index) {
-                <ziva-icon [iconName]="hoveredIconIndex === i ? item.hoverIcon : item.defaultIcon"
+                <dzi-icon [iconName]="hoveredIconIndex === i ? item.hoverIcon : item.defaultIcon"
                     [iconColor]="item.color" [ariaLabel]="item.ariaLabel" class="hover-icon"
                     (mouseenter)="hoveredIconIndex = i" (mouseleave)="hoveredIconIndex = null">
-                </ziva-icon>
+                </dzi-icon>
                 }
             </div>
         </div>
@@ -161,8 +161,8 @@
         <div class="section-preview">
             <div class="icons-row">
                 @for (item of disabledIcons; track item.label) {
-                <ziva-icon [iconName]="item.iconName" [iconColor]="item.color" disabled
-                    [ariaLabel]="item.ariaLabel"></ziva-icon>
+                <dzi-icon [iconName]="item.iconName" [iconColor]="item.color" disabled
+                    [ariaLabel]="item.ariaLabel"></dzi-icon>
                 }
             </div>
         </div>
@@ -198,9 +198,9 @@
         <div class="section-preview">
             <div class="icons-row">
                 @for (item of clickIcons; track item.label) {
-                <ziva-icon [iconName]="item.iconName" [iconColor]="item.color" [ariaLabel]="item.ariaLabel"
+                <dzi-icon [iconName]="item.iconName" [iconColor]="item.color" [ariaLabel]="item.ariaLabel"
                     class="click-icon" (click)="onIconClick(item.label)">
-                </ziva-icon>
+                </dzi-icon>
                 }
             </div>
 
@@ -245,7 +245,7 @@
     <div class="api-reference">
         <h2 class="api-reference-title">API Reference</h2>
         <p class="api-reference-desc">
-            All inputs for <code>ziva-icon</code>. Icons must be registered in
+            All inputs for <code>dzi-icon</code>. Icons must be registered in
             <code>app.config.ts</code> via <code>LucideAngularModule.pick()</code>.
         </p>
         <table class="api-table">

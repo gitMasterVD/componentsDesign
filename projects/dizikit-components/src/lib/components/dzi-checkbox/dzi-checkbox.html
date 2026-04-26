@@ -1,0 +1,81 @@
+﻿<label
+    class="dzi-checkbox"
+    [class.dzi-checkbox--checked]="checked"
+    [class.dzi-checkbox--indeterminate]="indeterminate"
+    [class.dzi-checkbox--disabled]="disabled"
+    [class.dzi-checkbox--error]="error"
+    [class.dzi-checkbox--focused]="isFocused"
+    [class.dzi-checkbox--sm]="size === 'sm'"
+    [class.dzi-checkbox--md]="size === 'md'"
+    [class.dzi-checkbox--lg]="size === 'lg'"
+    [class.dzi-checkbox--primary]="color === 'primary'"
+    [class.dzi-checkbox--success]="color === 'success'"
+    [class.dzi-checkbox--error-color]="color === 'error'"
+    [class.dzi-checkbox--warning]="color === 'warning'"
+    [attr.for]="inputId"
+>
+    <!-- Visually hidden native checkbox for accessibility -->
+    <input
+        #inputEl
+        type="checkbox"
+        class="dzi-checkbox__input"
+        [id]="inputId"
+        [checked]="checked"
+        [disabled]="disabled"
+        [required]="required"
+        [indeterminate]="indeterminate"
+        [attr.name]="name"
+        [attr.value]="value"
+        [attr.aria-checked]="indeterminate ? 'mixed' : checked"
+        [attr.aria-disabled]="disabled"
+        [attr.aria-required]="required || null"
+        [attr.aria-label]="ariaLabel || null"
+        [attr.aria-labelledby]="ariaLabelledBy || null"
+        [attr.aria-describedby]="ariaDescribedBy || null"
+        [attr.tabindex]="disabled ? -1 : 0"
+        (change)="onInputChange($event)"
+        (focus)="onFocus()"
+        (blur)="onBlur()"
+    />
+
+    <!-- Custom visual checkbox -->
+    <span class="dzi-checkbox__box" aria-hidden="true">
+        <!-- Checkmark icon -->
+        <svg
+            class="dzi-checkbox__icon"
+            [class.dzi-checkbox__icon--check]="checked && !indeterminate"
+            viewBox="0 0 16 16"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+        >
+            <path
+                d="M3.5 8.5L6.5 11.5L12.5 4.5"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+            />
+        </svg>
+
+        <!-- Indeterminate dash icon -->
+        <svg
+            class="dzi-checkbox__icon"
+            [class.dzi-checkbox__icon--indeterminate]="indeterminate"
+            viewBox="0 0 16 16"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+        >
+            <path
+                d="M4 8H12"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+            />
+        </svg>
+    </span>
+
+    <!-- Label content (projected) -->
+    <span class="dzi-checkbox__label">
+        <ng-content></ng-content>
+    </span>
+</label>

@@ -1,4 +1,4 @@
-<aside class="sidebar">
+﻿<aside class="sidebar">
     <div class="sidebar-header">
         <div class="logo">
             <!-- Placeholder SVG for the logo based on the user's image -->
@@ -23,7 +23,7 @@
                 @for (item of guideItems; track item.label) {
                 <li class="nav-item">
                     <a [href]="item.link" class="nav-link">
-                        <ziva-icon [iconName]="item.icon" iconColor="var(--color-text-secondary)"></ziva-icon>
+                        <dzi-icon [iconName]="item.icon" iconColor="var(--color-text-secondary)"></dzi-icon>
                         <span>{{ item.label }}</span>
                     </a>
                 </li>
@@ -37,7 +37,7 @@
                 @for (item of componentItems; track item.label) {
                 <li class="nav-item">
                     <a [routerLink]="item.link" routerLinkActive="active" class="nav-link">
-                        <ziva-icon [iconName]="item.icon" iconColor="var(--color-text-secondary)"></ziva-icon>
+                        <dzi-icon [iconName]="item.icon" iconColor="var(--color-text-secondary)"></dzi-icon>
                         <span>{{ item.label }}</span>
                     </a>
                 </li>

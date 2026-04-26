@@ -1,11 +1,11 @@
-import { Component } from '@angular/core';
+﻿import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ZivaInputDirective, ZivaLabelComponent, ZivaFooterComponent, ZivaFormFieldComponent } from '@ziva-components';
+import { DziInputDirective, DziLabelComponent, DziFooterComponent, DziFormFieldComponent } from '@dizikit';
 
 @Component({
   selector: 'app-form-field-showcase',
   standalone: true,
-  imports: [CommonModule, ZivaInputDirective, ZivaLabelComponent, ZivaFooterComponent, ZivaFormFieldComponent],
+  imports: [CommonModule, DziInputDirective, DziLabelComponent, DziFooterComponent, DziFormFieldComponent],
   templateUrl: './form-field-showcase.component.html',
   styleUrls: ['./form-field-showcase.component.scss']
 })
@@ -22,55 +22,55 @@ export class FormFieldShowcaseComponent {
   }
 
   basicCode = {
-    html: `<ziva-form-field>
-  <ziva-label>First Name</ziva-label>
-  <input zivaInput placeholder="Enter your first name" />
-</ziva-form-field>`,
-    ts: `import { ZivaFormFieldComponent, ZivaLabelComponent, ZivaInputDirective } from '@ziva-components';
+    html: `<dzi-form-field>
+  <dzi-label>First Name</dzi-label>
+  <input dziInput placeholder="Enter your first name" />
+</dzi-form-field>`,
+    ts: `import { DziFormFieldComponent, DziLabelComponent, DziInputDirective } from '@dizikit';
 
 @Component({
-  imports: [ZivaFormFieldComponent, ZivaLabelComponent, ZivaInputDirective],
+  imports: [DziFormFieldComponent, DziLabelComponent, DziInputDirective],
   // ...
 })`,
     scss: `/* Form field handles label and input layout automatically */`
   };
 
   hintCode = {
-    html: `<ziva-form-field>
-  <ziva-label>Username</ziva-label>
-  <input zivaInput placeholder="e.g. jdoe" />
-  <ziva-footer>Your unique identifier on the platform.</ziva-footer>
-</ziva-form-field>`,
-    ts: `import { ZivaFormFieldComponent, ZivaLabelComponent, ZivaInputDirective, ZivaFooterComponent } from '@ziva-components';
+    html: `<dzi-form-field>
+  <dzi-label>Username</dzi-label>
+  <input dziInput placeholder="e.g. jdoe" />
+  <dzi-footer>Your unique identifier on the platform.</dzi-footer>
+</dzi-form-field>`,
+    ts: `import { DziFormFieldComponent, DziLabelComponent, DziInputDirective, DziFooterComponent } from '@dizikit';
 
 @Component({
-  imports: [ZivaFormFieldComponent, ZivaLabelComponent, ZivaInputDirective, ZivaFooterComponent],
+  imports: [DziFormFieldComponent, DziLabelComponent, DziInputDirective, DziFooterComponent],
   // ...
 })`,
-    scss: `/* ZivaFooter is useful for display-only hints and descriptions */`
+    scss: `/* DziFooter is useful for display-only hints and descriptions */`
   };
 
   statusCode = {
     html: `<!-- Success state -->
-<ziva-form-field>
-  <ziva-label>Discount Code</ziva-label>
-  <input zivaInput status="success" value="SAVE20" />
-  <ziva-footer>Code applied successfully!</ziva-footer>
-</ziva-form-field>
+<dzi-form-field>
+  <dzi-label>Discount Code</dzi-label>
+  <input dziInput status="success" value="SAVE20" />
+  <dzi-footer>Code applied successfully!</dzi-footer>
+</dzi-form-field>
 
 <!-- Warning state -->
-<ziva-form-field>
-  <ziva-label>Password Strength</ziva-label>
-  <input zivaInput type="password" status="warning" value="12345" />
-  <ziva-footer>This password is weak.</ziva-footer>
-</ziva-form-field>
+<dzi-form-field>
+  <dzi-label>Password Strength</dzi-label>
+  <input dziInput type="password" status="warning" value="12345" />
+  <dzi-footer>This password is weak.</dzi-footer>
+</dzi-form-field>
 
 <!-- Error state -->
-<ziva-form-field>
-  <ziva-label>Email Address</ziva-label>
-  <input zivaInput type="email" [error]="true" value="invalid-email" />
-  <ziva-footer>Please enter a valid email address.</ziva-footer>
-</ziva-form-field>`,
+<dzi-form-field>
+  <dzi-label>Email Address</dzi-label>
+  <input dziInput type="email" [error]="true" value="invalid-email" />
+  <dzi-footer>Please enter a valid email address.</dzi-footer>
+</dzi-form-field>`,
     ts: `@Component({
   templateUrl: './example.html'
 })
@@ -81,11 +81,11 @@ export class StatusExample {
   };
 
   textareaCode = {
-    html: `<ziva-form-field>
-  <ziva-label>Bio</ziva-label>
-  <textarea zivaInput placeholder="Describe yourself..."></textarea>
-  <ziva-footer>Limited to 200 characters.</ziva-footer>
-</ziva-form-field>`,
+    html: `<dzi-form-field>
+  <dzi-label>Bio</dzi-label>
+  <textarea dziInput placeholder="Describe yourself..."></textarea>
+  <dzi-footer>Limited to 200 characters.</dzi-footer>
+</dzi-form-field>`,
     ts: `@Component({
   template: '...'
 })`,
@@ -93,8 +93,8 @@ export class StatusExample {
   };
 
   apiProperties = [
-    { name: 'ziva-form-field', type: 'Component', description: 'The outer container component for form fields. Coordinates label and hint layout.' },
-    { name: 'ziva-label', type: 'Component', description: 'The component used for displaying labels within the form field.' },
-    { name: 'ziva-footer', type: 'Component', description: 'The component used for displaying hints or help text below the input.' },
+    { name: 'dzi-form-field', type: 'Component', description: 'The outer container component for form fields. Coordinates label and hint layout.' },
+    { name: 'dzi-label', type: 'Component', description: 'The component used for displaying labels within the form field.' },
+    { name: 'dzi-footer', type: 'Component', description: 'The component used for displaying hints or help text below the input.' },
   ];
 }

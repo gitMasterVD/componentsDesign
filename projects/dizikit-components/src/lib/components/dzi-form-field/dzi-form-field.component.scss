@@ -1,0 +1,38 @@
+﻿.dzi-form-field-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: var(--form-field-container-margin-bottom);
+
+    dzi-label {
+        margin-bottom: var(--form-field-label-margin);
+        font-size: var(--form-field-label-font-size);
+        font-weight: var(--form-field-label-font-weight);
+        color: var(--form-field-label-color);
+        transition: color 0.2s ease;
+    }
+
+    .dzi-input-wrapper {
+        position: relative;
+        width: 100%;
+    }
+
+    .dzi-form-field-footer {
+        padding-top: var(--form-field-footer-margin);
+    }
+
+    // Handle status states of the child input to highlight label/footer
+    &:has(.dzi-input--focused) {
+        dzi-label {
+            color: var(--form-field-focus-label-color);
+        }
+    }
+
+    &:has(.dzi-input--error) {
+
+        dzi-label,
+        .dzi-form-field-footer {
+            color: var(--form-field-error-color);
+        }
+    }
+}

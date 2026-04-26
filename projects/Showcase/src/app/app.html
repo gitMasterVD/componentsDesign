@@ -1,12 +1,12 @@
-<div class="layout-root">
+﻿<div class="layout-root">
   <app-sidebar></app-sidebar>
 
   <main class="main-content">
     <header class="content-header">
-      <div class="breadcrumb">Ziva UI / Components</div>
+      <div class="breadcrumb">Dizikit UI / Components</div>
       <button class="theme-toggle" (click)="toggleTheme()"
         [attr.aria-label]="isDark ? 'Switch to light mode' : 'Switch to dark mode'">
-        <ziva-icon [iconName]="isDark ? 'Sun' : 'Moon'" iconColor="var(--color-text-primary)"></ziva-icon>
+        <dzi-icon [iconName]="isDark ? 'Sun' : 'Moon'" iconColor="var(--color-text-primary)"></dzi-icon>
         <span>{{ isDark ? 'Light' : 'Dark' }}</span>
       </button>
     </header>
