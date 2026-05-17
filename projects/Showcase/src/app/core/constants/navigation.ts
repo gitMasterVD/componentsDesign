@@ -13,7 +13,8 @@ export const COMPONENT_NAV: NavItem[] = [
     { label: 'Checkbox', path: '/components/checkbox', link: '/components/checkbox', icon: 'Type' },
     { label: 'Radio Button', path: '/components/radio', link: '/components/radio', icon: 'CircleDot' },
     { label: 'Sidebar', path: '/components/sidebar', link: '/components/sidebar', icon: 'PanelLeft' },
-    { label: 'Card', path: '/components/card', link: '/components/card', icon: 'Layout' }
+    { label: 'Card', path: '/components/card', link: '/components/card', icon: 'Layout' },
+    { label: 'Badge', path: '/components/badge', link: '/components/badge', icon: 'Tag' }
 ];
 
 export const GUIDE_NAV: NavItem[] = [

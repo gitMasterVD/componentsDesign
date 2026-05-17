@@ -10,6 +10,7 @@ import { CardShowcaseComponent } from './features/card/card-showcase.component';
 import { RadioShowcaseComponent } from './features/radio/radio-showcase.component';
 import { SidebarShowcaseComponent } from './features/sidebar/sidebar-showcase.component';
 import { ComingSoonComponent } from './features/common/coming-soon/coming-soon.component';
+import { BadgeShowcaseComponent } from './features/badge/badge-showcase.component';
 
 export const routes: Routes = [
     {
@@ -32,6 +33,7 @@ export const routes: Routes = [
                     { path: 'radio', component: RadioShowcaseComponent },
                     { path: 'sidebar', component: SidebarShowcaseComponent },
                     { path: 'card', component: CardShowcaseComponent },
+                    { path: 'badge', component: BadgeShowcaseComponent },
                 ]
             }
         ]

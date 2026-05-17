@@ -1,0 +1,17 @@
+:root {
+    --badge-bg: var(--color-primary);
+    --badge-color: var(--color-on-primary);
+    --badge-radius: 4px;
+    --badge-padding: 4px 8px;
+    --badge-font-size: 12px;
+
+    // Variants
+    --badge-success-bg: var(--color-success);
+    --badge-success-color: var(--color-on-success);
+    --badge-error-bg: var(--color-error);
+    --badge-error-color: var(--color-on-error);
+    --badge-warning-bg: var(--color-warning);
+    --badge-warning-color: var(--color-on-warning);
+    --badge-info-bg: var(--color-primary);
+    --badge-info-color: var(--color-on-primary);
+}

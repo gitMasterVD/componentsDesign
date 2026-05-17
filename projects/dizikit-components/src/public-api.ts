@@ -11,4 +11,5 @@ export * from './lib/components/dzi-checkbox';
 export * from './lib/components/dzi-card';
 export * from './lib/components/dzi-radio-button';
 export * from './lib/components/dzi-sidebar';
+export * from './lib/components/dzi-badge';
 

@@ -1,0 +1,97 @@
+<div class="content-body">
+    <div class="component-header">
+        <h1 class="component-title">Badge</h1>
+        <p class="component-description">
+            <code>dzi-badge</code> is used to display status, notifications, or short text indicators.
+        </p>
+    </div>
+
+    <!-- Section: Variants -->
+    <div class="section-card">
+        <div class="section-header">
+            <h2 class="section-title">Variants</h2>
+            <p class="section-desc">Various color schemes for different contexts.</p>
+        </div>
+
+        <div class="section-preview">
+            <dzi-badge variant="primary"></dzi-badge>
+            <dzi-badge variant="success"></dzi-badge>
+            <dzi-badge variant="warning"></dzi-badge>
+            <dzi-badge variant="error"></dzi-badge>
+            <span style="margin: 0 10px; border-left: 1px solid #ddd; height: 30px;"></span>
+            <dzi-badge variant="primary">1</dzi-badge>
+            <dzi-badge variant="success">5</dzi-badge>
+            <dzi-badge variant="warning">12</dzi-badge>
+            <dzi-badge variant="error">99+</dzi-badge>
+        </div>
+
+        <div class="section-tabs">
+            <div class="tabs-bar">
+                <button class="tab-btn" [class.active]="activeTabs['variants'] === 'html'" (click)="setTab('variants', 'html')">HTML</button>
+                <button class="tab-btn" [class.active]="activeTabs['variants'] === 'ts'" (click)="setTab('variants', 'ts')">TS</button>
+                <button class="tab-btn" [class.active]="activeTabs['variants'] === 'scss'" (click)="setTab('variants', 'scss')">SCSS</button>
+            </div>
+            <div class="code-viewer">
+                @if (activeTabs['variants'] === 'html') { <pre><code class="language-html">{{ variantCode.html }}</code></pre> }
+                @if (activeTabs['variants'] === 'ts') { <pre><code class="language-typescript">{{ variantCode.ts }}</code></pre> }
+                @if (activeTabs['variants'] === 'scss') { <pre><code class="language-scss">{{ variantCode.scss }}</code></pre> }
+            </div>
+        </div>
+    </div>
+
+    <!-- Section: Sizes -->
+    <div class="section-card">
+        <div class="section-header">
+            <h2 class="section-title">Sizes</h2>
+            <p class="section-desc">Available in small, medium, and large.</p>
+        </div>
+
+        <div class="section-preview">
+            <dzi-badge size="sm">1</dzi-badge>
+            <dzi-badge size="md">1</dzi-badge>
+            <dzi-badge size="lg">1</dzi-badge>
+            <span style="margin: 0 10px; border-left: 1px solid #ddd; height: 30px;"></span>
+            <dzi-badge size="sm"></dzi-badge>
+            <dzi-badge size="md"></dzi-badge>
+            <dzi-badge size="lg"></dzi-badge>
+        </div>
+
+        <div class="section-tabs">
+            <div class="tabs-bar">
+                <button class="tab-btn" [class.active]="activeTabs['sizes'] === 'html'" (click)="setTab('sizes', 'html')">HTML</button>
+                <button class="tab-btn" [class.active]="activeTabs['sizes'] === 'ts'" (click)="setTab('sizes', 'ts')">TS</button>
+                <button class="tab-btn" [class.active]="activeTabs['sizes'] === 'scss'" (click)="setTab('sizes', 'scss')">SCSS</button>
+            </div>
+            <div class="code-viewer">
+                @if (activeTabs['sizes'] === 'html') { <pre><code class="language-html">{{ sizeCode.html }}</code></pre> }
+                @if (activeTabs['sizes'] === 'ts') { <pre><code class="language-typescript">{{ sizeCode.ts }}</code></pre> }
+                @if (activeTabs['sizes'] === 'scss') { <pre><code class="language-scss">{{ sizeCode.scss }}</code></pre> }
+            </div>
+        </div>
+    </div>
+
+    <!-- API Reference -->
+    <div class="api-reference">
+        <h2 class="api-reference-title">API Reference</h2>
+        <table class="api-table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Type</th>
+                    <th>Default</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (prop of apiProperties; track prop.name) {
+                <tr>
+                    <td><code>{{ prop.name }}</code></td>
+                    <td><code>{{ prop.type }}</code></td>
+                    <td><code>{{ prop.default }}</code></td>
+                    <td>{{ prop.description }}</td>
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

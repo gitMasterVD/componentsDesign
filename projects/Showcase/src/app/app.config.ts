@@ -16,7 +16,7 @@ import {
   Save, Trash2, Trash, Plus, Check, TextSelect,
   // Click events
   Download, Share2, Copy, ChevronDown, CircleDot, Layout,
-  PanelLeft, Layers, ChevronRight, ChevronLeft, BarChart, Folder, Users, FileText, LogOut
+  PanelLeft, Layers, ChevronRight, ChevronLeft, BarChart, Folder, Users, FileText, LogOut, Tag
 } from 'lucide-angular';
 
 /**
@@ -43,7 +43,7 @@ export const appConfig: ApplicationConfig = {
         Save, Trash2, Trash, Plus, Check, TextSelect,
         // Click events
         Download, Share2, Copy, ChevronDown, CircleDot, Layout,
-        PanelLeft, Layers, ChevronRight, ChevronLeft, BarChart, Folder, Users, FileText, LogOut
+        PanelLeft, Layers, ChevronRight, ChevronLeft, BarChart, Folder, Users, FileText, LogOut, Tag
       })
     ),
   ],
