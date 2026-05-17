@@ -1,4 +1,4 @@
-﻿import { Component, Input, OnChanges, SimpleChanges, booleanAttribute, HostBinding } from '@angular/core';
+import { Component, Input, OnChanges, SimpleChanges, booleanAttribute, HostBinding } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LucideAngularModule } from 'lucide-angular';
 
@@ -14,16 +14,21 @@ export class DziIconComponent {
     @Input() iconColor: string = '';
     @Input({ transform: booleanAttribute }) disabled: boolean = false;
 
-    @HostBinding('class.dzi-icon') readonly hostClass = true;
-    @HostBinding('class.disabled') get isDisabled() { return this.disabled; }
-    @HostBinding('attr.disabled') get isDisabledAttr() { return this.disabled ? '' : null; }
     @Input() ariaLabel: string | null = null;
     @Input() ariaLabelledby: string | null = null;
     @Input() svgSrc: string | null = null;
     @Input() imgSrc: string | null = null;
+    @Input() size: number | string = 24;
+
+    @HostBinding('class.dzi-icon') readonly hostClass = true;
+    @HostBinding('class.disabled') get isDisabled() { return this.disabled; }
+    @HostBinding('attr.disabled') get isDisabledAttr() { return this.disabled ? '' : null; }
+    @HostBinding('style.--icon-size') get hostSize() {
+        return typeof this.size === 'number' ? `${this.size}px` : this.size;
+    }
 
     get effectiveColor(): string {
         if (this.disabled) return 'var(--color-disabled)';
-        return this.iconColor || 'var(--color-primary)';
+        return this.iconColor || 'currentColor';
     }
 }

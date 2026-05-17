@@ -11,7 +11,7 @@ import {
   // Color / Semantic
   Zap, CheckCircle, XCircle, AlertTriangle, Info,
   // Hover pairs
-  Eye, EyeOff, Heart, HeartCrack, Star, StarOff, Lock, LockOpen, Palette, Image,
+  Eye, EyeOff, Heart, HeartCrack, Star, StarOff, Lock, LockOpen, Palette, Image, X,
   // Disabled
   Save, Trash2, Trash, Plus, Check, TextSelect,
   // Click events
@@ -38,7 +38,7 @@ export const appConfig: ApplicationConfig = {
         // Color / Semantic
         Zap, CheckCircle, XCircle, AlertTriangle, Info,
         // Hover pairs
-        Eye, EyeOff, Heart, HeartCrack, Star, StarOff, Lock, LockOpen, Palette, Image,
+        Eye, EyeOff, Heart, HeartCrack, Star, StarOff, Lock, LockOpen, Palette, Image, X,
         // Disabled
         Save, Trash2, Trash, Plus, Check, TextSelect,
         // Click events

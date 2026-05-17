@@ -12,4 +12,4 @@ export * from './lib/components/dzi-card';
 export * from './lib/components/dzi-radio-button';
 export * from './lib/components/dzi-sidebar';
 export * from './lib/components/dzi-badge';
-
+export * from './lib/components/dzi-tag';

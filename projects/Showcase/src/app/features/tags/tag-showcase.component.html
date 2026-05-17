@@ -1,0 +1,148 @@
+<div class="content-body">
+
+    <div class="component-header">
+        <h1 class="component-title">Tag</h1>
+        <p class="component-description">
+            Tags are used for items that need to be labeled, categorized, or organized using keywords that describe them.
+            Unlike Badges (which are used for notification counts), Tags are optimized for text content.
+        </p>
+    </div>
+
+    <!-- Section: Variants & Appearances -->
+    <div class="section-card">
+        <div class="section-header">
+            <h2 class="section-title">Variants & Appearances</h2>
+            <p class="section-desc">Tags come in 5 semantic colors and 3 distinct appearances (soft, solid, outline).</p>
+        </div>
+
+        <div class="section-preview" style="flex-direction: column; align-items: flex-start; gap: 20px;">
+            <div style="display: flex; gap: 10px; align-items: center;">
+                <span style="width: 80px; color: var(--color-text-secondary); font-size: 12px; font-weight: 600; text-transform: uppercase;">Soft</span>
+                <dzi-tag variant="primary" appearance="soft">Primary</dzi-tag>
+                <dzi-tag variant="success" appearance="soft">Success</dzi-tag>
+                <dzi-tag variant="warning" appearance="soft">Warning</dzi-tag>
+                <dzi-tag variant="error" appearance="soft">Error</dzi-tag>
+                <dzi-tag variant="neutral" appearance="soft">Neutral</dzi-tag>
+            </div>
+            
+            <div style="display: flex; gap: 10px; align-items: center;">
+                <span style="width: 80px; color: var(--color-text-secondary); font-size: 12px; font-weight: 600; text-transform: uppercase;">Solid</span>
+                <dzi-tag variant="primary" appearance="solid">Primary</dzi-tag>
+                <dzi-tag variant="success" appearance="solid">Success</dzi-tag>
+                <dzi-tag variant="warning" appearance="solid">Warning</dzi-tag>
+                <dzi-tag variant="error" appearance="solid">Error</dzi-tag>
+                <dzi-tag variant="neutral" appearance="solid">Neutral</dzi-tag>
+            </div>
+
+            <div style="display: flex; gap: 10px; align-items: center;">
+                <span style="width: 80px; color: var(--color-text-secondary); font-size: 12px; font-weight: 600; text-transform: uppercase;">Outline</span>
+                <dzi-tag variant="primary" appearance="outline">Primary</dzi-tag>
+                <dzi-tag variant="success" appearance="outline">Success</dzi-tag>
+                <dzi-tag variant="warning" appearance="outline">Warning</dzi-tag>
+                <dzi-tag variant="error" appearance="outline">Error</dzi-tag>
+                <dzi-tag variant="neutral" appearance="outline">Neutral</dzi-tag>
+            </div>
+        </div>
+
+        <div class="section-tabs">
+            <div class="tabs-bar">
+                <button class="tab-btn" [class.active]="activeTabs['variants'] === 'html'" (click)="setTab('variants', 'html')">HTML</button>
+                <button class="tab-btn" [class.active]="activeTabs['variants'] === 'ts'" (click)="setTab('variants', 'ts')">TS</button>
+                <button class="tab-btn" [class.active]="activeTabs['variants'] === 'scss'" (click)="setTab('variants', 'scss')">SCSS</button>
+            </div>
+            <div class="code-viewer">
+                @if (activeTabs['variants'] === 'html') { <pre><code class="language-html">{{ variantCode.html }}</code></pre> }
+                @if (activeTabs['variants'] === 'ts') { <pre><code class="language-typescript">{{ variantCode.ts }}</code></pre> }
+                @if (activeTabs['variants'] === 'scss') { <pre><code class="language-scss">{{ variantCode.scss }}</code></pre> }
+            </div>
+        </div>
+    </div>
+
+    <!-- Section: Sizes -->
+    <div class="section-card">
+        <div class="section-header">
+            <h2 class="section-title">Sizes</h2>
+            <p class="section-desc">Tags are available in small, medium, and large.</p>
+        </div>
+
+        <div class="section-preview">
+            <dzi-tag size="sm" variant="primary">Small Tag</dzi-tag>
+            <dzi-tag size="md" variant="success">Medium Tag</dzi-tag>
+            <dzi-tag size="lg" variant="warning">Large Tag</dzi-tag>
+        </div>
+
+        <div class="section-tabs">
+            <div class="tabs-bar">
+                <button class="tab-btn" [class.active]="activeTabs['sizes'] === 'html'" (click)="setTab('sizes', 'html')">HTML</button>
+                <button class="tab-btn" [class.active]="activeTabs['sizes'] === 'ts'" (click)="setTab('sizes', 'ts')">TS</button>
+                <button class="tab-btn" [class.active]="activeTabs['sizes'] === 'scss'" (click)="setTab('sizes', 'scss')">SCSS</button>
+            </div>
+            <div class="code-viewer">
+                @if (activeTabs['sizes'] === 'html') { <pre><code class="language-html">{{ sizeCode.html }}</code></pre> }
+                @if (activeTabs['sizes'] === 'ts') { <pre><code class="language-typescript">{{ sizeCode.ts }}</code></pre> }
+                @if (activeTabs['sizes'] === 'scss') { <pre><code class="language-scss">{{ sizeCode.scss }}</code></pre> }
+            </div>
+        </div>
+    </div>
+
+    <!-- Section: Closable -->
+    <div class="section-card">
+        <div class="section-header">
+            <h2 class="section-title">Closable Tags</h2>
+            <p class="section-desc">Use the <code>closable</code> property to allow users to remove tags. This is extremely useful for filtering interfaces.</p>
+        </div>
+
+        <div class="section-preview">
+            <dzi-tag variant="primary" [closable]="true" (closed)="onTagClosed('Feature')">
+                <dzi-icon iconName="Layers" size="14"></dzi-icon>
+                Feature
+            </dzi-tag>
+            <dzi-tag variant="success" appearance="solid" [closable]="true" (closed)="onTagClosed('Approved')">
+                <dzi-icon iconName="Check" size="14"></dzi-icon>
+                Approved
+            </dzi-tag>
+            <dzi-tag variant="neutral" appearance="outline" [closable]="true" (closed)="onTagClosed('Obsolete')">
+                Obsolete
+            </dzi-tag>
+        </div>
+
+        <div class="section-tabs">
+            <div class="tabs-bar">
+                <button class="tab-btn" [class.active]="activeTabs['closable'] === 'html'" (click)="setTab('closable', 'html')">HTML</button>
+                <button class="tab-btn" [class.active]="activeTabs['closable'] === 'ts'" (click)="setTab('closable', 'ts')">TS</button>
+                <button class="tab-btn" [class.active]="activeTabs['closable'] === 'scss'" (click)="setTab('closable', 'scss')">SCSS</button>
+            </div>
+            <div class="code-viewer">
+                @if (activeTabs['closable'] === 'html') { <pre><code class="language-html">{{ closableCode.html }}</code></pre> }
+                @if (activeTabs['closable'] === 'ts') { <pre><code class="language-typescript">{{ closableCode.ts }}</code></pre> }
+                @if (activeTabs['closable'] === 'scss') { <pre><code class="language-scss">{{ closableCode.scss }}</code></pre> }
+            </div>
+        </div>
+    </div>
+
+    <!-- API Reference -->
+    <div class="api-reference">
+        <h2 class="api-reference-title">API Reference</h2>
+        
+        <table class="api-table">
+            <thead>
+                <tr>
+                    <th>Property</th>
+                    <th>Type</th>
+                    <th>Default</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (prop of apiProperties; track prop.name) {
+                    <tr>
+                        <td class="prop-name"><code>{{ prop.name }}</code></td>
+                        <td class="prop-type"><code>{{ prop.type }}</code></td>
+                        <td class="prop-default"><code>{{ prop.default }}</code></td>
+                        <td class="prop-desc">{{ prop.description }}</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

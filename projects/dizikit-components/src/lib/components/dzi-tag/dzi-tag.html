@@ -1,0 +1,6 @@
+<span class="dzi-tag__content">
+    <ng-content></ng-content>
+</span>
+<button *ngIf="closable" class="dzi-tag__close" (click)="onClose($event)" aria-label="Close tag">
+    <dzi-icon iconName="X" [size]="size === 'sm' ? 12 : (size === 'md' ? 14 : 16)"></dzi-icon>
+</button>
